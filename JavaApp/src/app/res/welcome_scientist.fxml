@@ -17,6 +17,6 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="200.0" layoutY="108.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
       <Button id="add_data_point" layoutX="120.0" layoutY="150.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="393.0" text="Add Data Point" />
       <Button id="add_poi" layoutX="120.0" layoutY="220.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="393.0" text="Add POI Location" />
-      <Button layoutX="500.0" layoutY="340.0" mnemonicParsing="false" text="Logout" />
+      <Button id="logout_scientist" layoutX="500.0" layoutY="340.0" mnemonicParsing="false" text="Logout" />
    </children>
 </AnchorPane>
