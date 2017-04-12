@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Separator prefHeight="44.0" prefWidth="600.0" />
+      <Separator layoutY="359.0" prefHeight="44.0" prefWidth="600.0" />
+      <Text fill="#221fe4" layoutX="130.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add a new location">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <ComboBox id="city_location_spinner" layoutX="130.0" layoutY="140.0" prefWidth="150.0" promptText="City" />
+      <TextField id="zip_code_field" layoutX="130.0" layoutY="220.0" prefHeight="27.0" prefWidth="282.0" promptText="Zip code" />
+      <Button id="cancel_location" layoutX="130.0" layoutY="285.0" mnemonicParsing="false" text="Cancel" />
+      <Button id="submit_location" layoutX="331.0" layoutY="285.0" mnemonicParsing="false" text="Submit" />
+      <TextField id="poi_location_field" layoutX="130.0" layoutY="100.0" prefHeight="27.0" prefWidth="282.0" promptText="POI Location Name" />
+      <ComboBox id="state_location_spinner" layoutX="130.0" layoutY="180.0" prefWidth="150.0" promptText="State" />
+   </children>
+</AnchorPane>
