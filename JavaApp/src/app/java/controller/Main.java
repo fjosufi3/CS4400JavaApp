@@ -18,10 +18,6 @@ public class Main extends Application {
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         //Parent root = FXMLLoader.load(getClass().getResource("/app/res/pending_data_points.fxml"));
-
-
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 600, 500));
         primaryStage.show();
     }
 

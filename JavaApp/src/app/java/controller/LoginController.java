@@ -67,6 +67,10 @@ public class LoginController implements Initializable {
             
             ResultSet usersTable = statement.executeQuery("SELECT * FROM Users WHERE USERNAME= " + "'" + login_username.getText() + "'" 
             + " AND PASSWORD= " + "'" + login_password.getText() + "'");
+            
+            while (usersTable.next()) {
+                
+            }
         } catch (Exception e) {
             System.out.println("Something went wrong"); 
         }
