@@ -9,7 +9,6 @@ import javafx.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
@@ -60,7 +59,7 @@ public class LoginController implements Initializable {
         Connection c = null;
         Statement statement = null;
         try {
-            c = DriverManager.getConnection("");
+            c = ConnectionConfiguration.getConnection();
             c.setAutoCommit(false);
             
             statement = c.createStatement(); 
