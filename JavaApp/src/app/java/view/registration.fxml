@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.app.java.controller.RegistrationController">
+   <children>
+      <Label layoutX="65.0" layoutY="56.0" text="New User Registration" textFill="#221fe4">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Separator layoutY="-2.0" prefHeight="35.0" prefWidth="400.0" />
+      <Separator layoutY="477.0" prefHeight="23.0" prefWidth="400.0" />
+      <TextField id="username_reg" layoutX="100.0" layoutY="90.0" promptText="Username" />
+      <TextField id="email_reg" layoutX="100.0" layoutY="130.0" promptText="Email Address" />
+      <TextField id="password_reg" layoutX="100.0" layoutY="170.0" promptText="Password" />
+      <TextField id="confirm_password" layoutX="100.0" layoutY="210.0" promptText="Confirm Password" />
+      <ComboBox id="user_type_reg" layoutX="100.0" layoutY="250.0" prefHeight="27.0" prefWidth="167.0" promptText="User Type" AnchorPane.bottomAnchor="223.0" AnchorPane.topAnchor="250.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#edeff2" height="153.0" layoutX="17.0" layoutY="286.0" stroke="BLACK" strokeType="INSIDE" width="370.0" />
+      <Text fill="#221fe4" layoutX="29.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fill out this region if you choose city officials." wrappingWidth="278.21875" />
+      <ComboBox id="city_reg" layoutX="85.0" layoutY="320.0" prefWidth="150.0" promptText="City" />
+      <ComboBox id="state_reg" layoutX="85.0" layoutY="360.0" prefWidth="150.0" promptText="State" />
+      <TextField id="title_reg" layoutX="85.0" layoutY="400.0" promptText="Title" />
+      <Button id="submit_reg" layoutX="160.0" layoutY="451.0" mnemonicParsing="false" text="Register" />
+   </children>
+</AnchorPane>
