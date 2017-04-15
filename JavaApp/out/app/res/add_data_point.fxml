@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Separator prefHeight="44.0" prefWidth="600.0" />
+      <Separator layoutY="356.0" prefHeight="44.0" prefWidth="600.0" />
+      <Text fill="#221fe4" layoutX="120.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add a new data point">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <ComboBox id="poi_loc_name_spinner" layoutX="120.0" layoutY="90.0" prefHeight="27.0" prefWidth="282.0" promptText="POI Location Name" />
+      <DatePicker id="date_picker" layoutX="120.0" layoutY="130.0" prefHeight="27.0" prefWidth="145.0" promptText="Date of reading" />
+      <TextField id="time_field" layoutX="282.0" layoutY="130.0" prefHeight="27.0" prefWidth="120.0" promptText="Time" />
+      <ComboBox id="data_type_spinner" layoutX="120.0" layoutY="170.0" prefWidth="150.0" promptText="Data type" />
+      <TextField id="data_value_field" layoutX="120.0" layoutY="210.0" prefHeight="27.0" prefWidth="282.0" promptText="Data value" />
+      <Button id="cancel_data_point" layoutX="120.0" layoutY="275.0" mnemonicParsing="false" text="Cancel" />
+      <Button id="submit_data_point" layoutX="321.0" layoutY="275.0" mnemonicParsing="false" text="Submit" />
+      <Button id="add_new_location" layoutX="418.0" layoutY="335.0" mnemonicParsing="false" text="Add new location" />
+   </children>
+</AnchorPane>

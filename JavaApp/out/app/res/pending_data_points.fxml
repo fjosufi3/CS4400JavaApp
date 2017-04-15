@@ -7,9 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="602.0"
-            xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="app.java.controller.PendingDataController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Text fill="#221fe4" layoutX="51.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pending Data Points">
          <font>
@@ -17,7 +15,9 @@
          </font>
       </Text>
 
-
+      <Button id="backBtn_pending_data" layoutX="99.0" layoutY="374.0" mnemonicParsing="false" text="Back" />
+      <Button id="rejectBtn_pending_data" layoutX="260.0" layoutY="374.0" mnemonicParsing="false" text="Reject" />
+      <Button id="acceptBtn_pending_data" layoutX="430.0" layoutY="374.0" mnemonicParsing="false" text="Accept" />
       <TableView fx:id="pendingDataView" layoutX="25.0" layoutY="99.0" prefHeight="250.0" prefWidth="553.0">
          <columns>
             <TableColumn fx:id="columnSelect" prefWidth="57.0" text="Select" />
@@ -27,10 +27,5 @@
             <TableColumn fx:id="columnDateAndTime" prefWidth="179.0" text="Date and Time of Reading" />
          </columns>
       </TableView>
-
-      <Button id="backBtn_pending_data" layoutX="99.0" layoutY="374.0" mnemonicParsing="false" text="Back" />
-      <Button id="rejectBtn_pending_data" layoutX="260.0" layoutY="374.0" mnemonicParsing="false" text="Reject" />
-      <Button id="acceptBtn_pending_data" layoutX="430.0" layoutY="374.0" mnemonicParsing="false" text="Accept" />
-
    </children>
 </AnchorPane>
