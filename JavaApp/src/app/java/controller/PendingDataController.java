@@ -13,6 +13,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -26,6 +27,8 @@ import java.util.logging.Logger;
 
 public class PendingDataController implements Initializable {
 
+    @FXML
+    private Text screenHeader;
     @FXML
     private TableView<DataPoint> pendingDataView;
     @FXML

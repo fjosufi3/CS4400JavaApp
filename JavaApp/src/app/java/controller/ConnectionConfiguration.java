@@ -4,9 +4,6 @@ import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 
-/**
- * Created by mcw0805 on 4/10/17.
- */
 
 /*
 
