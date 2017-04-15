@@ -1,6 +1,8 @@
-package app.java.controller;
+package src.app.java.controller;
 
-import app.java.controller.DataPoint;
+import src.app.java.model.DataPoint;
+import src.app.java.model.POI;
+import src.app.java.model.DataType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
