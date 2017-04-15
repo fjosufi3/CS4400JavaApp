@@ -1,4 +1,4 @@
-package app.java.controller;
+package src.app.java.model;
 
 public enum UserType {
     Admin, City_Scientist, City_Official;
