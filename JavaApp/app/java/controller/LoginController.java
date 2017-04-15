@@ -45,10 +45,10 @@ public class LoginController implements Initializable {
         Parent root;
         if (event.getSource() == login_bt) {
             stage = (Stage) login_bt.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("/src/app/java/view/welcome_scientist.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/app/java/view/welcome_scientist.fxml"));
         } else {
             stage = (Stage) login_reg_bt.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("/src/app/java/view/registration.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/app/java/view/registration.fxml"));
         }
         Scene scene = new Scene(root);
         stage.setScene(scene);
