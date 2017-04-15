@@ -1,4 +1,4 @@
-package src.app.java.model;
+package app.java.model;
 
 public enum UserType {
     Admin, City_Scientist, City_Official;

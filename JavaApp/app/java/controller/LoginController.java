@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package src.app.java.controller;
+package app.java.controller;
 
 import javafx.event.ActionEvent;
 import java.io.IOException;

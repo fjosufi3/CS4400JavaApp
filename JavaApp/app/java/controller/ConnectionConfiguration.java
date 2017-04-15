@@ -1,4 +1,4 @@
-package src.app.java.controller;
+package app.java.controller;
 
 import java.sql.Connection;
 import java.sql.Driver;
