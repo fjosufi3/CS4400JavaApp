@@ -85,7 +85,6 @@ public class PendingDataController implements Initializable {
 
             }
 
-
         } catch (SQLException ex) {
             Logger.getLogger(PendingDataController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -160,6 +159,36 @@ public class PendingDataController implements Initializable {
 
     @FXML
     private void onClickReject(ActionEvent event) {
+
+        for (int i = 0; i < data.size(); i++) {
+            ObservableValue<CheckBox> c = columnSelect.getCellObservableValue(data.get(i));
+            CheckBox cb = c.getValue();
+            boolean isSelected = cb.isSelected();
+            System.out.println(isSelected);
+
+            if (isSelected) {
+                data.get(i).setAccepted(false);
+                String locNamePK = pendingDataView.getItems().get(i).getLocationName();
+                String dateTimePK = pendingDataView.getItems().get(i).getDateTimeString();
+                //System.out.println(dateTimePK);
+
+                try {
+                    PreparedStatement changeStatement = connection.prepareStatement("DELETE FROM DATA_POINT " +
+                            "WHERE Location_Name = ? and  Date_Time = ?");
+                    changeStatement.setString(1, locNamePK);
+                    changeStatement.setString(2, dateTimePK);
+
+                    changeStatement.executeUpdate();
+
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+                pendingDataView.getItems().remove(data.get(i));
+            }
+
+        } //end for loop
 
     }
 
