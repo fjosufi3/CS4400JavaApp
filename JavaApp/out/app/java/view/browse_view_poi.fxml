@@ -20,23 +20,23 @@
       </Label>
       <Separator layoutY="-2.0" prefHeight="35.0" prefWidth="680.0" />
       <Separator layoutY="569.0" prefHeight="23.0" prefWidth="680.0" />
-      <TextField id="zip_view_poi" layoutX="224.0" layoutY="214.0" prefHeight="27.0" prefWidth="197.0" promptText="Zip Code" />
-      <ComboBox id="loc_view_poi" layoutX="224.0" layoutY="92.0" prefHeight="27.0" prefWidth="197.0" promptText="Location Not Selected" AnchorPane.bottomAnchor="531.0" AnchorPane.topAnchor="92.0" />
-      <Button id="backBtn_view_poi" layoutX="314.0" layoutY="601.0" mnemonicParsing="false" text="Back" />
-      <ComboBox id="city_view_poi" layoutX="224.0" layoutY="131.0" prefHeight="27.0" prefWidth="197.0" promptText="City Not Selected" />
-      <ComboBox id="state_view_poi" layoutX="224.0" layoutY="172.0" prefHeight="27.0" prefWidth="197.0" promptText="State Not Selected" />
+      <TextField fx:id="zip_view_poi" layoutX="224.0" layoutY="214.0" prefHeight="27.0" prefWidth="197.0" promptText="Zip Code" />
+      <ComboBox fx:id="loc_view_poi" layoutX="224.0" layoutY="92.0" prefHeight="27.0" prefWidth="197.0" promptText="Location Not Selected" AnchorPane.bottomAnchor="531.0" AnchorPane.topAnchor="92.0" />
+      <Button fx:id="backBtn_view_poi" layoutX="314.0" layoutY="601.0" mnemonicParsing="false" text="Back" />
+      <ComboBox fx:id="city_view_poi" layoutX="224.0" layoutY="131.0" prefHeight="27.0" prefWidth="197.0" promptText="City Not Selected" />
+      <ComboBox fx:id="state_view_poi" layoutX="224.0" layoutY="172.0" prefHeight="27.0" prefWidth="197.0" promptText="State Not Selected" />
       <Text layoutX="87.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POI Location Name" />
       <Text layoutX="134.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City" />
       <Text layoutX="130.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State" />
       <Text layoutX="118.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zip Code" />
       <Text layoutX="122.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flagged" />
       <Text layoutX="105.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Flagged" />
-      <CheckBox id="flagged_view_poi" layoutX="224.0" layoutY="253.0" mnemonicParsing="false" />
-      <DatePicker id="dateStart_view_poi" layoutX="224.0" layoutY="282.0" prefHeight="27.0" prefWidth="128.0" />
+      <CheckBox fx:id="flagged_view_poi" layoutX="224.0" layoutY="253.0" mnemonicParsing="false" />
+      <DatePicker fx:id="dateStart_view_poi" layoutX="224.0" layoutY="282.0" prefHeight="27.0" prefWidth="128.0" />
       <Text layoutX="364.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to" />
-      <DatePicker id="dateEnd_view_poi" layoutX="387.0" layoutY="282.0" prefHeight="27.0" prefWidth="128.0" />
+      <DatePicker fx:id="dateEnd_view_poi" layoutX="387.0" layoutY="282.0" prefHeight="27.0" prefWidth="128.0" />
       <Separator layoutY="364.0" prefHeight="23.0" prefWidth="680.0" />
-      <Button id = "apply_filter_view_poi" layoutX="167.0" layoutY="331.0" mnemonicParsing="false" text="Apply Filter" />
-      <Button id = "reset_filter_view_poi" layoutX="395.0" layoutY="333.0" mnemonicParsing="false" text="Reset Filter" />
+      <Button fx:id = "apply_filter_view_poi" layoutX="167.0" layoutY="331.0" mnemonicParsing="false" text="Apply Filter" />
+      <Button fx:id = "reset_filter_view_poi" layoutX="395.0" layoutY="333.0" mnemonicParsing="false" text="Reset Filter" />
    </children>
 </AnchorPane>

@@ -21,23 +21,23 @@
       <Separator layoutY="29.0" prefHeight="35.0" prefWidth="680.0" />
       <Separator layoutY="572.0" prefHeight="23.0" prefWidth="680.0" />
       <ComboBox id="data_type_poi_detail" layoutX="224.0" layoutY="92.0" prefHeight="27.0" prefWidth="197.0" promptText="Select Data Type" AnchorPane.bottomAnchor="531.0" AnchorPane.topAnchor="92.0" />
-      <Button id="backBtn_poi_detail" layoutX="314.0" layoutY="601.0" mnemonicParsing="false" text="Back" />
-      <ComboBox id="state_poi_detail" layoutX="224.0" layoutY="172.0" prefHeight="27.0" prefWidth="197.0" promptText="State Not Selected" />
+      <Button fx:id="backBtn_poi_detail" layoutX="314.0" layoutY="601.0" mnemonicParsing="false" text="Back" />
+      <ComboBox fx:id="state_poi_detail" layoutX="224.0" layoutY="172.0" prefHeight="27.0" prefWidth="197.0" promptText="State Not Selected" />
       <Text layoutX="133.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" />
       <Text layoutX="118.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data Value" />
       <Text layoutX="130.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State" />
       <Text layoutX="132.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
       <DatePicker id="dateStart_poi_detail" layoutX="223.0" layoutY="218.0" prefHeight="27.0" prefWidth="128.0" />
       <Text layoutX="363.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to" />
-      <DatePicker id="dateEnd_poi_detail" layoutX="386.0" layoutY="218.0" prefHeight="27.0" prefWidth="128.0" />
+      <DatePicker fx:id="dateEnd_poi_detail" layoutX="386.0" layoutY="218.0" prefHeight="27.0" prefWidth="128.0" />
       <Separator layoutY="312.0" prefHeight="23.0" prefWidth="680.0" />
-      <Button id = "apply_filter_poi_detail" layoutX="167.0" layoutY="274.0" mnemonicParsing="false" text="Apply Filter" />
-      <Button id = "reset_filter_poi_detail" layoutX="395.0" layoutY="276.0" mnemonicParsing="false" text="Reset Filter" />
-      <TextField id="dateVal_min" layoutX="224.0" layoutY="131.0" prefHeight="27.0" prefWidth="100.0" />
-      <TextField id="dateVal_max" layoutX="369.0" layoutY="131.0" prefHeight="27.0" prefWidth="100.0" />
+      <Button fx:id = "apply_filter_poi_detail" layoutX="167.0" layoutY="274.0" mnemonicParsing="false" text="Apply Filter" />
+      <Button fx:id = "reset_filter_poi_detail" layoutX="395.0" layoutY="276.0" mnemonicParsing="false" text="Reset Filter" />
+      <TextField fx:id="dateVal_min" layoutX="224.0" layoutY="131.0" prefHeight="27.0" prefWidth="100.0" />
+      <TextField fx:id="dateVal_max" layoutX="369.0" layoutY="131.0" prefHeight="27.0" prefWidth="100.0" />
       <Text layoutX="338.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to" />
-      <CheckBox id = "flag_poi_detail" layoutX="584.0" layoutY="81.0" mnemonicParsing="false" text="Flag" />
+      <CheckBox fx:id = "flag_poi_detail" layoutX="584.0" layoutY="81.0" mnemonicParsing="false" text="Flag" />
       <Text layoutX="29.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POI Location: " />
-      <Text id= "chosen_loc" layoutX="119.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chosen Location" />
+      <Text fx:id= "chosen_loc" layoutX="119.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chosen Location" />
    </children>
 </AnchorPane>
