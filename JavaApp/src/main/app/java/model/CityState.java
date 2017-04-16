@@ -11,11 +11,17 @@ public class CityState {
     private StringProperty city;
     private StringProperty state;
 
-
     public CityState(StringProperty city, StringProperty state) {
         this.city = city;
         this.state = state;
     }
+
+
+    public CityState(String city, String state) {
+        this.city = new SimpleStringProperty(city);
+        this.state = new SimpleStringProperty(state);
+    }
+
 
     public String getCity() {
         return city.get();
