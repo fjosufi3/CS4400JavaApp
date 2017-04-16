@@ -18,8 +18,29 @@
             </font>
         </Text>
 
-      <Button fx:id="backBtn_pending_officialAcct" layoutX="100.0" layoutY="340.0" mnemonicParsing="false" text="Back" />
-      <Button fx:id="rejectBtn_pending_officialAcct" layoutX="260.0" layoutY="340.0" mnemonicParsing="false" text="Reject" />
-      <Button fx:id="acceptBtn_pending_officialAcct" layoutX="430.0" layoutY="340.0" mnemonicParsing="false" text="Accept" />
+<<<<<<< HEAD
+        <TableView fx:id="pendingOfficialView" layoutX="24.0" layoutY="90.0" prefHeight="250.0" prefWidth="599.0">
+            <columns>
+                <TableColumn fx:id="columnSelect" prefWidth="47.0" text="Select"/>
+                <TableColumn fx:id="columnUsername" prefWidth="133.0" text="Username"/>
+                <TableColumn fx:id="columnEmail" prefWidth="170.0" text="Email"/>
+                <TableColumn fx:id="columnCity" prefWidth="79.0" text="City"/>
+                <TableColumn fx:id="columnState" prefWidth="76.0" text="State"/>
+                <TableColumn fx:id="columnOfficialTitle" prefWidth="93.0" text="Title"/>
+            </columns>
+        </TableView>
+
+        <Button fx:id="backBtn_pending_officialAcct" layoutX="101.0" layoutY="354.0" mnemonicParsing="false"
+                text="Back"/>
+        <Button fx:id="rejectBtn_pending_officialAcct" layoutX="290.0" layoutY="354.0" mnemonicParsing="false"
+                text="Reject"/>
+        <Button fx:id="acceptBtn_pending_officialAcct" layoutX="494.0" layoutY="354.0" mnemonicParsing="false"
+                text="Accept"/>
+    </children>
+=======
+      <Button id="backBtn_pending_officialAcct" layoutX="100.0" layoutY="340.0" mnemonicParsing="false" text="Back" />
+      <Button id="rejectBtn_pending_officialAcct" layoutX="260.0" layoutY="340.0" mnemonicParsing="false" text="Reject" />
+      <Button id="acceptBtn_pending_officialAcct" layoutX="430.0" layoutY="340.0" mnemonicParsing="false" text="Accept" />
    </children>
+>>>>>>> master
 </AnchorPane>
