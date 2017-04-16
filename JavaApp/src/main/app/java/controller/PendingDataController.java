@@ -1,5 +1,6 @@
 package app.java.controller;
 
+import app.java.model.ConnectionConfiguration;
 import app.java.model.DataPoint;
 import app.java.model.POI;
 import app.java.model.DataType;

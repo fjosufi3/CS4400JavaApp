@@ -1,8 +1,7 @@
-package app.java.controller;
+package app.java.model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-
 
 /*
 
