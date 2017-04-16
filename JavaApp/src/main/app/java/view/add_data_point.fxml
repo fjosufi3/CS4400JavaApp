@@ -19,13 +19,13 @@
             <Font size="36.0" />
          </font>
       </Text>
-      <ComboBox fx:id="poi_loc_name_spinner" layoutX="120.0" layoutY="90.0" prefHeight="27.0" prefWidth="282.0" promptText="POI Location Name" />
-      <DatePicker fx:id="date_picker" layoutX="120.0" layoutY="130.0" prefHeight="27.0" prefWidth="145.0" promptText="Date of reading" />
-      <TextField fx:id="time_field" layoutX="282.0" layoutY="130.0" prefHeight="27.0" prefWidth="120.0" promptText="Time" />
-      <ComboBox fx:id="data_type_spinner" layoutX="120.0" layoutY="170.0" prefWidth="150.0" promptText="Data type" />
-      <TextField fx:id="data_value_field" layoutX="120.0" layoutY="210.0" prefHeight="27.0" prefWidth="282.0" promptText="Data value" />
-      <Button fx:id="cancel_data_point" layoutX="120.0" layoutY="275.0" mnemonicParsing="false" text="Cancel" />
-      <Button fx:id="submit_data_point" layoutX="321.0" layoutY="275.0" mnemonicParsing="false" text="Submit" />
-      <Button fx:id="add_new_location" layoutX="418.0" layoutY="335.0" mnemonicParsing="false" text="Add new location" />
+      <ComboBox id="poi_loc_name_spinner" layoutX="120.0" layoutY="90.0" prefHeight="27.0" prefWidth="282.0" promptText="POI Location Name" />
+      <DatePicker id="date_picker" layoutX="120.0" layoutY="130.0" prefHeight="27.0" prefWidth="145.0" promptText="Date of reading" />
+      <TextField id="time_field" layoutX="282.0" layoutY="130.0" prefHeight="27.0" prefWidth="120.0" promptText="Time" />
+      <ComboBox id="data_type_spinner" layoutX="120.0" layoutY="170.0" prefWidth="150.0" promptText="Data type" />
+      <TextField id="data_value_field" layoutX="120.0" layoutY="210.0" prefHeight="27.0" prefWidth="282.0" promptText="Data value" />
+      <Button id="cancel_data_point" layoutX="120.0" layoutY="275.0" mnemonicParsing="false" text="Cancel" />
+      <Button id="submit_data_point" layoutX="321.0" layoutY="275.0" mnemonicParsing="false" text="Submit" />
+      <Button id="add_new_location" layoutX="418.0" layoutY="335.0" mnemonicParsing="false" text="Add new location" />
    </children>
 </AnchorPane>

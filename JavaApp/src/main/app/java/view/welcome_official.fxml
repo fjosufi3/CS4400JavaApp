@@ -19,8 +19,8 @@
            </font>
        </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="200.0" layoutY="108.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-      <Button fx:id="filterSearch_data_point" layoutX="120.0" layoutY="150.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="393.0" text="Filter/Search POI" />
-      <Button fx:id="poi_report" layoutX="120.0" layoutY="220.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="393.0" text="POI Report" />
-      <Button fx:id="logout_official" layoutX="500.0" layoutY="340.0" mnemonicParsing="false" text="Logout" />
+      <Button id="filterSearch_data_point" layoutX="120.0" layoutY="150.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="393.0" text="Filter/Search POI" />
+      <Button id="poi_report" layoutX="120.0" layoutY="220.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="393.0" text="POI Report" />
+      <Button id="logout_official" layoutX="500.0" layoutY="340.0" mnemonicParsing="false" text="Logout" />
    </children>
 </AnchorPane>
