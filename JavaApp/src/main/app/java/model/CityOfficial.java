@@ -1,4 +1,9 @@
 package app.java.model;
+
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -51,6 +56,5 @@ public class CityOfficial extends User {
 
     public void setCityState(CityState cityState) {
         this.cityState = cityState;
-
     }
 }
