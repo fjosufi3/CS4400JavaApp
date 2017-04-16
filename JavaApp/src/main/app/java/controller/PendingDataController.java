@@ -173,8 +173,11 @@ public class PendingDataController implements Initializable {
                 //System.out.println(dateTimePK);
 
                 try {
-                    PreparedStatement changeStatement = connection.prepareStatement("DELETE FROM DATA_POINT " +
-                            "WHERE Location_Name = ? and  Date_Time = ?");
+//                    PreparedStatement changeStatement = connection.prepareStatement("DELETE FROM DATA_POINT " +
+//                            "WHERE Location_Name = ? and  Date_Time = ?");
+
+                    PreparedStatement changeStatement = connection.prepareStatement("UPDATE DATA_POINT " +
+                            "SET Accepted = FALSE WHERE Location_Name = ? and  Date_Time = ?");
                     changeStatement.setString(1, locNamePK);
                     changeStatement.setString(2, dateTimePK);
 

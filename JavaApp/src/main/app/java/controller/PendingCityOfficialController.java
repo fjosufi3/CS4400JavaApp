@@ -166,9 +166,7 @@ public class PendingCityOfficialController implements Initializable {
                 pendingOfficialView.getItems().remove(data.get(i));
             }
 
-
         } //end for
-
 
     }
 
@@ -187,8 +185,11 @@ public class PendingCityOfficialController implements Initializable {
                 String usernamePK = pendingOfficialView.getItems().get(i).getUsername();
 
                 try {
-                    PreparedStatement changeStatement = connection.prepareStatement("DELETE FROM CITY_OFFICIAL " +
-                            "WHERE Username = ?");
+//                    PreparedStatement changeStatement = connection.prepareStatement("DELETE FROM CITY_OFFICIAL " +
+//                            "WHERE Username = ?");
+
+                    PreparedStatement changeStatement = connection.prepareStatement("UPDATE CITY_OFFICIAL " +
+                            "SET Approved = FALSE WHERE Username = ?");
                     changeStatement.setString(1, usernamePK);
 
                     changeStatement.executeUpdate();
