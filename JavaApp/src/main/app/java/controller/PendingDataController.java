@@ -34,8 +34,6 @@ import java.util.logging.Logger;
 public class PendingDataController implements Initializable {
 
     @FXML
-    private Text screenHeader;
-    @FXML
     private TableView<DataPoint> pendingDataView;
     @FXML
     private TableColumn<CheckBoxTableCell, Boolean> columnSelect;
@@ -70,12 +68,11 @@ public class PendingDataController implements Initializable {
 
     public void loadFromDB() {
         try {
-
             pst = connection.prepareStatement("SELECT * FROM DATA_POINT WHERE Accepted IS NULL");
             rs = pst.executeQuery();
 
+            //pull data, adjust columns based on tables in DB
             while (rs.next()) {
-                //get string from db,whichever way
                 data.add(new DataPoint(rs.getString(4),
                         rs.getBoolean(3),
                         new DataType(rs.getString(5)),
@@ -84,14 +81,9 @@ public class PendingDataController implements Initializable {
                         rs.getTime(2)));
 
             }
-
-
         } catch (SQLException ex) {
             Logger.getLogger(PendingDataController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        //Set cell value factory to tableview.
-        //NB.PropertyValue Factory must be the same with the one set in model class.
 
         pendingDataView.setItems(data);
 
