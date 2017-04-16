@@ -78,11 +78,10 @@ public class User {
         this.userType = userType;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Email: " + getEmail()
-//                + "\nUsername: " + getUsername()
-//                + "\nPassword: " + getPassword();
-//    }
-
+    @Override
+    public String toString() {
+        return "Email: " + getEmail()
+                + "\nUsername: " + getUsername()
+                + "\nPassword: " + getPassword();
+    }
 }
