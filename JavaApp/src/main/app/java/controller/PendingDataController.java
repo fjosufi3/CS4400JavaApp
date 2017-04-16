@@ -108,7 +108,7 @@ public class PendingDataController implements Initializable {
     }
 
     @FXML
-    private void onClickBack(ActionEvent event) throws IOException{
+    private void onClickBack(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
         stage = (Stage) backBtn_pending_data.getScene().getWindow();
@@ -116,6 +116,16 @@ public class PendingDataController implements Initializable {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
+    }
+
+    private void onAccept(ActionEvent event) {
+        //push checked data to the DB
+
+    }
+
+    private void onReject(ActionEvent event) {
+        //delete checked data from the DB
 
     }
 }

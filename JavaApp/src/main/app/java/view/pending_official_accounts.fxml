@@ -15,8 +15,8 @@
       </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="200.0" layoutY="108.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
 
-      <Button id="backBtn_pending_officialAcct" layoutX="100.0" layoutY="340.0" mnemonicParsing="false" text="Back" />
-      <Button id="rejectBtn_pending_officialAcct" layoutX="260.0" layoutY="340.0" mnemonicParsing="false" text="Reject" />
-      <Button id="acceptBtn_pending_officialAcct" layoutX="430.0" layoutY="340.0" mnemonicParsing="false" text="Accept" />
+      <Button fx:id="backBtn_pending_officialAcct" layoutX="100.0" layoutY="340.0" mnemonicParsing="false" text="Back" />
+      <Button fx:id="rejectBtn_pending_officialAcct" layoutX="260.0" layoutY="340.0" mnemonicParsing="false" text="Reject" />
+      <Button fx:id="acceptBtn_pending_officialAcct" layoutX="430.0" layoutY="340.0" mnemonicParsing="false" text="Accept" />
    </children>
 </AnchorPane>
