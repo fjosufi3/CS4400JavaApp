@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.CheckBoxTableCell;
@@ -38,7 +39,7 @@ public class PendingDataController implements Initializable {
     @FXML
     private TableView<DataPoint> pendingDataView;
     @FXML
-    private TableColumn<CheckBoxTableCell, Boolean> columnSelect;
+    private TableColumn<DataPoint, CheckBox> columnSelect;
     @FXML
     private TableColumn<POI, String> columnPOILoc;
     @FXML
@@ -99,7 +100,6 @@ public class PendingDataController implements Initializable {
 
     private void setCellTable() {
         columnSelect.setCellValueFactory(new PropertyValueFactory<>("accepted"));
-        columnSelect.setCellFactory(column -> new CheckBoxTableCell());
         columnPOILoc.setCellValueFactory(new PropertyValueFactory<>("locationName"));
         columnDataType.setCellValueFactory(new PropertyValueFactory<>("dataType"));
         columnDataValue.setCellValueFactory(new PropertyValueFactory<>("dataValue"));
@@ -119,12 +119,14 @@ public class PendingDataController implements Initializable {
 
     }
 
-    private void onAccept(ActionEvent event) {
+    @FXML
+    private void onClickAccept(ActionEvent event) {
         //push checked data to the DB
 
     }
 
-    private void onReject(ActionEvent event) {
+    @FXML
+    private void onClickReject(ActionEvent event) {
         //delete checked data from the DB
 
     }
