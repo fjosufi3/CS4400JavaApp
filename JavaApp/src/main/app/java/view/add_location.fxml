@@ -18,11 +18,11 @@
             <Font size="36.0" />
          </font>
       </Text>
-      <ComboBox fx:id="city_location_spinner" layoutX="130.0" layoutY="140.0" prefWidth="150.0" promptText="City" />
-      <TextField fx:id="zip_code_field" layoutX="130.0" layoutY="220.0" prefHeight="27.0" prefWidth="282.0" promptText="Zip code" />
-      <Button fx:id="cancel_location" layoutX="130.0" layoutY="285.0" mnemonicParsing="false" text="Cancel" />
-      <Button fx:id="submit_location" layoutX="331.0" layoutY="285.0" mnemonicParsing="false" text="Submit" />
-      <TextField fx:id="poi_location_field" layoutX="130.0" layoutY="100.0" prefHeight="27.0" prefWidth="282.0" promptText="POI Location Name" />
-      <ComboBox fx:id="state_location_spinner" layoutX="130.0" layoutY="180.0" prefWidth="150.0" promptText="State" />
+      <ComboBox id="city_location_spinner" layoutX="130.0" layoutY="140.0" prefWidth="150.0" promptText="City" />
+      <TextField id="zip_code_field" layoutX="130.0" layoutY="220.0" prefHeight="27.0" prefWidth="282.0" promptText="Zip code" />
+      <Button id="cancel_location" layoutX="130.0" layoutY="285.0" mnemonicParsing="false" text="Cancel" />
+      <Button id="submit_location" layoutX="331.0" layoutY="285.0" mnemonicParsing="false" text="Submit" />
+      <TextField id="poi_location_field" layoutX="130.0" layoutY="100.0" prefHeight="27.0" prefWidth="282.0" promptText="POI Location Name" />
+      <ComboBox id="state_location_spinner" layoutX="130.0" layoutY="180.0" prefWidth="150.0" promptText="State" />
    </children>
 </AnchorPane>

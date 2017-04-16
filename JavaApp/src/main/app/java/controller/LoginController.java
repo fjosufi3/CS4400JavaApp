@@ -57,9 +57,9 @@ public class LoginController implements Initializable {
         boolean isValidLogin = FormValidation.isValidLogin(login_username.getText(), login_password.getText());
         String userType = FormValidation.getUserType(login_username.getText(), login_password.getText());
         if (isValidLogin) {
-            if (userType.equals(UserType.Admin.toString())) {
+            if (userType.equals(UserType.Admin)) {
                 root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_admin.fxml"));
-            } else if (userType.equals(UserType.City_Scientist.toString())) {
+            } else if (userType.equals(UserType.City_Scientist)) {
                 root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_scientist.fxml"));
             } else {
                 root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_official.fxml"));
