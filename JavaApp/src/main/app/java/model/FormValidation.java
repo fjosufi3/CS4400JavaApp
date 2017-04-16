@@ -49,15 +49,6 @@ public class FormValidation {
         return notEmpty;
     }
 
-    public static boolean passwordMatch(PasswordField pass, PasswordField confirm_pass, Label label) {
-        boolean match = true;
-        if (!pass.equals(confirm_pass)) {
-            match = false;
-            label.setText("Passwords must match");
-        }
-        return match;
-    }
-
     public static boolean isValidLogin(String user, String pass) {
         boolean access_granted = false;
         Connection c = null;
