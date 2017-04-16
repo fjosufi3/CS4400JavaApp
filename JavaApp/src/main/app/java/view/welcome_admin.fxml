@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.java.controller.AdminController">
    <children>
       <Text fill="#221fe4" layoutX="51.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Administrator">
          <font>
@@ -19,8 +19,8 @@
            </font>
        </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="200.0" layoutY="108.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-      <Button id="pending_data_point" layoutX="120.0" layoutY="150.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="393.0" text="Pending Data Points" />
-      <Button id="pending_official_acct" layoutX="120.0" layoutY="220.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="393.0" text="Pending City Official Accounts" />
-      <Button id="logout_admin" layoutX="500.0" layoutY="340.0" mnemonicParsing="false" text="Logout" />
+      <Button fx:id="pending_data_point_btn" layoutX="120.0" layoutY="150.0" mnemonicParsing="false" onAction="#onClickPendingData" prefHeight="27.0" prefWidth="393.0" text="Pending Data Points" />
+      <Button fx:id="pending_official_acct_btn" layoutX="120.0" layoutY="220.0" mnemonicParsing="false" onAction="#onClickPendingOfficial" prefHeight="27.0" prefWidth="393.0" text="Pending City Official Accounts" />
+      <Button fx:id="logout_admin_btn" layoutX="500.0" layoutY="340.0" mnemonicParsing="false" text="Logout" />
    </children>
 </AnchorPane>
