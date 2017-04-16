@@ -20,6 +20,7 @@
       </Label>
       <Separator layoutY="-2.0" prefHeight="35.0" prefWidth="400.0" />
       <Separator layoutY="477.0" prefHeight="23.0" prefWidth="400.0" />
+<<<<<<< HEAD
       <TextField id="username_reg" fx:id="username_reg" layoutX="100.0" layoutY="90.0" promptText="Username" />
       <TextField id="email_reg" fx:id="email" layoutX="100.0" layoutY="130.0" promptText="Email address" />
       <ComboBox id="user_type_reg" fx:id="user_type_box" layoutX="100.0" layoutY="250.0" prefHeight="27.0" prefWidth="167.0" promptText="User type" AnchorPane.bottomAnchor="223.0" AnchorPane.topAnchor="250.0" />
@@ -29,6 +30,19 @@
       <ComboBox id="state_reg" fx:id="state_box" layoutX="100.0" layoutY="360.0" prefWidth="150.0" promptText="State" />
       <TextField id="title_reg" fx:id="city_official_title" layoutX="100.0" layoutY="400.0" prefHeight="27.0" prefWidth="150.0" promptText="Title" />
       <Button id="submit_reg" fx:id="reg_submit" layoutX="218.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Submit" />
+=======
+      <TextField fx:id="username_reg" layoutX="100.0" layoutY="90.0" promptText="Username" />
+      <TextField fx:id="email_reg" layoutX="100.0" layoutY="130.0" promptText="Email Address" />
+      <TextField fx:id="password_reg" layoutX="100.0" layoutY="170.0" promptText="Password" />
+      <TextField fx:id="confirm_password" layoutX="100.0" layoutY="210.0" promptText="Confirm Password" />
+      <ComboBox fx:id="user_type_reg" layoutX="100.0" layoutY="250.0" prefHeight="27.0" prefWidth="167.0" promptText="User Type" AnchorPane.bottomAnchor="223.0" AnchorPane.topAnchor="250.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#edeff2" height="153.0" layoutX="17.0" layoutY="286.0" stroke="BLACK" strokeType="INSIDE" width="370.0" />
+      <Text fill="#221fe4" layoutX="29.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fill out this region if you choose city officials." wrappingWidth="278.21875" />
+      <ComboBox fx:id="reg_city" layoutX="85.0" layoutY="320.0" prefWidth="150.0" promptText="City" />
+      <ComboBox fx:id="reg_reg" layoutX="85.0" layoutY="360.0" prefWidth="150.0" promptText="State" />
+      <TextField fx:id="reg_title" layoutX="85.0" layoutY="400.0" prefHeight="27.0" prefWidth="150.0" promptText="Title" />
+      <Button fx:id="reg_submit" layoutX="218.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Submit" />
+>>>>>>> 6cc5b14e38e734e7198358934e1c776e7c83855a
       <Button fx:id="reg_cancel" layoutX="100.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Cancel" />
       <Label fx:id="username_label" layoutX="280.0" layoutY="95.0" text="Label" textFill="RED" />
       <Label fx:id="email_label" layoutX="280.0" layoutY="135.0" text="Label" textFill="RED" />
