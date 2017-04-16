@@ -107,6 +107,10 @@ public class DataPoint {
         return new SimpleStringProperty(date.toString() + " " + time.toString());
     }
 
+    public String getDateTimeString() {
+        return getDateTime().get();
+    }
+
 
 }
 

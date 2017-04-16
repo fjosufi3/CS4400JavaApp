@@ -4,6 +4,7 @@ import app.java.model.ConnectionConfiguration;
 import app.java.model.DataPoint;
 import app.java.model.POI;
 import app.java.model.DataType;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,10 +24,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -100,6 +99,7 @@ public class PendingDataController implements Initializable {
 
     private void setCellTable() {
         columnSelect.setCellValueFactory(new PropertyValueFactory<>("accepted"));
+        columnSelect.setCellValueFactory(new PendingDataValFactory());
         columnPOILoc.setCellValueFactory(new PropertyValueFactory<>("locationName"));
         columnDataType.setCellValueFactory(new PropertyValueFactory<>("dataType"));
         columnDataValue.setCellValueFactory(new PropertyValueFactory<>("dataValue"));
@@ -123,11 +123,44 @@ public class PendingDataController implements Initializable {
     private void onClickAccept(ActionEvent event) {
         //push checked data to the DB
 
+        for (int i = 0; i < data.size(); i++) {
+            ObservableValue<CheckBox> c = columnSelect.getCellObservableValue(data.get(i));
+            CheckBox cb = c.getValue();
+            boolean isSelected = cb.isSelected();
+            System.out.println(isSelected);
+
+            if (isSelected) {
+                data.get(i).setAccepted(true);
+                String locNamePK = pendingDataView.getItems().get(i).getLocationName();
+                String dateTimePK = pendingDataView.getItems().get(i).getDateTimeString();
+                //System.out.println(dateTimePK);
+
+                try {
+//                    PreparedStatement changeStatement = connection.prepareStatement("SELECT Location_Name, Date_Time " +
+//                            "FROM DATA_POINT WHERE Location_Name = '"+locNamePK+"' and  Date_time = '"+dateTimePK+"'     ");
+
+                    PreparedStatement changeStatement = connection.prepareStatement("UPDATE DATA_POINT " +
+                            "SET Accepted = TRUE WHERE Location_Name = ? and  Date_Time = ?");
+                    changeStatement.setString(1, locNamePK);
+                    changeStatement.setString(2, dateTimePK);
+
+                    changeStatement.executeUpdate();
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } //end catch block
+
+                pendingDataView.getItems().remove(data.get(i));
+            }
+
+
+        } //end for
+
     }
 
     @FXML
     private void onClickReject(ActionEvent event) {
-        //delete checked data from the DB
 
     }
+
 }
