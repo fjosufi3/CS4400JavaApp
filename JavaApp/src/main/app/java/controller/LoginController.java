@@ -60,9 +60,9 @@ public class LoginController implements Initializable {
         boolean isValidLogin = FormValidation.isValidLogin(login_username.getText(), login_password.getText());
         String userType = FormValidation.getUserType(login_username.getText(), login_password.getText());
         if (isValidLogin) {
-            if (userType.equals(UserType.Admin)) {
+            if (userType.equals(UserType.Admin.toString())) {
                 root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_admin.fxml"));
-            } else if (userType.equals(UserType.City_Scientist)) {
+            } else if (userType.equals(UserType.City_Scientist.toString())) {
                 root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_scientist.fxml"));
             } else {
                 root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_official.fxml"));
