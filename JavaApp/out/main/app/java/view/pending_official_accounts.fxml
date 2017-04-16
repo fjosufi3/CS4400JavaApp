@@ -26,7 +26,7 @@
         </TableView>
 
         <Button fx:id="backBtn_pending_officialAcct" layoutX="101.0" layoutY="354.0" mnemonicParsing="false" onAction="#onClickBack" text="Back" />
-        <Button fx:id="rejectBtn_pending_officialAcct" layoutX="290.0" layoutY="354.0" mnemonicParsing="false" text="Reject" />
-        <Button fx:id="acceptBtn_pending_officialAcct" layoutX="494.0" layoutY="354.0" mnemonicParsing="false" text="Accept" />
+        <Button fx:id="rejectBtn_pending_officialAcct" layoutX="290.0" layoutY="354.0" mnemonicParsing="false" onAction="#onClickReject" text="Reject" />
+        <Button fx:id="acceptBtn_pending_officialAcct" layoutX="494.0" layoutY="354.0" mnemonicParsing="false" onAction="#onClickAccept" text="Accept" />
     </children>
 </AnchorPane>
