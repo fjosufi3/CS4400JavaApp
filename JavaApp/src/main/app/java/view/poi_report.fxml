@@ -14,7 +14,7 @@
          </font>
       </Label>
       <Separator layoutY="-2.0" prefHeight="35.0" prefWidth="680.0" />
-      <Button id="backBtn_poi_report" layoutX="322.0" layoutY="465.0" mnemonicParsing="false" text="Back" />
+      <Button fx:id="backBtn_poi_report" layoutX="322.0" layoutY="465.0" mnemonicParsing="false" text="Back" />
       <Separator layoutX="1.0" layoutY="438.0" prefHeight="35.0" prefWidth="680.0" />
    </children>
 </AnchorPane>
