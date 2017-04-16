@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51e197e6-7c6c-440e-915a-4d0ed058d575" name="Default" comment="">
-<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -40,11 +39,6 @@
 =======
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/view/registration.fxml" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/view/registration.fxml" />
 >>>>>>> master
-=======
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/PendingDataController.java" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/PendingDataController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/model/User.java" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/view/pending_official_accounts.fxml" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/view/pending_official_accounts.fxml" />
->>>>>>> Stashed changes
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -71,7 +65,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -100,8 +93,6 @@
               <caret line="77" column="20" lean-forward="true" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
 <<<<<<< HEAD
 =======
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -137,7 +128,6 @@
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
             <state relative-caret-position="823">
               <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
 >>>>>>> 6cc5b14e38e734e7198358934e1c776e7c83855a
@@ -151,10 +141,6 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> master
-=======
-            <state relative-caret-position="195">
-              <caret line="80" column="40" lean-forward="true" selection-start-line="80" selection-start-column="40" selection-end-line="80" selection-end-column="40" />
->>>>>>> Stashed changes
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -162,7 +148,6 @@
           </provider>
         </entry>
       </file>
-<<<<<<< Updated upstream
 <<<<<<< HEAD
       <file leaf-file-name="PendingCityOfficialController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/PendingCityOfficialController.java">
@@ -180,24 +165,11 @@
               <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
               <folding />
 >>>>>>> master
-=======
-      <file leaf-file-name="PendingCityOfficialController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/PendingCityOfficialController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1005">
-              <caret line="67" column="31" lean-forward="true" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
->>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< Updated upstream
 <<<<<<< HEAD
-=======
->>>>>>> Stashed changes
       <file leaf-file-name="pending_official_accounts.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/pending_official_accounts.fxml">
           <provider selected="true" editor-type-id="text-editor">
@@ -213,7 +185,6 @@
       </file>
       <file leaf-file-name="CityOfficial.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/CityOfficial.java">
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< Updated upstream
@@ -263,9 +234,6 @@
 =======
           <provider selected="true" editor-type-id="text-editor">
 >>>>>>> Stashed changes
-=======
-          <provider selected="true" editor-type-id="text-editor">
->>>>>>> Stashed changes
             <state relative-caret-position="90">
               <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
@@ -288,9 +256,6 @@
                 <element signature="e#1405#1406#0" expanded="true" />
               </folding>
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -303,7 +268,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
               <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
               <folding />
 =======
@@ -332,8 +296,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
               <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-=======
->>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
@@ -412,11 +374,8 @@
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/view/pending_official_accounts.fxml" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/PendingDataController.java" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/PendingCityOfficialController.java" />
-<<<<<<< Updated upstream
 =======
 >>>>>>> master
-=======
->>>>>>> Stashed changes
       </list>
     </option>
   </component>
@@ -1135,7 +1094,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -1149,8 +1107,6 @@
     <entry file="file://$PROJECT_DIR$/JavaApp/src/app/res/login.fxml" />
     <entry file="file://$USER_HOME$/IdeaProjects/DBTest/src/FxTest.java" />
     <entry file="file://$PROJECT_DIR$/JavaApp/src/app/res/registration.fxml" />
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -1182,7 +1138,6 @@
     <entry file="file://$PROJECT_DIR$/JavaApp/src/app/res/pending_data_points.fxml" />
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/pending_data_points.fxml" />
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/DataType.java">
-<<<<<<< Updated upstream
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
@@ -1190,15 +1145,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JavaApp/src/ignore.txt">
-=======
->>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/add_location.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -1213,9 +1165,6 @@
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-=======
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/ignore.txt">
->>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1354,7 +1303,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/pending_data_points.fxml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1370,42 +1318,14 @@
             <marker date="1492303942000" expanded="true" signature="1986:2033" ph="SELECT * FRO... DATA_POINT" />
           </folding>
 >>>>>>> master
-=======
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/poi_detail.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
-          <folding />
->>>>>>> Stashed changes
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
     </entry>
-<<<<<<< Updated upstream
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/registration.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
-=======
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/browse_view_poi.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="35" column="17" lean-forward="false" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/add_location.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
->>>>>>> Stashed changes
           <folding />
 =======
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/Main.java">
@@ -1425,9 +1345,8 @@
       </provider>
 <<<<<<< HEAD
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/add_data_point.fxml">
+    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/poi_report.fxml">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
         <state relative-caret-position="180">
           <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
 =======
@@ -1435,15 +1354,10 @@
         <state relative-caret-position="200">
           <caret line="14" column="117" lean-forward="false" selection-start-line="14" selection-start-column="117" selection-end-line="14" selection-end-column="117" />
 >>>>>>> master
-=======
-        <state relative-caret-position="270">
-          <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
->>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -1457,38 +1371,21 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-=======
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/login.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-          <folding />
->>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/registration.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
-<<<<<<< Updated upstream
 =======
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/DataPoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="107" selection-end-column="5" />
-=======
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/welcome_official.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
->>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/CityState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1510,13 +1407,6 @@
             <element signature="e#855#856#0" expanded="true" />
             <element signature="e#933#934#0" expanded="true" />
           </folding>
-=======
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/pending_data_points.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="29" column="67" lean-forward="false" selection-start-line="29" selection-start-column="67" selection-end-line="29" selection-end-column="67" />
-          <folding />
->>>>>>> Stashed changes
         </state>
 >>>>>>> Stashed changes
       </provider>
@@ -1527,7 +1417,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/UserType.java">
 <<<<<<< HEAD
 =======
@@ -1539,12 +1428,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="107" selection-end-column="5" />
-=======
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/registration.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
->>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
@@ -1574,73 +1457,35 @@
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-=======
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/poi_report.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
->>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
 >>>>>>> master
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-=======
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/DataPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="107" selection-end-column="5" />
->>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/CityOfficial.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
           <caret line="60" column="63" lean-forward="false" selection-start-line="60" selection-start-column="63" selection-end-line="60" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
-=======
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/CityState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#447#448#0" expanded="true" />
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#518#519#0" expanded="true" />
-            <element signature="e#558#559#0" expanded="true" />
-            <element signature="e#593#594#0" expanded="true" />
-            <element signature="e#625#626#0" expanded="true" />
-            <element signature="e#659#660#0" expanded="true" />
-            <element signature="e#704#705#0" expanded="true" />
-            <element signature="e#732#733#0" expanded="true" />
-            <element signature="e#774#775#0" expanded="true" />
-            <element signature="e#811#812#0" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#933#934#0" expanded="true" />
->>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/RegistrationController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
@@ -1651,9 +1496,6 @@
 <<<<<<< HEAD
 =======
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/pending_data_points.fxml">
-=======
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/welcome_admin.fxml">
->>>>>>> Stashed changes
 =======
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/welcome_admin.fxml">
 >>>>>>> Stashed changes
@@ -1681,7 +1523,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/CityOfficial.java">
 <<<<<<< Updated upstream
       <provider selected="true" editor-type-id="text-editor">
@@ -1763,72 +1604,10 @@
         <state relative-caret-position="134">
           <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="45" />
 >>>>>>> Stashed changes
-=======
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/CityOfficial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#809#810#0" expanded="true" />
-            <element signature="e#843#844#0" expanded="true" />
-            <element signature="e#888#889#0" expanded="true" />
-            <element signature="e#916#917#0" expanded="true" />
-            <element signature="e#958#959#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1030#1031#0" expanded="true" />
-            <element signature="e#1067#1068#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
-            <element signature="e#1147#1148#0" expanded="true" />
-            <element signature="e#1196#1197#0" expanded="true" />
-            <element signature="e#1239#1240#0" expanded="true" />
-            <element signature="e#1278#1279#0" expanded="true" />
-            <element signature="e#1310#1311#0" expanded="true" />
-            <element signature="e#1363#1364#0" expanded="true" />
-            <element signature="e#1405#1406#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/pending_official_accounts.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="45" />
->>>>>>> Stashed changes
           <folding />
 >>>>>>> 6cc5b14e38e734e7198358934e1c776e7c83855a
 =======
 >>>>>>> master
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/PendingDataController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="80" column="40" lean-forward="true" selection-start-line="80" selection-start-column="40" selection-end-line="80" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/PendingCityOfficialController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="67" column="31" lean-forward="true" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
