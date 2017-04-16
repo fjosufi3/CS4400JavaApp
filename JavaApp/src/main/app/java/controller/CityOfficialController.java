@@ -18,14 +18,14 @@ import java.util.ResourceBundle;
 /**
  * Created by mcw0805 on 4/16/17.
  */
-public class AdminController implements Initializable {
+public class CityOfficialController implements Initializable {
 
     @FXML
-    private Button pending_data_point_btn;
+    private Button filterSearch_data_point_btn;
     @FXML
-    private Button pending_official_acct_btn;
+    private Button poi_report_btn;
     @FXML
-    private Button logout_admin_btn;
+    private Button logout_official_btn;
 
     private Connection connection = null;
 
@@ -35,22 +35,22 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    private void onClickPendingData(ActionEvent event) throws IOException {
+    private void onClickFilterSearch(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
-        stage = (Stage) pending_data_point_btn.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("/main/app/java/view/pending_data_points.fxml"));
+        stage = (Stage) filterSearch_data_point_btn.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("/main/app/java/view/browse_view_poi.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
     @FXML
-    private void onClickPendingOfficial(ActionEvent event) throws IOException {
+    private void onClickPOIReport(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
-        stage = (Stage) pending_official_acct_btn.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("/main/app/java/view/pending_official_accounts.fxml"));
+        stage = (Stage) poi_report_btn.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("/main/app/java/view/poi_report.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -60,7 +60,7 @@ public class AdminController implements Initializable {
     private void onClickLogout(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
-        stage = (Stage) logout_admin_btn.getScene().getWindow();
+        stage = (Stage) logout_official_btn.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("/main/app/java/view/login.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);

@@ -6,7 +6,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.java.controller.CityOfficialController">
    <children>
       <Text fill="#221fe4" layoutX="51.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome City Official">
          <font>
@@ -19,8 +20,8 @@
            </font>
        </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="200.0" layoutY="108.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-      <Button fx:id="filterSearch_data_point" layoutX="120.0" layoutY="150.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="393.0" text="Filter/Search POI" />
-      <Button fx:id="poi_report" layoutX="120.0" layoutY="220.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="393.0" text="POI Report" />
-      <Button fx:id="logout_official" layoutX="500.0" layoutY="340.0" mnemonicParsing="false" text="Logout" />
+      <Button fx:id="filterSearch_data_point_btn" layoutX="120.0" layoutY="150.0" mnemonicParsing="false" onAction="#onClickFilterSearch" prefHeight="27.0" prefWidth="393.0" text="Filter/Search POI" />
+      <Button fx:id="poi_report_btn" layoutX="120.0" layoutY="220.0" mnemonicParsing="false" onAction="#onClickPOIReport" prefHeight="27.0" prefWidth="393.0" text="POI Report" />
+      <Button fx:id="logout_official_btn" layoutX="500.0" layoutY="340.0" mnemonicParsing="false" onAction="#onClickLogout" text="Logout" />
    </children>
 </AnchorPane>
