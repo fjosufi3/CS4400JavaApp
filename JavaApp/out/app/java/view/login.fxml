@@ -9,10 +9,10 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.java.controller.LoginController">
    <children>
-      <TextField fx:id="login_username" alignment="BOTTOM_LEFT" layoutX="117.0" layoutY="100.0" promptText="Username" />
-      <PasswordField fx:id="login_password" layoutX="117.0" layoutY="162.0" promptText="Password" />
-      <Button fx:id="login_bt" layoutX="91.0" layoutY="248.0" mnemonicParsing="false" onAction="#onLogin" text="Login" />
-      <Button fx:id="login_reg_bt" layoutX="250.0" layoutY="248.0" mnemonicParsing="false" onAction="#onRegistration" text="Register" />
+      <TextField id="login_username" fx:id="login_username" alignment="BOTTOM_LEFT" layoutX="117.0" layoutY="100.0" promptText="Username" />
+      <PasswordField id="login_password" fx:id="login_password" layoutX="117.0" layoutY="162.0" promptText="Password" />
+      <Button id="login_bt" fx:id="login_bt" layoutX="91.0" layoutY="248.0" mnemonicParsing="false" onAction="#onLogin" text="Login" />
+      <Button id="login_reg_bt" fx:id="login_reg_bt" layoutX="250.0" layoutY="248.0" mnemonicParsing="false" onAction="#onRegistration" text="Register" />
       <Label layoutX="117.0" layoutY="53.0" text="Login" textFill="#1f53c3">
          <font>
             <Font name="System Bold" size="22.0" />

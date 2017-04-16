@@ -57,8 +57,8 @@ public class LoginController implements Initializable {
         Parent root;
         boolean validUserEntry = FormValidation.textFieldNotEmpty(login_username, username_label, "Username is required");
         boolean validPassEntry = FormValidation.passwordFieldNotEmpty(login_password, password_label, "Password is required");
-        boolean isValidLogin = FormValidation.isValidLogin(login_username.getText(), login_password.getText());
-        String userType = FormValidation.getUserType(login_username.getText(), login_password.getText());
+        boolean isValidLogin = FormValidation.isValidLogin(login_username, login_password);
+        String userType = FormValidation.getUserType(login_username, login_password);
         if (isValidLogin) {
             if (userType.equals(UserType.Admin.toString())) {
                 root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_admin.fxml"));
