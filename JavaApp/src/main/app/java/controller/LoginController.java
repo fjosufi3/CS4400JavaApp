@@ -1,3 +1,6 @@
+/*
+ * Controller for login functionality
+ */
 package app.java.controller;
 
 import app.java.model.ConnectionConfiguration;
@@ -20,7 +23,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
- * Controller for login functionality
+ * FXML Controller class
  *
  * @author Josufi
  */
@@ -78,7 +81,7 @@ public class LoginController implements Initializable {
         Stage stage;
         Parent root;
         stage = (Stage) login_reg_bt.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("/main/app/java/view/registration.fxml"));
+        root = FXMLLoader.load(getClass().getResource("main/app/java/view/registration.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
