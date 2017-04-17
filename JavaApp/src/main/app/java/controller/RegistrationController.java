@@ -63,6 +63,7 @@ public class RegistrationController implements Initializable {
     @FXML
     private Label city_state_label;
 
+
     @FXML
     private void onCancel(ActionEvent event) throws IOException {
         Stage stage;
@@ -76,6 +77,7 @@ public class RegistrationController implements Initializable {
     @FXML
     private void onSubmit(ActionEvent event) throws IOException {
         String selectedType = user_type_box.getSelectionModel().getSelectedItem().toString();
+        boolean typeCO = selectedType.equals(UserType.City_Official.toString());
         boolean validUserEntry = FormValidation.textFieldNotEmpty(username_reg, username_label, "Required");
         boolean usernameAvailable = FormValidation.usernameAvailable(username_reg, username_label);
         boolean emailAvailable = FormValidation.emailAvailable(email, email_label);
@@ -85,7 +87,6 @@ public class RegistrationController implements Initializable {
         boolean passwordLength = FormValidation.passwordLength(password_reg, password_label);
         boolean validCity = FormValidation.isValidCityState(city_box.getSelectionModel().getSelectedItem().toString(),
                 state_box.getSelectionModel().getSelectedItem().toString(), city_state_label);
-        boolean typeCO = selectedType.equals(UserType.City_Official.toString());
 
         if (!typeCO && validUserEntry && usernameAvailable && emailAvailable && isValidEmail && validPassEntry
                 && passwordMatch && passwordLength) {
@@ -101,27 +102,29 @@ public class RegistrationController implements Initializable {
             stage.setScene(scene);
             stage.show();
         }
-        boolean validTitle = FormValidation.textFieldNotEmpty(city_official_title, title_label, "Required");
-        if (typeCO && validUserEntry && usernameAvailable && emailAvailable && isValidEmail && validPassEntry
-                && passwordMatch && passwordLength && validTitle && validCity) {
-            CityState CO_location = new CityState(new SimpleStringProperty(city_box.getSelectionModel().getSelectedItem().toString()),
-                    new SimpleStringProperty(state_box.getSelectionModel().getSelectedItem().toString()));
+        if (typeCO) {
+            boolean validTitle = FormValidation.textFieldNotEmpty(city_official_title, title_label, "Required");
+            if (validUserEntry && usernameAvailable && emailAvailable && isValidEmail && validPassEntry
+                    && passwordMatch && passwordLength && validTitle && validCity) {
+                CityState CO_location = new CityState(new SimpleStringProperty(city_box.getSelectionModel().getSelectedItem().toString()),
+                        new SimpleStringProperty(state_box.getSelectionModel().getSelectedItem().toString()));
 
-            User newUser = new User(email.getText(), username_reg.getText(), password_reg.getText(), UserType.City_Official);
-            CityOfficial newCO = new CityOfficial(email.getText(), username_reg.getText(), password_reg.getText(),
-                    UserType.City_Official, city_official_title.getText(), false, CO_location);
+                User newUser = new User(email.getText(), username_reg.getText(), password_reg.getText(), UserType.City_Official);
+                CityOfficial newCO = new CityOfficial(email.getText(), username_reg.getText(), password_reg.getText(),
+                        UserType.City_Official, city_official_title.getText(), false, CO_location);
 
-            FormValidation.addNewUser(newUser.getEmail(), newUser.getUsername(), newUser.getPassword(), newUser.getUserType());
-            FormValidation.addNewCityOfficial(newCO.getUsername(), newCO.getTitle(), newCO.getCityState().getCity(),
-                    newCO.getCityState().getState());
+                FormValidation.addNewUser(newUser.getEmail(), newUser.getUsername(), newUser.getPassword(), newUser.getUserType());
+                FormValidation.addNewCityOfficial(newCO.getUsername(), newCO.getTitle(), newCO.getCityState().getCity(),
+                        newCO.getCityState().getState());
 
-            Stage stage;
-            Parent root;
-            stage = (Stage) reg_submit.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_official.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+                Stage stage;
+                Parent root;
+                stage = (Stage) reg_submit.getScene().getWindow();
+                root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_official.fxml"));
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
         }
     }
     /**

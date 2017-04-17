@@ -86,15 +86,17 @@ public class FormValidation {
     }
 
     public static boolean isValidEmailAddress(TextField email, Label label) {
+        boolean valid = false;
         String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
         java.util.regex.Matcher m = p.matcher(email.getText());
-        if (m.matches()) {
-            return true;
-        } else {
+        if (!m.matches()) {
             label.setText("Invalid email");
+        } else {
+            valid = true;
+            label.setText("");
         }
-        return false;
+        return valid;
     }
 
     public static boolean passwordFieldNotEmpty(PasswordField p) {
@@ -121,14 +123,19 @@ public class FormValidation {
         if (!pass.getText().equals(confirm_pass.getText())) {
             match = false;
             label.setText("Passwords must match");
+        } else {
+            label.setText("");
         }
         return match;
     }
 
     public static boolean passwordLength(PasswordField pass, Label label) {
         boolean longEnough = false;
-        if (pass.getText().length() >= 4) {
-            longEnough = true;
+        if (pass.getText().length() < 4) {
+            longEnough = false;
+            label.setText("Password is too short");
+        } else {
+            label.setText("");
         }
         return longEnough;
     }
