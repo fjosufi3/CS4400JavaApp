@@ -110,7 +110,7 @@ public class ViewPOIController implements Initializable {
         columnCity.setCellValueFactory(new PropertyValueFactory<>("city"));
         columnState.setCellValueFactory(new PropertyValueFactory<>("state"));
         columnZipCode.setCellValueFactory(new PropertyValueFactory<>("zip"));
-        columnFlag.setCellValueFactory(new PropertyValueFactory<>("flag"));
+        columnFlag.setCellValueFactory(new PropertyValueFactory<>("flagString"));
         columnDate.setCellValueFactory(new PropertyValueFactory<>("dateFlagged"));
 
 

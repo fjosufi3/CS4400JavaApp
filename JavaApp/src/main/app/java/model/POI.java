@@ -14,6 +14,7 @@ public class POI {
     private StringProperty state;
     private StringProperty zip;
     private IntegerProperty flag;
+    private StringProperty flagString;
     private Date dateFlagged;
     //private DataPoint dataPoint;
 
@@ -25,6 +26,13 @@ public class POI {
         this.zip = new SimpleStringProperty(zip);
         this.flag = new SimpleIntegerProperty(flag);
         this.dateFlagged = dateFlagged;
+
+
+        if (getFlag() == 1) {
+            this.flagString = new SimpleStringProperty("true");
+        } else {
+            this.flagString = new SimpleStringProperty("false");
+        }
     }
 
     public String getLocation() {
@@ -93,5 +101,17 @@ public class POI {
 
     public void setDateFlagged(Date dateFlagged) {
         this.dateFlagged = dateFlagged;
+    }
+
+    public String getFlagString() {
+        return flagString.get();
+    }
+
+    public StringProperty flagStringProperty() {
+        return flagString;
+    }
+
+    public void setFlagString(String flagS) {
+        this.flagString.set(flagS);
     }
 }
