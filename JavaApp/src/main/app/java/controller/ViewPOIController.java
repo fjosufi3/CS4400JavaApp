@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 
 import app.java.model.ConnectionConfiguration;
 import app.java.model.POI;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -111,6 +112,9 @@ public class ViewPOIController implements Initializable {
         columnZipCode.setCellValueFactory(new PropertyValueFactory<>("zip"));
         columnFlag.setCellValueFactory(new PropertyValueFactory<>("flag"));
         columnDate.setCellValueFactory(new PropertyValueFactory<>("dateFlagged"));
+
+
+
     }
 
     @FXML
@@ -167,7 +171,9 @@ public class ViewPOIController implements Initializable {
 
     @FXML
     private void onResetFilter() {
+
         poiTableView.getItems().removeAll(data);
+        flagged_checkBox.setSelected(false);
     }
 
     @FXML
@@ -181,5 +187,6 @@ public class ViewPOIController implements Initializable {
         stage.show();
 
     }
+
 
 }
