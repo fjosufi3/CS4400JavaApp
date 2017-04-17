@@ -6,12 +6,15 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="app.java.controller.ViewPOIController">
    <children>
       <Label layoutX="309.0" layoutY="44.0" text="View POIs" textFill="#221fe4">
          <font>
@@ -21,22 +24,33 @@
       <Separator layoutY="-2.0" prefHeight="35.0" prefWidth="680.0" />
       <Separator layoutY="569.0" prefHeight="23.0" prefWidth="680.0" />
       <TextField fx:id="zip_view_poi" layoutX="224.0" layoutY="214.0" prefHeight="27.0" prefWidth="197.0" promptText="Zip Code" />
-      <ComboBox fx:id="loc_view_poi" layoutX="224.0" layoutY="92.0" prefHeight="27.0" prefWidth="197.0" promptText="Location Not Selected" AnchorPane.bottomAnchor="531.0" AnchorPane.topAnchor="92.0" />
-      <Button fx:id="backBtn_view_poi" layoutX="314.0" layoutY="601.0" mnemonicParsing="false" text="Back" />
-      <ComboBox fx:id="city_view_poi" layoutX="224.0" layoutY="131.0" prefHeight="27.0" prefWidth="197.0" promptText="City Not Selected" />
-      <ComboBox fx:id="state_view_poi" layoutX="224.0" layoutY="172.0" prefHeight="27.0" prefWidth="197.0" promptText="State Not Selected" />
+      <ComboBox fx:id="poi_loc_box" layoutX="224.0" layoutY="92.0" prefHeight="27.0" prefWidth="197.0" promptText="Location Not Selected" AnchorPane.bottomAnchor="531.0" AnchorPane.topAnchor="92.0" />
+      <Button fx:id="backBtn_view_poi" layoutX="314.0" layoutY="601.0" mnemonicParsing="false" onAction="#onClickBack" text="Back" />
+      <ComboBox fx:id="city_view_poi_box" layoutX="224.0" layoutY="131.0" prefHeight="27.0" prefWidth="197.0" promptText="City Not Selected" />
+      <ComboBox fx:id="state_view_poi_box" layoutX="224.0" layoutY="172.0" prefHeight="27.0" prefWidth="197.0" promptText="State Not Selected" />
       <Text layoutX="87.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POI Location Name" />
       <Text layoutX="134.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City" />
       <Text layoutX="130.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="State" />
       <Text layoutX="118.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zip Code" />
       <Text layoutX="122.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flagged" />
       <Text layoutX="105.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Flagged" />
-      <CheckBox fx:id="flagged_view_poi" layoutX="224.0" layoutY="253.0" mnemonicParsing="false" />
+      <CheckBox fx:id="flagged_checkBox" layoutX="224.0" layoutY="253.0" mnemonicParsing="false" />
       <DatePicker fx:id="dateStart_view_poi" layoutX="224.0" layoutY="282.0" prefHeight="27.0" prefWidth="128.0" />
       <Text layoutX="364.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to" />
       <DatePicker fx:id="dateEnd_view_poi" layoutX="387.0" layoutY="282.0" prefHeight="27.0" prefWidth="128.0" />
       <Separator layoutY="364.0" prefHeight="23.0" prefWidth="680.0" />
-      <Button fx:id = "apply_filter_view_poi" layoutX="167.0" layoutY="331.0" mnemonicParsing="false" text="Apply Filter" />
-      <Button fx:id = "reset_filter_view_poi" layoutX="395.0" layoutY="333.0" mnemonicParsing="false" text="Reset Filter" />
+      <Button fx:id="apply_filter_view_poi_btn" layoutX="167.0" layoutY="331.0" mnemonicParsing="false" text="Apply Filter" />
+      <Button fx:id="reset_filter_view_poi_btn" layoutX="395.0" layoutY="333.0" mnemonicParsing="false" onAction="#onResetFilter" text="Reset Filter" />
+      <TableView fx:id="poiTableView" layoutX="24.0" layoutY="376.0" prefHeight="203.0" prefWidth="624.0">
+         <columns>
+            <TableColumn fx:id="columnLocation" prefWidth="116.0" text="Location Name" />
+            <TableColumn fx:id="columnCity" prefWidth="108.0" text="City" />
+            <TableColumn fx:id="columnState" prefWidth="98.0" text="State" />
+            <TableColumn fx:id="columnZipCode" prefWidth="86.0" text="Zip Code" />
+            <TableColumn fx:id="columnFlag" prefWidth="65.0" text="Flagged" />
+            <TableColumn fx:id="columnDate" prefWidth="150.0" text="Date Flagged" />
+         </columns>
+      </TableView>
+      <Label fx:id="zip_valid_label" layoutX="451.0" layoutY="219.0" textFill="RED" />
    </children>
 </AnchorPane>
