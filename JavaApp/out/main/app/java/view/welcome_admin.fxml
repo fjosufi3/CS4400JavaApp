@@ -8,14 +8,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.java.controller.AdminController">
    <children>
-      <Text fill="BLUE" layoutX="51.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Administrator">
+      <Text fill="#221fe4" layoutX="51.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Administrator">
          <font>
-            <Font name="Avenir Next Regular" size="36.0" />
+            <Font size="36.0" />
          </font>
       </Text>
-       <Text fill="BLUE" layoutX="51.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose a Functionality:">
+       <Text fill="#221fe4" layoutX="51.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose a Functionality:">
            <font>
-               <Font name="Avenir Next Regular" size="18.0" />
+               <Font size="18.0" />
            </font>
        </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="200.0" layoutY="108.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />

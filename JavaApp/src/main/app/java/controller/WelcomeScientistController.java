@@ -25,29 +25,25 @@ public class WelcomeScientistController {
     private Button logout_scientist;
 
     @FXML
-    private void onAddData(ActionEvent event) throws IOException {
+    void onAddData(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
+        stage = (Stage) add_data_point.getScene().getWindow();
         if (event.getSource() == add_data_point) {
-            stage = (Stage) add_data_point.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("/main/app/java/view/add_data_point.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
         } else {
-            stage = (Stage) add_poi.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("/main/app/java/view/add_location.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
         }
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
-    private void onLogout(ActionEvent event) throws IOException {
+    void onLogout(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
-        stage = (Stage) logout_scientist.getScene().getWindow();
+        stage = (Stage) add_data_point.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("/main/app/java/view/login.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);

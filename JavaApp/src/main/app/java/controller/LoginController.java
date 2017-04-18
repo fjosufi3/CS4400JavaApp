@@ -44,33 +44,35 @@ public class LoginController implements Initializable {
     @FXML
     private Label password_label;
 
+    private Connection connection = null;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //
+        connection = ConnectionConfiguration.getConnection();
     }
     
     @FXML
     private void onLogin(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
-        boolean validUserEntry = FormValidation.textFieldNotEmpty(login_username, username_label, "Required");
-        boolean validPassEntry = FormValidation.passwordFieldNotEmpty(login_password, password_label, "Required");
-        boolean isValidLogin = FormValidation.isValidLogin(login_username, login_password, credentials);
+        boolean validUserEntry = FormValidation.textFieldNotEmpty(login_username, username_label, "Username is required");
+        boolean validPassEntry = FormValidation.passwordFieldNotEmpty(login_password, password_label, "Password is required");
+        boolean isValidLogin = FormValidation.isValidLogin(login_username, login_password);
         String userType = FormValidation.getUserType(login_username, login_password);
         if (isValidLogin) {
             if (userType.equals(UserType.Admin.toString())) {
                 root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_admin.fxml"));
-            } else if (userType.equals(UserType.City_Official.toString())) {
-                root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_official.fxml"));
-            } else {
-                System.out.println(UserType.City_Official.toString());
+            } else if (userType.equals(UserType.City_Scientist.toString())) {
                 root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_scientist.fxml"));
+            } else {
+                root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_official.fxml"));
             }
             stage = (Stage) login_bt.getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+        } else {
+            credentials.setText("Sorry, invalid credentials");
         }
     }
 
