@@ -27,7 +27,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
- * View POI functionality 
+ * View POI functionality
  */
 public class ViewPOIController implements Initializable {
 
@@ -88,8 +88,6 @@ public class ViewPOIController implements Initializable {
 
     }
 
-
-
     private void setCellTable() {
         columnLocation.setCellValueFactory(new PropertyValueFactory<>("location"));
         columnCity.setCellValueFactory(new PropertyValueFactory<>("city"));
@@ -97,8 +95,6 @@ public class ViewPOIController implements Initializable {
         columnZipCode.setCellValueFactory(new PropertyValueFactory<>("zip"));
         columnFlag.setCellValueFactory(new PropertyValueFactory<>("flagString"));
         columnDate.setCellValueFactory(new PropertyValueFactory<>("dateFlagged"));
-
-
 
     }
 
@@ -110,7 +106,7 @@ public class ViewPOIController implements Initializable {
             ResultSet rs1 = pst1.executeQuery();
 
 
-            while(rs1.next()) {
+            while (rs1.next()) {
                 //data.add(new CityState(rs1.getString(1), rs1.getString(2)));
 
                 cityList.add(rs1.getString(1));
@@ -119,17 +115,15 @@ public class ViewPOIController implements Initializable {
             PreparedStatement pst2 = con.prepareStatement("SELECT DISTINCT State FROM CITY_STATE ORDER BY State");
             ResultSet rs2 = pst2.executeQuery();
 
-
-            while(rs2.next()) {
+            while (rs2.next()) {
 
                 stateList.add(rs2.getString(1));
             }
 
-
             PreparedStatement pst3 = con.prepareStatement("SELECT Location_Name FROM POI ORDER BY Location_Name");
             ResultSet rs3 = pst3.executeQuery();
 
-            while(rs3.next()) {
+            while (rs3.next()) {
                 poiLocList.add(rs3.getString(1));
             }
 
@@ -163,7 +157,6 @@ public class ViewPOIController implements Initializable {
         if ((isValidStartDate && !isValidEndDate) || (!isValidEndDate && isValidEndDate)) {
             System.out.println("invalid"); // fix later with labels
         }
-
 
         String POILocation = null;
         String city = null;
@@ -201,7 +194,6 @@ public class ViewPOIController implements Initializable {
             //dateEnd = dateEnd_view_poi.getValue().toString();
         }
 
-
         System.out.println(POILocation);
         System.out.println(city);
         System.out.println(state);
@@ -238,34 +230,32 @@ public class ViewPOIController implements Initializable {
         }
 
 
-
         poiTableView.setItems(data);
 
 
-//        SELECT  Location_Name, City, State, Zip_Code, Flag, Date_Flagged FROM POI
-//        WHERE Location_Name = ? AND City = ? AND State = ? AND Zip_Code = ?
-//        AND Date_Flagged >= ? AND Date_Flagged <= ? AND Flag = ?;
-
-
-
+    /*
+     POI Relation attribute column names:
+     ------------------------------------
+      - Location_Name,
+      - City
+      - State
+      - Zip_Code
+      - Flag
+      - Date_Flagged */
 
     }
 
     private String generateCondition(String POILoc, String city, String state, String flag,
                                      String zip, String startDate, String endDate) {
         //guaranteed at least one is not null
-        //poi loc -> Location_Name = blah
-
         String whereClause = "";
 
-        String [] paramArray = {POILoc, city, state, flag, zip, startDate, endDate};
+        String[] paramArray = {POILoc, city, state, flag, zip, startDate, endDate};
 
         for (int i = 0; i < paramArray.length; i++) {
             if (paramArray[i] != null) {
                 whereClause += paramArray[i] + " AND ";
             }
-
-
         }
 
         if (whereClause.endsWith("AND ")) {
