@@ -54,9 +54,9 @@ public class LoginController implements Initializable {
     private void onLogin(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
-        boolean validUserEntry = FormValidation.textFieldNotEmpty(login_username, username_label, "Username is required");
-        boolean validPassEntry = FormValidation.passwordFieldNotEmpty(login_password, password_label, "Password is required");
-        boolean isValidLogin = FormValidation.isValidLogin(login_username, login_password);
+        boolean validUserEntry = FormValidation.textFieldNotEmpty(login_username, username_label, "Required");
+        boolean validPassEntry = FormValidation.passwordFieldNotEmpty(login_password, password_label, "Required");
+        boolean isValidLogin = FormValidation.isValidLogin(login_username, login_password, credentials);
         String userType = FormValidation.getUserType(login_username, login_password);
         if (isValidLogin) {
             if (userType.equals(UserType.Admin.toString())) {
@@ -71,8 +71,6 @@ public class LoginController implements Initializable {
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-        } else {
-            credentials.setText("Sorry, invalid credentials");
         }
     }
 

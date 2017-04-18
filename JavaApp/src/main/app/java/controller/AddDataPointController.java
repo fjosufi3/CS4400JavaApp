@@ -1,5 +1,7 @@
 package app.java.controller;
 
+import app.java.model.DataPoint;
+import app.java.model.DataType;
 import app.java.model.FormValidation;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTimePicker;
@@ -19,8 +21,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.text.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 /**
@@ -29,9 +36,11 @@ import java.util.ResourceBundle;
 public class AddDataPointController implements Initializable {
 
     @FXML
-    private ComboBox poi_location;
+    private ComboBox location_name;
     @FXML
-    private DatePicker date;
+    private JFXDatePicker date;
+    @FXML
+    private JFXTimePicker time;
     @FXML
     private ComboBox data_type;
     @FXML
@@ -68,14 +77,36 @@ public class AddDataPointController implements Initializable {
     }
 
     @FXML
-    private void onSubmit(ActionEvent event) throws IOException {
+    private void onSubmit(ActionEvent event) throws IOException, ParseException {
+        boolean validInteger = FormValidation.isValidInteger(data_value);
+        String poi = location_name.getSelectionModel().getSelectedItem().toString();
+        DataType type = new DataType(data_type.getSelectionModel().getSelectedItem().toString());
+        Date _date = Date.from(date.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
+        String dt = date.getValue().toString() + " " + time.getValue().toString();
+        java.text.DateFormat format = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        java.util.Date _d = format.parse(dt);
+        java.sql.Timestamp timestamp = new java.sql.Timestamp(_d.getTime());
 
+        if (validInteger) {
+            Boolean accepted = null;
+            LocalDate localDate = date.getValue();
+            int value = Integer.parseInt(data_value.getText());
+            DataPoint dataPoint = new DataPoint(poi, false, type, value, _date, Time.valueOf(time.getValue()));
+            FormValidation.addNewDataPoint(dataPoint.getDataValue(), timestamp, dataPoint.isAccepted(),
+                    dataPoint.getLocationName(), dataPoint.getDataType().toString());
+        }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         date.setValue(LocalDate.now());
+        time.setValue(LocalTime.now());
         ObservableList<String> types = FormValidation.getType();
         data_type.setItems(types);
+        //filler
+        ObservableList<String> loc_names = FXCollections.observableArrayList(
+                "Georgia Tech", "Golden Gate Bridge", "Grand Canyon"
+        );
+        location_name.setItems(loc_names);
     }
 }
