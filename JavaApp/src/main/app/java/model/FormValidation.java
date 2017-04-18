@@ -92,6 +92,7 @@ public class FormValidation {
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
         java.util.regex.Matcher m = p.matcher(email.getText());
         if (m.matches()) {
+            label.setText("");
             return true;
         } else {
             label.setText("Invalid email");
