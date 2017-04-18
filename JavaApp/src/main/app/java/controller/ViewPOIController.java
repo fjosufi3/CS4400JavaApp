@@ -73,7 +73,7 @@ public class ViewPOIController implements Initializable {
     private ObservableList<String> stateList = FXCollections.observableArrayList();
     private ObservableList<String> poiLocList = FXCollections.observableArrayList();
 
-    private ObservableList<POI> data = FXCollections.observableArrayList();
+    private ObservableList<POI> data;
     private Connection con = null;
 
 
@@ -82,7 +82,7 @@ public class ViewPOIController implements Initializable {
 
         con = ConnectionConfiguration.getConnection();
         setCellTable();
-        //loadFromDB(); //temporary
+        loadFromDB(); //temporary
         loadDropDown();
 
     }
@@ -161,7 +161,7 @@ public class ViewPOIController implements Initializable {
     }
 
     @FXML
-    private void onApplyFilter() { //IN PROGRESS ---> a lot of clean up to do
+    private void onApplyFilter() { //IN PROGRESS
         boolean zipNotEmpty = FormValidation.textFieldNotEmpty(zip_view_poi);
         boolean isValidZip = zipNotEmpty && FormValidation.isValidZipCode(zip_view_poi.getText());
         boolean isSelectedLocation = !(poi_loc_box.getSelectionModel().isEmpty());
@@ -171,142 +171,87 @@ public class ViewPOIController implements Initializable {
         boolean isValidStartDate = dateStart_view_poi.getValue() != null;
         boolean isValidEndDate = dateEnd_view_poi.getValue() != null;
 
+        //all fields empty
         if (!zipNotEmpty && !isSelectedLocation && !isSelectedCity && !isSelectedState
                 && !isFlagged && !isValidStartDate && !isValidEndDate) {
             System.out.println("enter a field");
         }
 
+        //one of the date fields is missing
         if ((isValidStartDate && !isValidEndDate) || (!isValidEndDate && isValidEndDate)) {
             System.out.println("invalid"); // fix later with labels
         }
 
+        //warning for invalid zip code if it's entered
+        if (zipNotEmpty && !isValidZip) {
+            System.out.println("zip code in right format needed");
+        }
 
+        String zipCode = null;
         String POILocation = null;
         String city = null;
         String state = null;
         String flag = null;
-        String zipCode = null;
         String dateStart = null;
         String dateEnd = null;
 
-        if (isValidZip) {
-            zipCode = "Zip_Code = " + zip_view_poi.getText();
-            //zipCode = zip_view_poi.getText();
-        }
-        if (isSelectedLocation) {
-            POILocation = "Location_Name = \'" + poi_loc_box.getSelectionModel().getSelectedItem().toString() + "\'";
-            //POILocation = poi_loc_box.getSelectionModel().getSelectedItem().toString();
+        if (isValidZip) { zipCode = zip_view_poi.getText(); }
+        if (isSelectedLocation) { POILocation = poi_loc_box.getSelectionModel().getSelectedItem().toString(); }
+        if (isSelectedCity) { city = city_view_poi_box.getSelectionModel().getSelectedItem().toString(); }
+        if (isSelectedState) { state = state_view_poi_box.getSelectionModel().getSelectedItem().toString(); }
+        if (isFlagged) { flag = "TRUE"; }
+        if (isValidStartDate) { dateStart = dateStart_view_poi.getValue().toString(); }
+        if (isValidEndDate) { dateEnd = dateEnd_view_poi.getValue().toString(); }
 
-        }
-        if (isSelectedCity) {
-            city = "City = \'" + city_view_poi_box.getSelectionModel().getSelectedItem().toString() + "\'";
-        }
-        if (isSelectedState) {
-            state = "State = \'" + state_view_poi_box.getSelectionModel().getSelectedItem().toString() + "\'";
-        }
-        if (isFlagged) {
-            flag = "Flag = TRUE";
-            //flag = "TRUE";
-        }
-        if (isValidStartDate) {
-            dateStart = "Date_Flagged >= \'" + dateStart_view_poi.getValue().toString() + "\'";
-            //dateStart = dateStart_view_poi.getValue().toString();
-        }
-        if (isValidEndDate) {
-            dateEnd = "Date_Flagged <= \'" + dateEnd_view_poi.getValue().toString() + "\'";
-            //dateEnd = dateEnd_view_poi.getValue().toString();
-        }
-
-
+        System.out.println(zipCode);
         System.out.println(POILocation);
         System.out.println(city);
         System.out.println(state);
         System.out.println(flag);
-        System.out.println(zipCode);
         System.out.println(dateStart);
         System.out.println(dateEnd);
 
-        System.out.println(generateCondition(POILocation, city, state, flag, zipCode, dateStart, dateEnd));
-        poiTableView.getItems().remove(data); //prevents loading data twice or more
+        //resets data upon click apply filter so that the data doesn't get added more than once
+        poiTableView.getItems().removeAll(data);
 
+        try {
+            PreparedStatement pst = con.prepareStatement("SELECT Location_Name, City, State, Zip_Code, Flag, Date_Flagged " +
+                    "FROM POI " +
+                    "WHERE  City = ? AND STATE = ?");
 
-        if (POILocation == null && city == null && state == null && flag == null
-                && zipCode == null && dateStart == null && dateEnd == null) {
-            System.out.println("enter a field");
+            //pst.setString(1, POILocation);
+            pst.setString(1, city);
+            pst.setString(2, state);
 
-        } else if ((dateStart == null && dateEnd != null) || (dateStart != null && dateEnd == null)) {
-            System.out.println("invalid"); // fix later with labels
-        } else {
-            try {
-                PreparedStatement pst = con.prepareStatement("SELECT Location_Name, City, State, Zip_Code, Flag, Date_Flagged " +
-                        "FROM POI " +
-                        "WHERE " + generateCondition(POILocation, city, state, flag, zipCode, dateStart, dateEnd));
+            ResultSet rs = pst.executeQuery();
 
-
-                ResultSet rs = pst.executeQuery();
-
-                while (rs.next()) {
-                    data.add(new POI(rs.getString(1), rs.getString(2), rs.getString(3),
-                            rs.getString(4), rs.getInt(5), rs.getDate(6)));
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
+            while (rs.next()) {
+                data.add(new POI(rs.getString(1), rs.getString(2), rs.getString(3),
+                        rs.getString(4), rs.getInt(5), rs.getDate(6)));
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-
 
         poiTableView.setItems(data);
 
-
+//
 //        SELECT  Location_Name, City, State, Zip_Code, Flag, Date_Flagged FROM POI
 //        WHERE Location_Name = ? AND City = ? AND State = ? AND Zip_Code = ?
 //        AND Date_Flagged >= ? AND Date_Flagged <= ? AND Flag = ?;
 
 
-
-
-    }
-
-    private String generateCondition(String POILoc, String city, String state, String flag,
-                                     String zip, String startDate, String endDate) {
-        //guaranteed that at least one is not null
-
-        String whereClause = "";
-
-        String [] paramArray = {POILoc, city, state, flag, zip, startDate, endDate};
-
-        for (int i = 0; i < paramArray.length; i++) {
-            if (paramArray[i] != null) {
-                whereClause += paramArray[i] + " AND ";
-            }
-        }
-
-        //remove "AND" from the end of the string
-        if (whereClause.endsWith("AND ")) {
-            whereClause = whereClause.substring(0, whereClause.length() - 4);
-        }
-
-        return whereClause;
     }
 
     @FXML
     private void onResetFilter() {
 
-        //clear table
         poiTableView.getItems().removeAll(data);
-
-        //clear combo boxes
         poi_loc_box.getSelectionModel().clearSelection();
         city_view_poi_box.getSelectionModel().clearSelection();
         state_view_poi_box.getSelectionModel().clearSelection();
-
-        //clear TextField
         zip_view_poi.clear();
-
-        //clear check box
         flagged_checkBox.setSelected(false);
-
-        //clear dates
         dateStart_view_poi.getEditor().clear();
         dateEnd_view_poi.getEditor().clear();
     }
