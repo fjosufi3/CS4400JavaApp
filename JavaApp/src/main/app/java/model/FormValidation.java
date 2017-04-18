@@ -1,6 +1,8 @@
 package app.java.model;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 
 import javax.swing.*;
@@ -86,17 +88,15 @@ public class FormValidation {
     }
 
     public static boolean isValidEmailAddress(TextField email, Label label) {
-        boolean valid = false;
         String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
         java.util.regex.Matcher m = p.matcher(email.getText());
-        if (!m.matches()) {
-            label.setText("Invalid email");
+        if (m.matches()) {
+            return true;
         } else {
-            valid = true;
-            label.setText("");
+            label.setText("Invalid email");
         }
-        return valid;
+        return false;
     }
 
     public static boolean passwordFieldNotEmpty(PasswordField p) {
@@ -123,91 +123,94 @@ public class FormValidation {
         if (!pass.getText().equals(confirm_pass.getText())) {
             match = false;
             label.setText("Passwords must match");
-        } else {
-            label.setText("");
         }
         return match;
     }
 
     public static boolean passwordLength(PasswordField pass, Label label) {
         boolean longEnough = false;
-        if (pass.getText().length() < 4) {
-            longEnough = false;
-            label.setText("Password is too short");
-        } else {
-            label.setText("");
+        if (pass.getText().length() >= 4) {
+            longEnough = true;
         }
         return longEnough;
     }
 
-    public static boolean isValidCityState(String city, String state, Label label) {
-        //temporary manual check
-        boolean validCity = false;
-
-        ArrayList<CityState> city_state_arr = new ArrayList<>();
-
-        CityState cityState = new CityState(new SimpleStringProperty(city), new SimpleStringProperty(state));
-
-        CityState ny_ny = new CityState(new SimpleStringProperty("New York"), new SimpleStringProperty("New York"));
-        CityState la_ca = new CityState(new SimpleStringProperty("Los Angeles"), new SimpleStringProperty("California"));
-        CityState ch_il = new CityState(new SimpleStringProperty("Chicago"), new SimpleStringProperty("Illinois"));
-        CityState ho_tx = new CityState(new SimpleStringProperty("Houston"), new SimpleStringProperty("Texas"));
-        CityState ph_pa = new CityState(new SimpleStringProperty("Philadelphia"), new SimpleStringProperty("Pennsylvania"));
-        CityState ph_az = new CityState(new SimpleStringProperty("Phoenix"), new SimpleStringProperty("Arizona"));
-        CityState sa_tx = new CityState(new SimpleStringProperty("San Antonio"), new SimpleStringProperty("Texas"));
-        CityState sd_ca = new CityState(new SimpleStringProperty("San Diego"), new SimpleStringProperty("California"));
-        CityState da_tx = new CityState(new SimpleStringProperty("Dallas"), new SimpleStringProperty("Texas"));
-        CityState sj_ca = new CityState(new SimpleStringProperty("San Jose"), new SimpleStringProperty("California"));
-        CityState au_tx = new CityState(new SimpleStringProperty("Austin"), new SimpleStringProperty("Texas"));
-        CityState jk_fl = new CityState(new SimpleStringProperty("Jacksonville"), new SimpleStringProperty("Florida"));
-        CityState sf_ca = new CityState(new SimpleStringProperty("San Francisco"), new SimpleStringProperty("California"));
-        CityState in_in = new CityState(new SimpleStringProperty("Indianapolis"), new SimpleStringProperty("Indiana"));
-        CityState co_oh = new CityState(new SimpleStringProperty("Columbus"), new SimpleStringProperty("Ohio"));
-        CityState fw_tx = new CityState(new SimpleStringProperty("Forth Worth"), new SimpleStringProperty("Texas"));
-        CityState ch_nc = new CityState(new SimpleStringProperty("Charlotte"), new SimpleStringProperty("North Carolina"));
-        CityState se_wa = new CityState(new SimpleStringProperty("Seattle"), new SimpleStringProperty("Washington"));
-        CityState de_co = new CityState(new SimpleStringProperty("Denver"), new SimpleStringProperty("Colorado"));
-        CityState ep_tx = new CityState(new SimpleStringProperty("El Paso"), new SimpleStringProperty("Texas"));
-        CityState at_ga = new CityState(new SimpleStringProperty("Atlanta"), new SimpleStringProperty("Georgia"));
-
-        city_state_arr.addAll(Arrays.asList(ny_ny, la_ca, ch_il, ho_tx, ph_pa, ph_az, sa_tx, sd_ca, da_tx, sj_ca, au_tx, jk_fl, sf_ca,
-                in_in, co_oh, fw_tx, ch_nc, se_wa, de_co, ep_tx, at_ga));
-
-        for (CityState i : city_state_arr) {
-            if (i.getCity().equals(cityState.getCity()) && i.getState().equals(cityState.getState())) {
-                validCity = true;
-            }
-        }
-        return validCity;
-    }
-
-    public static boolean isValidLogin(TextField user, PasswordField pass) {
-        boolean access_granted = false;
+    public static ObservableList<String> populateCityBox() {
+        ObservableList<String> citiesArr = FXCollections.observableArrayList();
         Connection c = null;
         PreparedStatement statement = null;
-        String query = "SELECT Username, Password FROM USER WHERE Username = ? AND Password = ?";
+        String query = "SELECT City FROM CITY_STATE";
         try {
             c = ConnectionConfiguration.getConnection();
             statement = c.prepareStatement(query);
-            statement.setString(1, user.getText());
-            statement.setString(2, pass.getText());
 
-            ResultSet usersTable = statement.executeQuery();
+            ResultSet cities = statement.executeQuery();
 
-            if (usersTable.next()) {
-                access_granted = true;
+            while (cities.next()) {
+                citiesArr.add(cities.getString("City"));
             }
-            usersTable.close();
+            cities.close();
             statement.close();
             c.close();
         } catch (Exception e) {
             System.out.println("Something went wrong with the database");
         }
-        return access_granted;
+        return citiesArr;
+    }
+
+    public static ObservableList<String> populateStateBox() {
+        ObservableList<String> statesArr = FXCollections.observableArrayList();
+        Connection c = null;
+        PreparedStatement statement = null;
+        String query = "SELECT State FROM CITY_STATE";
+        try {
+            c = ConnectionConfiguration.getConnection();
+            statement = c.prepareStatement(query);
+
+            ResultSet states = statement.executeQuery();
+
+            while (states.next()) {
+                statesArr.add(states.getString("State"));
+            }
+            states.close();
+            statement.close();
+            c.close();
+        } catch (Exception e) {
+            System.out.println("Something went wrong with the database");
+        }
+        return statesArr;
+    }
+
+    public static boolean isValidCityState(String city, String state, Label label) {
+        boolean validCityState = false;
+        Connection c = null;
+        PreparedStatement statement = null;
+        String query = "SELECT * FROM CITY_STATE";
+        try {
+            c = ConnectionConfiguration.getConnection();
+            statement = c.prepareStatement(query);
+
+            ResultSet cityStates = statement.executeQuery();
+
+            while (cityStates.next()) {
+                if (city.equals(cityStates.getString("City")) && state.equals(cityStates.getString("State"))) {
+                    validCityState = true;
+                    label.setText("");
+                }
+            }
+            cityStates.close();
+            statement.close();
+            c.close();
+        } catch (Exception e) {
+            System.out.println("Something went wrong with the database");
+        }
+        if (!validCityState) {
+            label.setText("Invalid city/state");
+        }
+        return validCityState;
     }
 
     public static boolean isValidZipCode(String zip) {
-
         boolean validZipCode = false;
         String zipCodePattern = "\\d{5}(-\\d{4})?";
 
@@ -215,6 +218,45 @@ public class FormValidation {
 
         return validZipCode;
 
+    }
+
+    public static boolean isValidInteger(TextField text) {
+        boolean validInteger = true;
+        try {
+            Integer.parseInt(text.getText());
+        } catch (NumberFormatException n) {
+            validInteger = false;
+        }
+        return validInteger;
+    }
+
+    public static boolean isValidLogin(TextField user, PasswordField pass, Label label) {
+        boolean access_granted = false;
+        Connection c = null;
+        PreparedStatement statement = null;
+        String query = "SELECT Username, Password FROM USER WHERE Username = ? AND Password = ?";
+        if (textFieldNotEmpty(user) && passwordFieldNotEmpty(pass)) {
+            try {
+                c = ConnectionConfiguration.getConnection();
+                statement = c.prepareStatement(query);
+                statement.setString(1, user.getText());
+                statement.setString(2, pass.getText());
+
+                ResultSet usersTable = statement.executeQuery();
+
+                if (usersTable.next()) {
+                    access_granted = true;
+                } else {
+                    label.setText("Sorry, invalid credentials");
+                }
+                usersTable.close();
+                statement.close();
+                c.close();
+            } catch (Exception e) {
+                System.out.println("Something went wrong with the database");
+            }
+        }
+        return access_granted;
     }
 
     public static String getUserType(TextField user, PasswordField pass) {
@@ -286,5 +328,76 @@ public class FormValidation {
             e.printStackTrace();
             System.out.println("Something went wrong with the database");
         }
+    }
+
+    public static void addNewDataPoint(int data_value, Timestamp date_time, Boolean accepted, String loc_name, String type) {
+        Connection c = null;
+        PreparedStatement statement = null;
+        String query = "INSERT INTO DATA_POINT(Data_Value, Date_Time, Accepted, Location_Name, Type) VALUES(?, ?, ?, ?, ?)";
+        try {
+            c = ConnectionConfiguration.getConnection();
+            statement = c.prepareStatement(query);
+            statement.setInt(1, data_value);
+            statement.setTimestamp(2, date_time);
+            statement.setBoolean(3, accepted);
+            statement.setString(4, loc_name);
+            statement.setString(5, type);
+            statement.executeUpdate();
+
+            Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+            successAlert.setHeaderText("Success!");
+            successAlert.setContentText("Your data point has been added");
+            successAlert.showAndWait();
+
+            c.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Something went wrong with the database");
+        }
+    }
+
+    public static void addNewLocation(String loc_name, String city, String state, String zip, Boolean flag, Date df) {
+        Connection c = null;
+        PreparedStatement statement = null;
+        String query = "INSERT INTO POI(Location_Name, City, State, Zip_Code, Flag, Date_Flagged) VALUES(?, ?, ?, ?, ?, ?)";
+        try {
+            c = ConnectionConfiguration.getConnection();
+            statement = c.prepareStatement(query);
+            statement.setString(1, loc_name);
+            statement.setString(2, city);
+            statement.setString(3, state);
+            statement.setString(4, zip);
+            statement.setBoolean(5, flag);
+            statement.setDate(6, df);
+            statement.executeUpdate();
+
+            Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+            successAlert.setHeaderText("Success!");
+            successAlert.setContentText("Your data point has been added");
+            successAlert.showAndWait();
+
+            c.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Something went wrong with the database");
+        }
+    }
+
+    public static ObservableList<String> getType() {
+        ObservableList<String> types = FXCollections.observableArrayList();
+        Connection c = null;
+        PreparedStatement statement = null;
+        String query = "SELECT Type FROM DATA_TYPE";
+        try {
+            c = ConnectionConfiguration.getConnection();
+            statement = c.prepareStatement(query);
+            ResultSet data_types = statement.executeQuery();
+            while (data_types.next()) {
+                types.add(data_types.getString("Type"));
+            }
+        } catch (Exception e) {
+            System.out.println("Something went wrong with the database");
+        }
+        return types;
     }
 }

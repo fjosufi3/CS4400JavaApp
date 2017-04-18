@@ -137,17 +137,8 @@ public class RegistrationController implements Initializable {
                         UserType.City_Scientist.toString(),
                         UserType.City_Official.toString()
                 );
-        ObservableList<String> cities =
-                FXCollections.observableArrayList(
-                        "New York", "Los Angeles", "Chicago", "Houston", "Philadelphia", "Phoenix",
-                        "San Antonio", "San Diego", "Dallas", "San Jose", "Austin", "Jacksonville", "San Francisco",
-                        "Indianapolis", "Columbus", "Forth Worth", "Charlotte", "Seattle", "Denver", "El Paso", "Atlanta"
-                );
-        ObservableList<String> states =
-                FXCollections.observableArrayList(
-                        "New York", "California", "Illinois", "Texas", "Pennsylvania", "Arizona", "Florida",
-                        "Indiana", "Ohio", "North Carolina", "Washington", "Colorado", "Georgia"
-                );
+        ObservableList<String> cities = FormValidation.populateCityBox();
+        ObservableList<String> states = FormValidation.populateStateBox();
         user_type_box.setItems(user_types);
         user_type_box.getSelectionModel().selectFirst();
         city_box.setItems(cities);
