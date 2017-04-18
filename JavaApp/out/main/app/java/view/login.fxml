@@ -10,16 +10,16 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.java.controller.LoginController">
    <children>
-      <JFXTextField fx:id="login_username" layoutX="77.0" layoutY="100.0" prefHeight="25.0" prefWidth="167.0" promptText="Username" />
-      <JFXPasswordField fx:id="login_password" layoutX="77.0" layoutY="152.0" prefHeight="25.0" prefWidth="167.0" promptText="Password" />
+      <JFXTextField fx:id="login_username" layoutX="77.0" layoutY="100.0" prefHeight="25.0" prefWidth="212.0" promptText="Username" />
+      <JFXPasswordField fx:id="login_password" layoutX="77.0" layoutY="150.0" prefHeight="25.0" prefWidth="212.0" promptText="Password" />
       <Button id="login_bt" fx:id="login_bt" layoutX="174.0" layoutY="230.0" mnemonicParsing="false" onAction="#onLogin" text="Login" />
       <Label layoutX="89.0" layoutY="51.0" text="Login" textFill="BLUE">
          <font>
             <Font name="Avenir Next Regular" size="22.0" />
          </font>
       </Label>
-      <Label fx:id="username_label" layoutX="260.0" layoutY="110.0" textFill="RED" />
-      <Label fx:id="password_label" layoutX="260.0" layoutY="160.0" textFill="RED" />
+      <Label fx:id="username_label" layoutX="300.0" layoutY="110.0" text="Required" textFill="RED" />
+      <Label fx:id="password_label" layoutX="300.0" layoutY="160.0" text="Required" textFill="RED" />
       <Label fx:id="credentials" layoutX="131.0" layoutY="201.0" textFill="RED" />
       <JFXButton fx:id="login_reg_bt" layoutX="77.0" layoutY="265.0" onAction="#onRegistration" text="Don't have an account? Register here" textFill="BLUE" underline="true" />
    </children>
