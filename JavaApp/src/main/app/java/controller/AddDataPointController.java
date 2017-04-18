@@ -101,11 +101,8 @@ public class AddDataPointController implements Initializable {
         date.setValue(LocalDate.now());
         time.setValue(LocalTime.now());
         ObservableList<String> types = FormValidation.getType();
+        ObservableList<String> loc_names = FormValidation.populateLocationNames();
         data_type.setItems(types);
-        //filler
-        ObservableList<String> loc_names = FXCollections.observableArrayList(
-                "Georgia Tech", "Golden Gate Bridge", "Grand Canyon"
-        );
         location_name.setItems(loc_names);
     }
 }
