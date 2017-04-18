@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="false">
+  <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$/JavaApp/out" />
     <output-test url="file:///test/CS4400JavaApp" />
     <exclude-output />
@@ -25,6 +25,15 @@
       <library>
         <CLASSES>
           <root url="jar://$USER_HOME$/Downloads/mysql-connector-java-5.1.41/mysql-connector-java-5.1.41-bin.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/jfoenix.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
