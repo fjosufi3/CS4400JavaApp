@@ -346,7 +346,34 @@ public class FormValidation {
 
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
             successAlert.setHeaderText("Success!");
-            successAlert.setContentText("Your information has been saved to the database");
+            successAlert.setContentText("Your data point has been added");
+            successAlert.showAndWait();
+
+            c.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Something went wrong with the database");
+        }
+    }
+
+    public static void addNewLocation(String loc_name, String city, String state, String zip, Boolean flag, Date df) {
+        Connection c = null;
+        PreparedStatement statement = null;
+        String query = "INSERT INTO POI(Location_Name, City, State, Zip_Code, Flag, Date_Flagged) VALUES(?, ?, ?, ?, ?, ?)";
+        try {
+            c = ConnectionConfiguration.getConnection();
+            statement = c.prepareStatement(query);
+            statement.setString(1, loc_name);
+            statement.setString(2, city);
+            statement.setString(3, state);
+            statement.setString(4, zip);
+            statement.setBoolean(5, flag);
+            statement.setDate(6, df);
+            statement.executeUpdate();
+
+            Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+            successAlert.setHeaderText("Success!");
+            successAlert.setContentText("Your data point has been added");
             successAlert.showAndWait();
 
             c.close();

@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6903e2a3-b4b3-412c-8c92-bd5ffb811bad" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddLocationController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/out/app/java/view/add_data_point.fxml" afterPath="$PROJECT_DIR$/JavaApp/out/app/java/view/add_data_point.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/out/app/java/view/login.fxml" afterPath="$PROJECT_DIR$/JavaApp/out/app/java/view/login.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/out/main/app/java/view/add_data_point.fxml" afterPath="$PROJECT_DIR$/JavaApp/out/main/app/java/view/add_data_point.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/out/main/app/java/view/login.fxml" afterPath="$PROJECT_DIR$/JavaApp/out/main/app/java/view/login.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/out/app/java/view/add_location.fxml" afterPath="$PROJECT_DIR$/JavaApp/out/app/java/view/add_location.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/out/main/app/java/view/add_location.fxml" afterPath="$PROJECT_DIR$/JavaApp/out/main/app/java/view/add_location.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddDataPointController.java" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddDataPointController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/LoginController.java" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/LoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/RegistrationController.java" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/RegistrationController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/WelcomeScientistController.java" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/WelcomeScientistController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/model/DataPoint.java" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/model/DataPoint.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/view/add_data_point.fxml" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/view/add_data_point.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/view/login.fxml" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/view/login.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/view/add_location.fxml" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/view/add_location.fxml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -55,57 +49,63 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="AddLocationController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddLocationController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="78" column="17" lean-forward="false" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="POI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/POI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="907">
+              <caret line="115" column="5" lean-forward="false" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
+              <folding>
+                <element signature="e#2607#2608#0" expanded="true" />
+                <element signature="e#2649#2650#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FormValidation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="81">
+              <caret line="363" column="56" lean-forward="true" selection-start-line="363" selection-start-column="56" selection-end-line="363" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1492504800000" expanded="true" signature="1192:1236" ph="SELECT Usern... USER" />
+                <marker date="1492504800000" expanded="true" signature="2083:2121" ph="SELECT Email... USER" />
+                <marker date="1492504800000" expanded="true" signature="4646:4673" ph="SELECT City CITY_STATE" />
+                <marker date="1492504800000" expanded="true" signature="5434:5462" ph="SELECT City CITY_STATE" />
+                <marker date="1492504800000" expanded="true" signature="6207:6231" ph="SELECT * FRO... CITY_STATE" />
+                <marker date="1492504800000" expanded="true" signature="7758:7829" ph="SELECT Usern... USER" />
+                <marker date="1492504800000" expanded="true" signature="8885:8939" ph="SELECT * FRO... USER" />
+                <marker date="1492504800000" expanded="true" signature="9811:9884" ph="INSERT INTO USER... " />
+                <marker date="1492504800000" expanded="true" signature="10906:10980" ph="INSERT INTO CITY_OFFICIAL... " />
+                <marker date="1492504800000" expanded="true" signature="11720:11818" ph="INSERT INTO DATA_POINT... " />
+                <marker date="1492504800000" expanded="true" signature="12849:12947" ph="INSERT INTO POI... " />
+                <marker date="1492504800000" expanded="true" signature="14011:14037" ph="SELECT Type DATA_TYPE" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="AddDataPointController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddDataPointController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="104" column="34" lean-forward="true" selection-start-line="104" selection-start-column="34" selection-end-line="104" selection-end-column="34" />
+            <state relative-caret-position="106">
+              <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FormValidation.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="162" column="17" lean-forward="true" selection-start-line="162" selection-start-column="17" selection-end-line="162" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1492501991000" expanded="true" signature="1192:1236" ph="SELECT Usern... USER" />
-                <marker date="1492501991000" expanded="true" signature="2083:2121" ph="SELECT Email... USER" />
-                <marker date="1492501991000" expanded="true" signature="4646:4673" ph="SELECT City CITY_STATE" />
-                <marker date="1492501991000" expanded="true" signature="5434:5462" ph="SELECT City CITY_STATE" />
-                <marker date="1492501991000" expanded="true" signature="6207:6231" ph="SELECT * FRO... CITY_STATE" />
-                <marker date="1492501991000" expanded="true" signature="7758:7829" ph="SELECT Usern... USER" />
-                <marker date="1492501991000" expanded="true" signature="8885:8939" ph="SELECT * FRO... USER" />
-                <marker date="1492501991000" expanded="true" signature="9811:9884" ph="INSERT INTO USER... " />
-                <marker date="1492501991000" expanded="true" signature="10906:10980" ph="INSERT INTO CITY_OFFICIAL... " />
-                <marker date="1492501991000" expanded="true" signature="11720:11818" ph="INSERT INTO DATA_POINT... " />
-                <marker date="1492501991000" expanded="true" signature="12876:12902" ph="SELECT Type DATA_TYPE" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataPoint.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/DataPoint.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="716">
-              <caret line="79" column="5" lean-forward="true" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/DataType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -185,9 +185,10 @@
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/WelcomeScientistController.java" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/model/DataPoint.java" />
-        <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddDataPointController.java" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/RegistrationController.java" />
+        <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddDataPointController.java" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java" />
+        <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddLocationController.java" />
       </list>
     </option>
   </component>
@@ -883,12 +884,12 @@
       <workItem from="1492485220488" duration="2546000" />
       <workItem from="1492488036225" duration="142000" />
       <workItem from="1492488483106" duration="1184000" />
-      <workItem from="1492490334736" duration="10772000" />
+      <workItem from="1492490334736" duration="13466000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47311000" />
+    <option name="totallyTimeSpent" value="50005000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -912,7 +913,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42746913" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42746913" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -949,7 +950,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
     <entry file="file://$PROJECT_DIR$/JavaApp/src/app/java/controller/DataPoint.java" />
     <entry file="file://$PROJECT_DIR$/JavaApp/src/app/java/controller/POI.java" />
     <entry file="file://$PROJECT_DIR$/JavaApp/src/app/res/pending_official_accounts.fxml" />
@@ -1107,13 +1107,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="135" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/POI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="115" column="5" lean-forward="false" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1278,14 +1271,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/DataPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="716">
-          <caret line="79" column="5" lean-forward="true" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/javafx-src.zip!/com/sun/javafx/tk/quantum/GlassViewEventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -1314,12 +1299,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddDataPointController.java">
+    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/DataPoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="104" column="34" lean-forward="true" selection-start-line="104" selection-start-column="34" selection-end-line="104" selection-end-column="34" />
+        <state relative-caret-position="716">
+          <caret line="79" column="5" lean-forward="true" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/POI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="907">
+          <caret line="115" column="5" lean-forward="false" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2607#2608#0" expanded="true" />
+            <element signature="e#2649#2650#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1334,23 +1328,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java">
+    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddDataPointController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="162" column="17" lean-forward="true" selection-start-line="162" selection-start-column="17" selection-end-line="162" selection-end-column="17" />
+        <state relative-caret-position="106">
+          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1492501991000" expanded="true" signature="1192:1236" ph="SELECT Usern... USER" />
-            <marker date="1492501991000" expanded="true" signature="2083:2121" ph="SELECT Email... USER" />
-            <marker date="1492501991000" expanded="true" signature="4646:4673" ph="SELECT City CITY_STATE" />
-            <marker date="1492501991000" expanded="true" signature="5434:5462" ph="SELECT City CITY_STATE" />
-            <marker date="1492501991000" expanded="true" signature="6207:6231" ph="SELECT * FRO... CITY_STATE" />
-            <marker date="1492501991000" expanded="true" signature="7758:7829" ph="SELECT Usern... USER" />
-            <marker date="1492501991000" expanded="true" signature="8885:8939" ph="SELECT * FRO... USER" />
-            <marker date="1492501991000" expanded="true" signature="9811:9884" ph="INSERT INTO USER... " />
-            <marker date="1492501991000" expanded="true" signature="10906:10980" ph="INSERT INTO CITY_OFFICIAL... " />
-            <marker date="1492501991000" expanded="true" signature="11720:11818" ph="INSERT INTO DATA_POINT... " />
-            <marker date="1492501991000" expanded="true" signature="12876:12902" ph="SELECT Type DATA_TYPE" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="363" column="56" lean-forward="true" selection-start-line="363" selection-start-column="56" selection-end-line="363" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1492504800000" expanded="true" signature="1192:1236" ph="SELECT Usern... USER" />
+            <marker date="1492504800000" expanded="true" signature="2083:2121" ph="SELECT Email... USER" />
+            <marker date="1492504800000" expanded="true" signature="4646:4673" ph="SELECT City CITY_STATE" />
+            <marker date="1492504800000" expanded="true" signature="5434:5462" ph="SELECT City CITY_STATE" />
+            <marker date="1492504800000" expanded="true" signature="6207:6231" ph="SELECT * FRO... CITY_STATE" />
+            <marker date="1492504800000" expanded="true" signature="7758:7829" ph="SELECT Usern... USER" />
+            <marker date="1492504800000" expanded="true" signature="8885:8939" ph="SELECT * FRO... USER" />
+            <marker date="1492504800000" expanded="true" signature="9811:9884" ph="INSERT INTO USER... " />
+            <marker date="1492504800000" expanded="true" signature="10906:10980" ph="INSERT INTO CITY_OFFICIAL... " />
+            <marker date="1492504800000" expanded="true" signature="11720:11818" ph="INSERT INTO DATA_POINT... " />
+            <marker date="1492504800000" expanded="true" signature="12849:12947" ph="INSERT INTO POI... " />
+            <marker date="1492504800000" expanded="true" signature="14011:14037" ph="SELECT Type DATA_TYPE" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddLocationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="78" column="17" lean-forward="false" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
