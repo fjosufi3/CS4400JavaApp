@@ -88,6 +88,12 @@ public class RegistrationController implements Initializable {
         boolean validCity = FormValidation.isValidCityState(city_box.getSelectionModel().getSelectedItem().toString(),
                 state_box.getSelectionModel().getSelectedItem().toString(), city_state_label);
 
+        if (typeCO) {
+            boolean validTitle = FormValidation.textFieldNotEmpty(city_official_title, title_label, "Required");
+        } else {
+            title_label.setText("");
+        }
+
         if (!typeCO && validUserEntry && usernameAvailable && emailAvailable && isValidEmail && validPassEntry
                 && passwordMatch && passwordLength) {
             User newUser = new User(email.getText(), username_reg.getText(), password_reg.getText(), UserType.City_Scientist);
@@ -103,9 +109,8 @@ public class RegistrationController implements Initializable {
             stage.show();
         }
         if (typeCO) {
-            boolean validTitle = FormValidation.textFieldNotEmpty(city_official_title, title_label, "Required");
             if (validUserEntry && usernameAvailable && emailAvailable && isValidEmail && validPassEntry
-                    && passwordMatch && passwordLength && validTitle && validCity) {
+                    && passwordMatch && passwordLength && validCity) {
                 CityState CO_location = new CityState(new SimpleStringProperty(city_box.getSelectionModel().getSelectedItem().toString()),
                         new SimpleStringProperty(state_box.getSelectionModel().getSelectedItem().toString()));
 
