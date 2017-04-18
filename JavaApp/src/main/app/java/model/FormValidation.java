@@ -181,31 +181,8 @@ public class FormValidation {
         return validCity;
     }
 
-    public static ObservableList<String> populateLocationNames() {
-        ObservableList<String> locationsArr = FXCollections.observableArrayList();
-        Connection c = null;
-        PreparedStatement statement = null;
-        String query = "SELECT Location_Name FROM POI";
-        try {
-            c = ConnectionConfiguration.getConnection();
-            statement = c.prepareStatement(query);
-
-            ResultSet poi_location = statement.executeQuery();
-
-            while (poi_location.next()) {
-                locationsArr.add(poi_location.getString("Location_Name"));
-            }
-            poi_location.close();
-            statement.close();
-            c.close();
-        } catch (Exception e) {
-            System.out.println("Something went wrong with the database");
-        }
-        return locationsArr;
-    }
-
-    public static boolean isValidCityState(String city, String state, Label label) {
-        boolean validCityState = false;
+    public static boolean isValidLogin(TextField user, PasswordField pass) {
+        boolean access_granted = false;
         Connection c = null;
         PreparedStatement statement = null;
         String query = "SELECT Username, Password FROM USER WHERE Username = ? AND Password = ?";

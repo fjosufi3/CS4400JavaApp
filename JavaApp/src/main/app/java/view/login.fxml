@@ -18,9 +18,9 @@
             <Font name="Avenir Next Regular" size="22.0" />
          </font>
       </Label>
-      <Label fx:id="username_label" layoutX="300.0" layoutY="110.0" textFill="RED" />
-      <Label fx:id="password_label" layoutX="300.0" layoutY="160.0" textFill="RED" />
-      <Label fx:id="credentials" layoutX="131.0" layoutY="201.0" textFill="RED" />
-      <JFXButton fx:id="login_reg_bt" layoutX="77.0" layoutY="265.0" onAction="#onRegistration" text="Don't have an account? Register here" textFill="BLUE" underline="true" />
+      <Label fx:id="username_label" layoutX="117.0" layoutY="127.0" textFill="RED" />
+      <Label fx:id="password_label" layoutX="117.0" layoutY="189.0" textFill="RED" />
+      <Label fx:id="credentials" layoutX="117.0" layoutY="217.0" textFill="RED" />
+      <JFXButton fx:id="login_reg_bt" layoutX="77.0" layoutY="259.0" onAction="#onRegistration" text="Don't have an account? Register here" textFill="BLUE" underline="true" />
    </children>
 </AnchorPane>

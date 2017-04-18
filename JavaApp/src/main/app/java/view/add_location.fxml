@@ -18,26 +18,11 @@
             <Font size="36.0" />
          </font>
       </Text>
-      <Button fx:id="cancel_location" layoutX="197.0" layoutY="285.0" mnemonicParsing="false" onAction="#onCancel" text="Cancel" />
-      <Button fx:id="submit_location" layoutX="316.0" layoutY="285.0" mnemonicParsing="false" onAction="#onSubmit" text="Submit" />
-      <JFXTextField fx:id="poi_location" layoutX="130.0" layoutY="105.0" prefHeight="25.0" prefWidth="231.0" promptText="POI location name" />
-      <JFXComboBox fx:id="city_box" layoutX="133.0" layoutY="145.0" prefHeight="27.0" prefWidth="150.0" promptText="City" />
-      <JFXComboBox fx:id="state_box" layoutX="133.0" layoutY="185.0" prefHeight="27.0" prefWidth="150.0" promptText="State" />
-      <JFXTextField fx:id="zip_code" layoutX="133.0" layoutY="225.0" promptText="Zip code" />
-      <Label fx:id="loc_label" layoutX="372.0" layoutY="108.0" prefHeight="19.0" prefWidth="180.0" textFill="RED">
-         <font>
-            <Font name="Avenir Next Regular" size="13.0" />
-         </font>
-      </Label>
-      <Label fx:id="zip_label" layoutX="292.0" layoutY="228.0" prefHeight="19.0" prefWidth="151.0" textFill="RED">
-         <font>
-            <Font name="Avenir Next Regular" size="13.0" />
-         </font>
-      </Label>
-      <Label fx:id="cs_label" layoutX="330.0" layoutY="177.0" prefHeight="17.0" prefWidth="134.0" textFill="RED">
-         <font>
-            <Font name="Avenir Next Regular" size="13.0" />
-         </font>
-      </Label>
+      <ComboBox fx:id="city_location_spinner" layoutX="130.0" layoutY="140.0" prefWidth="150.0" promptText="City" />
+      <TextField fx:id="zip_code_field" layoutX="130.0" layoutY="220.0" prefHeight="27.0" prefWidth="282.0" promptText="Zip code" />
+      <Button fx:id="cancel_location" layoutX="130.0" layoutY="285.0" mnemonicParsing="false" text="Cancel" />
+      <Button fx:id="submit_location" layoutX="331.0" layoutY="285.0" mnemonicParsing="false" text="Submit" />
+      <TextField fx:id="poi_location_field" layoutX="130.0" layoutY="100.0" prefHeight="27.0" prefWidth="282.0" promptText="POI Location Name" />
+      <ComboBox fx:id="state_location_spinner" layoutX="130.0" layoutY="180.0" prefWidth="150.0" promptText="State" />
    </children>
 </AnchorPane>

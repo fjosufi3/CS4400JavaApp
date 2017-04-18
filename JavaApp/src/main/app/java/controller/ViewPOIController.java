@@ -26,7 +26,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
- * View POI functionality 
+ * Created by mcw0805 on 4/14/17.
  */
 public class ViewPOIController implements Initializable {
 
@@ -173,17 +173,13 @@ public class ViewPOIController implements Initializable {
 
         if (!zipNotEmpty && !isSelectedLocation && !isSelectedCity && !isSelectedState
                 && !isFlagged && !isValidStartDate && !isValidEndDate) {
-            System.out.println("Enter a field");
+            System.out.println("enter a field");
         }
 
         if ((isValidStartDate && !isValidEndDate) || (!isValidEndDate && isValidEndDate)) {
-            System.out.println("Invalid"); // fix later with labels
+            System.out.println("invalid"); // fix later with labels
         }
 
-        //warning for invalid zip code if it's entered
-        if (zipNotEmpty && !isValidZip) {
-            System.out.println("Zip code in right format needed");
-        }
 
         String POILocation = null;
         String city = null;
