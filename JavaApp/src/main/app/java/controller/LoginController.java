@@ -44,11 +44,10 @@ public class LoginController implements Initializable {
     @FXML
     private Label password_label;
 
-    private Connection connection = null;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        connection = ConnectionConfiguration.getConnection();
+        //
     }
     
     @FXML
@@ -62,10 +61,11 @@ public class LoginController implements Initializable {
         if (isValidLogin) {
             if (userType.equals(UserType.Admin.toString())) {
                 root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_admin.fxml"));
-            } else if (userType.equals(UserType.City_Scientist.toString())) {
-                root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_scientist.fxml"));
-            } else {
+            } else if (userType.equals(UserType.City_Official.toString())) {
                 root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_official.fxml"));
+            } else {
+                System.out.println(UserType.City_Official.toString());
+                root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_scientist.fxml"));
             }
             stage = (Stage) login_bt.getScene().getWindow();
             Scene scene = new Scene(root);

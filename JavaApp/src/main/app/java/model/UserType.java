@@ -9,9 +9,9 @@ public enum UserType {
             case Admin:
                 return "Admin";
             case City_Scientist:
-                return "City Scientist";
+                return "City_Scientist";
             case City_Official:
-                return "City Official";
+                return "City_Official";
             default:
                 throw new IllegalArgumentException();
         }

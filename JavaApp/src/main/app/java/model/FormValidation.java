@@ -1,6 +1,8 @@
 package app.java.model;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 
 import javax.swing.*;
@@ -86,17 +88,15 @@ public class FormValidation {
     }
 
     public static boolean isValidEmailAddress(TextField email, Label label) {
-        boolean valid = false;
         String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
         java.util.regex.Matcher m = p.matcher(email.getText());
-        if (!m.matches()) {
-            label.setText("Invalid email");
+        if (m.matches()) {
+            return true;
         } else {
-            valid = true;
-            label.setText("");
+            label.setText("Invalid email");
         }
-        return valid;
+        return false;
     }
 
     public static boolean passwordFieldNotEmpty(PasswordField p) {
@@ -123,19 +123,14 @@ public class FormValidation {
         if (!pass.getText().equals(confirm_pass.getText())) {
             match = false;
             label.setText("Passwords must match");
-        } else {
-            label.setText("");
         }
         return match;
     }
 
     public static boolean passwordLength(PasswordField pass, Label label) {
         boolean longEnough = false;
-        if (pass.getText().length() < 4) {
-            longEnough = false;
-            label.setText("Password is too short");
-        } else {
-            label.setText("");
+        if (pass.getText().length() >= 4) {
+            longEnough = true;
         }
         return longEnough;
     }
@@ -181,6 +176,17 @@ public class FormValidation {
         return validCity;
     }
 
+    public static boolean isValidZipCode(String zip) {
+
+        boolean validZipCode = false;
+        String zipCodePattern = "\\d{5}(-\\d{4})?";
+
+        validZipCode = zip.matches(zipCodePattern);
+
+        return validZipCode;
+
+    }
+
     public static boolean isValidLogin(TextField user, PasswordField pass) {
         boolean access_granted = false;
         Connection c = null;
@@ -204,17 +210,6 @@ public class FormValidation {
             System.out.println("Something went wrong with the database");
         }
         return access_granted;
-    }
-
-    public static boolean isValidZipCode(String zip) {
-
-        boolean validZipCode = false;
-        String zipCodePattern = "\\d{5}(-\\d{4})?";
-
-        validZipCode = zip.matches(zipCodePattern);
-
-        return validZipCode;
-
     }
 
     public static String getUserType(TextField user, PasswordField pass) {
@@ -286,5 +281,23 @@ public class FormValidation {
             e.printStackTrace();
             System.out.println("Something went wrong with the database");
         }
+    }
+
+    public static ObservableList<String> getType() {
+        ObservableList<String> types = FXCollections.observableArrayList();
+        Connection c = null;
+        PreparedStatement statement = null;
+        String query = "SELECT Type FROM DATA_TYPE";
+        try {
+            c = ConnectionConfiguration.getConnection();
+            statement = c.prepareStatement(query);
+            ResultSet data_types = statement.executeQuery();
+            while (data_types.next()) {
+                types.add(data_types.getString("Type"));
+            }
+        } catch (Exception e) {
+            System.out.println("Something went wrong with the database");
+        }
+        return types;
     }
 }
