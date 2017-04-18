@@ -234,12 +234,26 @@ public class FormValidation {
         return validCityState;
     }
 
+
     public static boolean isValidZipCode(String zip) {
         boolean validZipCode = false;
         String zipCodePattern = "\\d{5}(-\\d{4})?";
 
         validZipCode = zip.matches(zipCodePattern);
 
+        return validZipCode;
+
+    }
+
+    public static boolean isValidZipCode(String zip, Label label) {
+        boolean validZipCode = false;
+        String zipCodePattern = "\\d{5}(-\\d{4})?";
+
+        validZipCode = zip.matches(zipCodePattern);
+
+        if (!validZipCode) {
+            label.setText("Invalid Zip Code");
+        }
         return validZipCode;
 
     }

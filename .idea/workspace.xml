@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6903e2a3-b4b3-412c-8c92-bd5ffb811bad" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/ViewPOIController.java" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/ViewPOIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/view/poi_report.fxml" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/view/poi_report.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,12 +32,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="POIReportController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/POIReportController.java">
+      <file leaf-file-name="RegistrationController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/RegistrationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
-              <folding />
+            <state relative-caret-position="108">
+              <caret line="80" column="65" lean-forward="false" selection-start-line="80" selection-start-column="60" selection-end-line="80" selection-end-column="65" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,8 +47,18 @@
       <file leaf-file-name="ViewPOIController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/ViewPOIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="591">
-              <caret line="295" column="31" lean-forward="true" selection-start-line="295" selection-start-column="31" selection-end-line="295" selection-end-column="31" />
+            <state relative-caret-position="156">
+              <caret line="289" column="44" lean-forward="true" selection-start-line="289" selection-start-column="44" selection-end-line="289" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FormValidation.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="236" column="0" lean-forward="true" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -68,6 +80,9 @@
       <find>accepted</find>
       <find>_date</find>
       <find>location</find>
+      <find>alert</find>
+      <find>empty</find>
+      <find>label</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -128,10 +143,10 @@
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddDataPointController.java" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/RegistrationController.java" />
-        <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java" />
-        <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/ViewPOIController.java" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/POIReportController.java" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/view/poi_report.fxml" />
+        <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/ViewPOIController.java" />
+        <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java" />
       </list>
     </option>
   </component>
@@ -714,7 +729,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32561728" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3248" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1083,14 +1098,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4764">
-          <caret line="94" column="30" lean-forward="true" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JavaApp/.idea/description.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1126,16 +1133,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/RegistrationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/poi_report.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -1163,18 +1160,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/ViewPOIController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="295" column="31" lean-forward="true" selection-start-line="295" selection-start-column="31" selection-end-line="295" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/POIReportController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/RegistrationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="80" column="65" lean-forward="false" selection-start-line="80" selection-start-column="60" selection-end-line="80" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/ViewPOIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="289" column="44" lean-forward="true" selection-start-line="289" selection-start-column="44" selection-end-line="289" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="236" column="0" lean-forward="true" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
           <folding />
         </state>
       </provider>

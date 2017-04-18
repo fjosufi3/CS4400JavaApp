@@ -140,8 +140,11 @@ public class ViewPOIController implements Initializable {
 
     @FXML
     private void onApplyFilter() {
+
+        zip_valid_label.setText("");
+
         boolean zipNotEmpty = FormValidation.textFieldNotEmpty(zip_view_poi);
-        boolean isValidZip = zipNotEmpty && FormValidation.isValidZipCode(zip_view_poi.getText());
+        boolean isValidZip = zipNotEmpty && FormValidation.isValidZipCode(zip_view_poi.getText(), zip_valid_label);
         boolean isSelectedLocation = !(poi_loc_box.getSelectionModel().isEmpty());
         boolean isSelectedCity = !(city_view_poi_box.getSelectionModel().isEmpty());
         boolean isSelectedState = !(state_view_poi_box.getSelectionModel().isEmpty());
@@ -152,6 +155,8 @@ public class ViewPOIController implements Initializable {
         if (!zipNotEmpty && !isSelectedLocation && !isSelectedCity && !isSelectedState
                 && !isFlagged && !isValidStartDate && !isValidEndDate) {
             System.out.println("enter a field");
+
+            Alert errorAlert = new Alert(Alert.AlertType.INFORMATION);
         }
 
         if ((isValidStartDate && !isValidEndDate) || (!isValidEndDate && isValidEndDate)) {
@@ -277,8 +282,9 @@ public class ViewPOIController implements Initializable {
         city_view_poi_box.getSelectionModel().clearSelection();
         state_view_poi_box.getSelectionModel().clearSelection();
 
-        //clears TextField
+        //clears TextField, label
         zip_view_poi.clear();
+        zip_valid_label.setText("");
 
         //clears checkbox
         flagged_checkBox.setSelected(false);
