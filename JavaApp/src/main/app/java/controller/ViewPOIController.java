@@ -173,7 +173,13 @@ public class ViewPOIController implements Initializable {
     private void onResetFilter() {
 
         poiTableView.getItems().removeAll(data);
+        poi_loc_box.getSelectionModel().clearSelection();
+        city_view_poi_box.getSelectionModel().clearSelection();
+        state_view_poi_box.getSelectionModel().clearSelection();
+        zip_view_poi.clear();
         flagged_checkBox.setSelected(false);
+        dateStart_view_poi.getEditor().clear();
+        dateEnd_view_poi.getEditor().clear();
     }
 
     @FXML

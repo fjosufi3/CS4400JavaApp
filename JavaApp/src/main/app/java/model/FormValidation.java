@@ -206,6 +206,17 @@ public class FormValidation {
         return access_granted;
     }
 
+    public static boolean isValidZipCode(String zip) {
+
+        boolean validZipCode = false;
+        String zipCodePattern = "\\d{5}(-\\d{4})?";
+
+        validZipCode = zip.matches(zipCodePattern);
+
+        return validZipCode;
+
+    }
+
     public static String getUserType(TextField user, PasswordField pass) {
         String userType = null;
         Connection c = null;
