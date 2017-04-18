@@ -39,7 +39,7 @@
       <Text layoutX="364.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to" />
       <DatePicker fx:id="dateEnd_view_poi" layoutX="387.0" layoutY="282.0" prefHeight="27.0" prefWidth="128.0" />
       <Separator layoutY="364.0" prefHeight="23.0" prefWidth="680.0" />
-      <Button fx:id="apply_filter_view_poi_btn" layoutX="167.0" layoutY="331.0" mnemonicParsing="false" text="Apply Filter" />
+      <Button fx:id="apply_filter_view_poi_btn" layoutX="167.0" layoutY="331.0" mnemonicParsing="false" onAction="#onApplyFilter" text="Apply Filter" />
       <Button fx:id="reset_filter_view_poi_btn" layoutX="395.0" layoutY="333.0" mnemonicParsing="false" onAction="#onResetFilter" text="Reset Filter" />
       <TableView fx:id="poiTableView" layoutX="24.0" layoutY="376.0" prefHeight="203.0" prefWidth="624.0">
          <columns>

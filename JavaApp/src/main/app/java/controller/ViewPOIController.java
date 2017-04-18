@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.ResourceBundle;
 
 import app.java.model.ConnectionConfiguration;
+import app.java.model.FormValidation;
 import app.java.model.POI;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -159,15 +160,88 @@ public class ViewPOIController implements Initializable {
 
     }
 
-//    private void onApplyFilter() {
-//        boolean zipNotEmpty = FormValidation.textFieldNotEmpty(zip_view_poi, zip_valid_label, "Reqired");
-//        boolean isValidZip = FormValidation.isValidZipCode(zip_view_poi.getText());
+    @FXML
+    private void onApplyFilter() { //IN PROGRESS
+        boolean zipNotEmpty = FormValidation.textFieldNotEmpty(zip_view_poi);
+        boolean isValidZip = zipNotEmpty && FormValidation.isValidZipCode(zip_view_poi.getText());
+        boolean isSelectedLocation = !(poi_loc_box.getSelectionModel().isEmpty());
+        boolean isSelectedCity = !(city_view_poi_box.getSelectionModel().isEmpty());
+        boolean isSelectedState = !(state_view_poi_box.getSelectionModel().isEmpty());
+        boolean isFlagged = flagged_checkBox.isSelected();
+        boolean isValidStartDate = dateStart_view_poi.getValue() != null;
+        boolean isValidEndDate = dateEnd_view_poi.getValue() != null;
+
+        //all fields empty
+        if (!zipNotEmpty && !isSelectedLocation && !isSelectedCity && !isSelectedState
+                && !isFlagged && !isValidStartDate && !isValidEndDate) {
+            System.out.println("enter a field");
+        }
+
+        //one of the date fields is missing
+        if ((isValidStartDate && !isValidEndDate) || (!isValidEndDate && isValidEndDate)) {
+            System.out.println("invalid"); // fix later with labels
+        }
+
+        //warning for invalid zip code if it's entered
+        if (zipNotEmpty && !isValidZip) {
+            System.out.println("zip code in right format needed");
+        }
+
+        String zipCode = null;
+        String POILocation = null;
+        String city = null;
+        String state = null;
+        String flag = null;
+        String dateStart = null;
+        String dateEnd = null;
+
+        if (isValidZip) { zipCode = zip_view_poi.getText(); }
+        if (isSelectedLocation) { POILocation = poi_loc_box.getSelectionModel().getSelectedItem().toString(); }
+        if (isSelectedCity) { city = city_view_poi_box.getSelectionModel().getSelectedItem().toString(); }
+        if (isSelectedState) { state = state_view_poi_box.getSelectionModel().getSelectedItem().toString(); }
+        if (isFlagged) { flag = "TRUE"; }
+        if (isValidStartDate) { dateStart = dateStart_view_poi.getValue().toString(); }
+        if (isValidEndDate) { dateEnd = dateEnd_view_poi.getValue().toString(); }
+
+        System.out.println(zipCode);
+        System.out.println(POILocation);
+        System.out.println(city);
+        System.out.println(state);
+        System.out.println(flag);
+        System.out.println(dateStart);
+        System.out.println(dateEnd);
+
+        //resets data upon click apply filter so that the data doesn't get added more than once
+        poiTableView.getItems().removeAll(data);
+
+        try {
+            PreparedStatement pst = con.prepareStatement("SELECT Location_Name, City, State, Zip_Code, Flag, Date_Flagged " +
+                    "FROM POI " +
+                    "WHERE  City = ? AND STATE = ?");
+
+            //pst.setString(1, POILocation);
+            pst.setString(1, city);
+            pst.setString(2, state);
+
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                data.add(new POI(rs.getString(1), rs.getString(2), rs.getString(3),
+                        rs.getString(4), rs.getInt(5), rs.getDate(6)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        poiTableView.setItems(data);
+
 //
-//        if(!zipNotEmpty || !isValidZip)
-//            return; // fix later
-//
-//
-//    }
+//        SELECT  Location_Name, City, State, Zip_Code, Flag, Date_Flagged FROM POI
+//        WHERE Location_Name = ? AND City = ? AND State = ? AND Zip_Code = ?
+//        AND Date_Flagged >= ? AND Date_Flagged <= ? AND Flag = ?;
+
+
+    }
 
     @FXML
     private void onResetFilter() {
