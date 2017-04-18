@@ -12,9 +12,7 @@ import java.util.ResourceBundle;
 import app.java.model.ConnectionConfiguration;
 import app.java.model.FormValidation;
 import app.java.model.POI;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -68,7 +66,9 @@ public class ViewPOIController implements Initializable {
     @FXML
     private Button backBtn_view_poi;
     @FXML
-    private Label zip_valid_label;
+    private Label zip_invalid_label;
+    @FXML
+    private Label date_invalid_label;
 
     private ObservableList<String> cityList = FXCollections.observableArrayList();
     private ObservableList<String> stateList = FXCollections.observableArrayList();
@@ -141,10 +141,11 @@ public class ViewPOIController implements Initializable {
     @FXML
     private void onApplyFilter() {
 
-        zip_valid_label.setText("");
+        zip_invalid_label.setText("");
+        date_invalid_label.setText("");
 
         boolean zipNotEmpty = FormValidation.textFieldNotEmpty(zip_view_poi);
-        boolean isValidZip = zipNotEmpty && FormValidation.isValidZipCode(zip_view_poi.getText(), zip_valid_label);
+        boolean isValidZip = zipNotEmpty && FormValidation.isValidZipCode(zip_view_poi.getText(), zip_invalid_label);
         boolean isSelectedLocation = !(poi_loc_box.getSelectionModel().isEmpty());
         boolean isSelectedCity = !(city_view_poi_box.getSelectionModel().isEmpty());
         boolean isSelectedState = !(state_view_poi_box.getSelectionModel().isEmpty());
@@ -152,15 +153,17 @@ public class ViewPOIController implements Initializable {
         boolean isValidStartDate = dateStart_view_poi.getValue() != null;
         boolean isValidEndDate = dateEnd_view_poi.getValue() != null;
 
-        if (!zipNotEmpty && !isSelectedLocation && !isSelectedCity && !isSelectedState
-                && !isFlagged && !isValidStartDate && !isValidEndDate) {
-            System.out.println("enter a field");
+//        if (!zipNotEmpty && !isSelectedLocation && !isSelectedCity && !isSelectedState
+//                && !isFlagged && !isValidStartDate && !isValidEndDate) {
+//
+//            Alert errorAlert = new Alert(Alert.AlertType.INFORMATION);
+//            errorAlert.setHeaderText("Error!");
+//            errorAlert.setContentText("No fields are entered.");
+//            errorAlert.showAndWait();
+//        }
 
-            Alert errorAlert = new Alert(Alert.AlertType.INFORMATION);
-        }
-
-        if ((isValidStartDate && !isValidEndDate) || (!isValidEndDate && isValidEndDate)) {
-            System.out.println("invalid"); // fix later with labels
+        if ((isValidStartDate && !isValidEndDate) || (!isValidStartDate && isValidEndDate)) {
+            date_invalid_label.setText("Enter a range of dates");
         }
 
         String POILocation = null;
@@ -202,17 +205,20 @@ public class ViewPOIController implements Initializable {
         System.out.println(POILocation);
         System.out.println(city);
         System.out.println(state);
-        System.out.println(flag);
+        System.out.println("flagged?" + flag);
         System.out.println(zipCode);
-        System.out.println(dateStart);
-        System.out.println(dateEnd);
+        System.out.println("Date start " + dateStart);
+        System.out.println("Date end " + dateEnd);
 
         System.out.println(generateCondition(POILocation, city, state, flag, zipCode, dateStart, dateEnd));
         poiTableView.getItems().removeAll(data);
 
         if (POILocation == null && city == null && state == null && flag == null
                 && zipCode == null && dateStart == null && dateEnd == null) {
-            System.out.println("enter a field");
+            Alert errorAlert = new Alert(Alert.AlertType.INFORMATION);
+            errorAlert.setHeaderText("Error!");
+            errorAlert.setContentText("No fields are entered.");
+            errorAlert.showAndWait();
 
         } else if ((dateStart == null && dateEnd != null) || (dateStart != null && dateEnd == null)) {
             System.out.println("invalid"); // fix later with labels
@@ -284,14 +290,19 @@ public class ViewPOIController implements Initializable {
 
         //clears TextField, label
         zip_view_poi.clear();
-        zip_valid_label.setText("");
 
         //clears checkbox
         flagged_checkBox.setSelected(false);
 
         //clears dates
         dateStart_view_poi.getEditor().clear();
+        dateStart_view_poi.setValue(null);
         dateEnd_view_poi.getEditor().clear();
+        dateEnd_view_poi.setValue(null);
+
+        //clear warnings
+        zip_invalid_label.setText("");
+        date_invalid_label.setText("");
     }
 
     @FXML
