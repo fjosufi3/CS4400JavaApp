@@ -29,8 +29,8 @@
             <TableColumn fx:id="columnAQMin" prefWidth="75.0" text="AQ Min" />
             <TableColumn fx:id="columnAQAvg" prefWidth="75.0" text="AQ Avg" />
             <TableColumn fx:id="columnAQMax" prefWidth="75.0" text="AQ Max" />
-            <TableColumn fx:id="columnNumDataPts" prefWidth="84.87750244140625" text="# data pts" />
-            <TableColumn fx:id="columnFlagged" prefWidth="84.87750244140625" text="Flagged" />
+            <TableColumn fx:id="columnNumDataPts" text="# data pts" />
+            <TableColumn fx:id="columnFlagged" prefWidth="90.0" text="Flagged" />
          </columns>
       </TableView>
    </children>
