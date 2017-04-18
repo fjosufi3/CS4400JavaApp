@@ -83,29 +83,12 @@ public class ViewPOIController implements Initializable {
 
         con = ConnectionConfiguration.getConnection();
         setCellTable();
-        loadFromDB(); //temporary
+        //loadFromDB(); //temporary
         loadDropDown();
 
     }
 
-    @FXML
-    private void loadFromDB() {
-        data = FXCollections.observableArrayList();
-        try {
-            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM POI");
 
-            while (rs.next()) {
-                data.add(new POI(rs.getString(1), rs.getString(2), rs.getString(3),
-                        rs.getString(4), rs.getInt(5), rs.getDate(6)));
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        poiTableView.setItems(null);
-        poiTableView.setItems(data);
-    }
 
     private void setCellTable() {
         columnLocation.setCellValueFactory(new PropertyValueFactory<>("location"));
@@ -326,6 +309,25 @@ public class ViewPOIController implements Initializable {
         stage.show();
 
     }
+
+    /*@FXML
+    private void loadFromDB() {
+        data = FXCollections.observableArrayList();
+        try {
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM POI");
+
+            while (rs.next()) {
+                data.add(new POI(rs.getString(1), rs.getString(2), rs.getString(3),
+                        rs.getString(4), rs.getInt(5), rs.getDate(6)));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        poiTableView.setItems(null);
+        poiTableView.setItems(data);
+    }*/
 
 
 }
