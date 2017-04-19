@@ -377,7 +377,7 @@ public class FormValidation {
             statement = c.prepareStatement(query);
             statement.setInt(1, data_value);
             statement.setTimestamp(2, date_time);
-            statement.setBoolean(3, accepted);
+            statement.setNull(3, Types.INTEGER);
             statement.setString(4, loc_name);
             statement.setString(5, type);
             statement.executeUpdate();
@@ -406,7 +406,7 @@ public class FormValidation {
             statement.setString(3, state);
             statement.setString(4, zip);
             statement.setBoolean(5, flag);
-            statement.setDate(6, df);
+            statement.setNull(6, Types.INTEGER);
             statement.executeUpdate();
 
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
