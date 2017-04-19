@@ -83,7 +83,6 @@ public class ViewPOIController implements Initializable {
 
         con = ConnectionConfiguration.getConnection();
         setCellTable();
-        //loadFromDB(); //temporary
         loadDropDown();
 
     }
@@ -102,35 +101,33 @@ public class ViewPOIController implements Initializable {
     private void loadDropDown() {
 
         try {
-            PreparedStatement pst1 = con.prepareStatement("SELECT DISTINCT City FROM CITY_STATE ORDER BY City");
-            ResultSet rs1 = pst1.executeQuery();
+            //loading cities
+            PreparedStatement pstCity = con.prepareStatement("SELECT DISTINCT City FROM CITY_STATE ORDER BY City");
+            ResultSet rsCity = pstCity.executeQuery();
 
-
-            while (rs1.next()) {
-                //data.add(new CityState(rs1.getString(1), rs1.getString(2)));
-
-                cityList.add(rs1.getString(1));
+            while (rsCity.next()) {
+                cityList.add(rsCity.getString(1));
             }
 
-            PreparedStatement pst2 = con.prepareStatement("SELECT DISTINCT State FROM CITY_STATE ORDER BY State");
-            ResultSet rs2 = pst2.executeQuery();
+            //loading states
+            PreparedStatement pstState = con.prepareStatement("SELECT DISTINCT State FROM CITY_STATE ORDER BY State");
+            ResultSet rsState = pstState.executeQuery();
 
-            while (rs2.next()) {
-
-                stateList.add(rs2.getString(1));
+            while (rsState.next()) {
+                stateList.add(rsState.getString(1));
             }
 
-            PreparedStatement pst3 = con.prepareStatement("SELECT Location_Name FROM POI ORDER BY Location_Name");
-            ResultSet rs3 = pst3.executeQuery();
+            //loading POI locations
+            PreparedStatement pstLocName = con.prepareStatement("SELECT Location_Name FROM POI ORDER BY Location_Name");
+            ResultSet rsLocName = pstLocName.executeQuery();
 
-            while (rs3.next()) {
-                poiLocList.add(rs3.getString(1));
+            while (rsLocName.next()) {
+                poiLocList.add(rsLocName.getString(1));
             }
 
             city_view_poi_box.setItems(cityList);
             state_view_poi_box.setItems(stateList);
             poi_loc_box.setItems(poiLocList);
-
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -165,24 +162,30 @@ public class ViewPOIController implements Initializable {
         if (isValidZip) {
             zipCode = "Zip_Code = " + zip_view_poi.getText();
         }
+
         if (isSelectedLocation) {
             POILocation = "Location_Name = \'" + poi_loc_box.getSelectionModel().getSelectedItem().toString() + "\'";
 
         }
+
         if (isSelectedCity) {
             city = "City = \'" + city_view_poi_box.getSelectionModel().getSelectedItem().toString() + "\'";
         }
+
         if (isSelectedState) {
             state = "State = \'" + state_view_poi_box.getSelectionModel().getSelectedItem().toString() + "\'";
         }
+
         if (isFlagged) {
             flag = "Flag = TRUE";
             //flag = "TRUE";
         }
+
         if (isValidStartDate) {
             dateStart = "Date_Flagged >= \'" + dateStart_view_poi.getValue().toString() + "\'";
             //dateStart = dateStart_view_poi.getValue().toString();
         }
+
         if (isValidEndDate) {
             dateEnd = "Date_Flagged <= \'" + dateEnd_view_poi.getValue().toString() + "\'";
             //dateEnd = dateEnd_view_poi.getValue().toString();
@@ -206,13 +209,19 @@ public class ViewPOIController implements Initializable {
             errorAlert.setContentText("No fields are entered.");
             errorAlert.showAndWait();
 
-        } else if ((dateStart == null && dateEnd != null) || (dateStart != null && dateEnd == null)) {
+        } else if ((dateStart == null && dateEnd != null)
+                || (dateStart != null && dateEnd == null)) {
+
             //only one date entered
             date_invalid_label.setText("Enter a range of dates");
+
         } else if (dateStart != null && dateEnd != null && !isValidRange) {
+
             //start date > end date if entered
             date_invalid_label.setText("Invalid range");
+
         } else {
+
             try {
                 PreparedStatement pst = con.prepareStatement("SELECT Location_Name, City, State, Zip_Code, Flag, Date_Flagged " +
                         "FROM POI " +
@@ -248,7 +257,9 @@ public class ViewPOIController implements Initializable {
 
     private String generateCondition(String POILoc, String city, String state, String flag,
                                      String zip, String startDate, String endDate) {
-        //guaranteed at least one is not null
+
+        //guaranteed at least one parameter is not null
+
         String whereClause = "";
 
         String[] paramArray = {POILoc, city, state, flag, zip, startDate, endDate};
