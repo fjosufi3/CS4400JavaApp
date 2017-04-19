@@ -95,6 +95,27 @@ public class ViewPOIController implements Initializable {
         columnFlag.setCellValueFactory(new PropertyValueFactory<>("flagString"));
         columnDate.setCellValueFactory(new PropertyValueFactory<>("dateFlagged"));
 
+        poiTableView.setRowFactory(tv -> {
+            TableRow<POI> row = new TableRow<>();
+
+            row.setOnMouseClicked(event -> {
+                if (!row.isEmpty()) {
+                    Stage stage = new Stage();
+                    Parent root = null;
+                    try {
+                        root = FXMLLoader.load(getClass().getResource("/main/app/java/view/poi_detail.fxml"));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                }
+            });
+            return row;
+
+        });
+
     }
 
     @FXML
