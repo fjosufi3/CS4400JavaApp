@@ -61,7 +61,7 @@ public class POIDetailController implements Initializable {
     @FXML
     private Button backBtn_poi_detail;
     @FXML
-    private Text chosen_loc;
+    private Text chosen_loc = new Text("");
 
     private ObservableList<String> dataTypeList = FXCollections.observableArrayList();
 
@@ -83,17 +83,17 @@ public class POIDetailController implements Initializable {
         Stage stage;
         Parent root;
         stage = (Stage) backBtn_poi_detail.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_official.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/main/app/java/view/browse_view_poi.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
 
     }
 
-//    public void setLocationText() {
-//        //chosen_loc.setText(loc);
-//        chosen_loc.setText((new ViewPOIController()).getPOILocation());
-//    }
+    public void setLocationText(String loc) {
+        chosen_loc.setText(loc);
+
+    }
 
 
     @FXML

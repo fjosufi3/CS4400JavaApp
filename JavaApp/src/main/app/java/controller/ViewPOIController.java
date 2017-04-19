@@ -85,6 +85,7 @@ public class ViewPOIController implements Initializable {
         con = ConnectionConfiguration.getConnection();
         setCellTable();
         loadDropDown();
+        poiDetailScene();
 
     }
 
@@ -96,32 +97,36 @@ public class ViewPOIController implements Initializable {
         columnFlag.setCellValueFactory(new PropertyValueFactory<>("flagString"));
         columnDate.setCellValueFactory(new PropertyValueFactory<>("dateFlagged"));
 
+    }
+
+    private void poiDetailScene() {
         poiTableView.setRowFactory(tv -> {
             TableRow<POI> row = new TableRow<>();
 
             row.setOnMouseClicked(event -> {
                 if (!row.isEmpty()) {
                     Stage stage = (Stage) viewPOIpane.getScene().getWindow();
+                    Parent root = null;
 
                     try {
-                        POIDetailController detail = new POIDetailController();
-                        stage.setScene(detail.getScene());
-                        System.out.println("row" + row.getItem() == null);
-                        //Object o = poiTableView.getSelectionModel().getSelectedItem().getLocation();
+                        FXMLLoader loader = new FXMLLoader();
+                        loader.setLocation(getClass().getResource("/main/app/java/view/poi_detail.fxml"));
+                        root = loader.load();
 
-                        System.out.println(poiTableView.getSelectionModel().getSelectedItem().getLocation());
+                        POIDetailController cont = loader.getController();
+                        cont.setLocationText(poiTableView.getSelectionModel().getSelectedItem().getLocation());
 
-                        //detail.setLocationText(poiTableView.getSelectionModel().getSelectedItem().getLocation());
-                        //detail.setLocationText(row.getItem().getLocation());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    stage.show();
+
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+
                 }
             });
             return row;
         });
-
     }
 
     @FXML

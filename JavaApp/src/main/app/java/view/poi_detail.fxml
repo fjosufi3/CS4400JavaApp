@@ -35,11 +35,11 @@
       <Text layoutX="254.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to" />
       <Text layoutX="54.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POI Location: ">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="Arial Bold" size="14.0" />
          </font></Text>
-      <Text fx:id="chosen_loc" layoutX="158.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xx">
+      <Text fx:id="chosen_loc" fill="MAROON" layoutX="152.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ddd">
          <font>
-            <Font name="System Bold Italic" size="14.0" />
+            <Font name="Arial Bold Italic" size="14.0" />
          </font></Text>
       <TableView fx:id="poiDetailView" layoutX="82.0" layoutY="356.0" prefHeight="200.0" prefWidth="422.0">
         <columns>
