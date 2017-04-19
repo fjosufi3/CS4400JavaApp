@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -68,18 +69,14 @@ public class POIDetailController implements Initializable {
     private Text chosen_loc = new Text("");
 
     private ObservableList<String> dataTypeList = FXCollections.observableArrayList();
+    private ObservableList<DataPoint> data = FXCollections.observableArrayList();
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadDropDown();
-    }
+        setCellTable();
 
-    public Scene getScene() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/main/app/java/view/poi_detail.fxml"));
-        Scene scene = new Scene(root);
-
-        return scene;
     }
 
     @FXML
@@ -96,6 +93,13 @@ public class POIDetailController implements Initializable {
 
     public void setLocationText(String loc) {
         chosen_loc.setText(loc);
+
+    }
+
+    private void setCellTable() {
+        columnDataType.setCellValueFactory(new PropertyValueFactory<>("dataType"));
+        columnDataVal.setCellValueFactory(new PropertyValueFactory<>("dataValue"));
+        columnDateTime.setCellValueFactory(cellData -> cellData.getValue().getDateTime());
 
     }
 
@@ -122,12 +126,17 @@ public class POIDetailController implements Initializable {
 
     }
 
+
     @FXML
     private void onClickApplyFilter() {
 
         boolean minDataNotEmpty = FormValidation.textFieldNotEmpty(minDataValTextField);
         boolean maxDataNotEmpty = FormValidation.textFieldNotEmpty(maxDataValTextField);
         boolean isSelectedType = !(dataTypeBox.getSelectionModel().isEmpty());
+        boolean isNumericMin = minDataNotEmpty
+                && FormValidation.isValidInteger(minDataValTextField);
+        boolean isNumericMax = minDataNotEmpty
+                && FormValidation.isValidInteger(maxDataValTextField);
         boolean isFlagged = flagged_checkbox.isSelected();
         boolean isValidStartDate = startDate_poiDetail.getValue() != null;
         boolean isValidEndDate = endDate_poiDetail.getValue() != null;
@@ -144,24 +153,28 @@ public class POIDetailController implements Initializable {
         if (isSelectedType) {
             type = "Type = \'" + dataTypeBox.getSelectionModel()
                     .getSelectedItem().toString() + "\' ";
+
+            //type = dataTypeBox.getSelectionModel().getSelectedItem().toString();
         }
 
-        if (minDataNotEmpty) {
+        if (isNumericMin) {
             minVal = "Data_Value >= " + Integer.parseInt(minDataValTextField.getText());
+            //minVal =  minDataValTextField.getText();
         }
 
-        if (maxDataNotEmpty) {
+        if (isNumericMax) {
             maxVal = "Data_Value <= " + Integer.parseInt(maxDataValTextField.getText());
+            //maxVal = maxDataValTextField.getText();
         }
 
 
         if (isValidStartDate) {
-            dateStart = "Date_Flagged >= \'" + startDate_poiDetail.getValue().toString() + "\'";
-            //dateStart = dateStart_view_poi.getValue().toString();
+            dateStart = "POI.Date_Flagged >= \'" + startDate_poiDetail.getValue().toString() + "\'";
+            //dateStart = startDate_poiDetail.getValue().toString();
         }
 
         if (isValidEndDate) {
-            dateEnd = "Date_Flagged <= \'" + endDate_poiDetail.getValue().toString() + "\'";
+            dateEnd = "POI.Date_Flagged <= \'" + endDate_poiDetail.getValue().toString() + "\'";
             //dateEnd = endDate_poiDetail.getValue().toString();
         }
 
@@ -173,6 +186,8 @@ public class POIDetailController implements Initializable {
             System.out.println("date flagged: " + dateFlagged);
         }
 
+
+        poiDetailView.getItems().removeAll(data);
 
         if (type == null && minVal == null && maxVal == null && flag == null
                 && dateStart == null && dateEnd == null) { //checks empty fields
@@ -195,24 +210,69 @@ public class POIDetailController implements Initializable {
             System.out.println("invalid rage");
 
         } else {
+            System.out.println(generateCondition(type, minVal, maxVal, dateStart,  dateEnd));
             Connection con = ConnectionConfiguration.getConnection();
             try {
                 PreparedStatement pst = con.prepareStatement(
-                        "SELECT Type, Data_Value, DATE_TIME " +
-                                "FROM DATA_POINT WHERE Location_Name = ? ");
+                        "SELECT * " +
+                                "FROM DATA_POINT, POI WHERE DATA_POINT.Location_Name = ? AND POI.Location_Name  = ? AND Accepted = TRUE AND "
+                                + generateCondition(type, minVal, maxVal, dateStart,  dateEnd) + " ORDER BY Type");
+
+                pst.setString(1, chosen_loc.getText());
+                pst.setString(2,chosen_loc.getText());
+
+                ResultSet rs = pst.executeQuery();
+
+                while (rs.next()) {
+                    data.add(new DataPoint(rs.getString(4),
+                            rs.getBoolean(3),
+                            new DataType(rs.getString(5)),
+                            rs.getInt(1),
+                            rs.getDate(2),
+                            rs.getTime(2)));
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
 
+            poiDetailView.setItems(data);
+
+        } //end else
+
+    }
+
+    private String generateCondition(String type, String minVal, String maxVal,
+                                     String dateStart, String dateEnd) {
+
+        String whereClause = "";
+
+        String [] paramArray = {type, minVal, maxVal, dateStart, dateEnd};
+
+        for (int i = 0; i < paramArray.length; i++) {
+            if (paramArray[i] != null) {
+                whereClause += paramArray[i] + " AND ";
+            }
+
         }
+
+        if (whereClause.endsWith("AND ")) {
+            whereClause = whereClause.substring(0, whereClause.length() - 4);
+        }
+
+        return whereClause;
 
     }
 
     @FXML
     private void onClickResetFilter() {
 
+        //clear table
+        poiDetailView.getItems().removeAll(data);
+
+        //clear combo box
         dataTypeBox.getSelectionModel().clearSelection();
 
+        //data values TextField
         minDataValTextField.clear();
         maxDataValTextField.clear();
 
