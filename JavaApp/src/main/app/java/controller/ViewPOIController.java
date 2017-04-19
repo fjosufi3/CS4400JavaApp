@@ -22,6 +22,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
@@ -30,7 +31,7 @@ import javafx.stage.Stage;
 public class ViewPOIController implements Initializable {
 
     @FXML
-    private Label pageHeader;
+    private AnchorPane viewPOIpane;
     @FXML
     private TableView<POI> poiTableView;
     @FXML
@@ -100,20 +101,25 @@ public class ViewPOIController implements Initializable {
 
             row.setOnMouseClicked(event -> {
                 if (!row.isEmpty()) {
-                    Stage stage = new Stage();
-                    Parent root = null;
+                    Stage stage = (Stage) viewPOIpane.getScene().getWindow();
+
                     try {
-                        root = FXMLLoader.load(getClass().getResource("/main/app/java/view/poi_detail.fxml"));
+                        POIDetailController detail = new POIDetailController();
+                        stage.setScene(detail.getScene());
+                        System.out.println("row" + row.getItem() == null);
+                        //Object o = poiTableView.getSelectionModel().getSelectedItem().getLocation();
+
+                        System.out.println(poiTableView.getSelectionModel().getSelectedItem().getLocation());
+
+                        //detail.setLocationText(poiTableView.getSelectionModel().getSelectedItem().getLocation());
+                        //detail.setLocationText(row.getItem().getLocation());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    Scene scene = new Scene(root);
-                    stage.setScene(scene);
                     stage.show();
                 }
             });
             return row;
-
         });
 
     }
@@ -340,6 +346,10 @@ public class ViewPOIController implements Initializable {
 
     }
 
+//    public String getPOILocation() {
+//        return poiTableView.getSelectionModel().getSelectedItem().getLocation();
+//    }
+
     /*@FXML
     private void loadFromDB() {
         data = FXCollections.observableArrayList();
@@ -358,6 +368,7 @@ public class ViewPOIController implements Initializable {
         poiTableView.setItems(null);
         poiTableView.setItems(data);
     }*/
+
 
 
 }

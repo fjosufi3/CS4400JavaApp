@@ -13,19 +13,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="636.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="636.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.java.controller.POIDetailController">
    <children>
       <Label layoutX="250.0" layoutY="90.0" text="POI Detail" textFill="#221fe4">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <ComboBox id="data_type_poi_detail" fx:id="dataTypeBox" layoutX="192.0" layoutY="133.0" prefHeight="27.0" prefWidth="197.0" promptText="Select Data Type" AnchorPane.bottomAnchor="476.0" AnchorPane.topAnchor="133.0" />
-      <Button fx:id="backBtn_poi_detail" layoutX="266.0" layoutY="582.0" mnemonicParsing="false" text="Back" />
+      <ComboBox fx:id="dataTypeBox" layoutX="192.0" layoutY="133.0" prefHeight="27.0" prefWidth="197.0" promptText="Select Data Type" AnchorPane.bottomAnchor="476.0" AnchorPane.topAnchor="133.0" />
+      <Button fx:id="backBtn_poi_detail" layoutX="266.0" layoutY="582.0" mnemonicParsing="false" onAction="#onClickBack" text="Back" />
       <Text layoutX="133.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" />
       <Text layoutX="100.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data Value" />
       <Text layoutX="134.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
-      <DatePicker id="dateStart_poi_detail" fx:id="startDate_potDeatil" layoutX="192.0" layoutY="228.0" prefHeight="27.0" prefWidth="128.0" />
+      <DatePicker fx:id="startDate_potDeatil" layoutX="192.0" layoutY="228.0" prefHeight="27.0" prefWidth="128.0" />
       <Text layoutX="338.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to" />
       <DatePicker fx:id="dateEnd_poi_detail" layoutX="367.0" layoutY="228.0" prefHeight="27.0" prefWidth="128.0" />
       <Button fx:id="applyFilter_poi_detail_btn" layoutX="138.0" layoutY="283.0" mnemonicParsing="false" text="Apply Filter" />
@@ -37,11 +37,11 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Text>
-      <Text fx:id="chosen_loc" layoutX="158.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chosen Location">
+      <Text fx:id="chosen_loc" layoutX="158.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font></Text>
-      <TableView fx:id="poiDetailView" layoutX="88.0" layoutY="356.0" prefHeight="200.0" prefWidth="422.0">
+      <TableView fx:id="poiDetailView" layoutX="82.0" layoutY="356.0" prefHeight="200.0" prefWidth="422.0">
         <columns>
           <TableColumn fx:id="columnDataType" prefWidth="96.0" text="Data Type" />
           <TableColumn fx:id="columnDataValue" prefWidth="133.0" text="Data Value" />
