@@ -152,19 +152,7 @@ public class ViewPOIController implements Initializable {
         boolean isFlagged = flagged_checkBox.isSelected();
         boolean isValidStartDate = dateStart_view_poi.getValue() != null;
         boolean isValidEndDate = dateEnd_view_poi.getValue() != null;
-
-//        if (!zipNotEmpty && !isSelectedLocation && !isSelectedCity && !isSelectedState
-//                && !isFlagged && !isValidStartDate && !isValidEndDate) {
-//
-//            Alert errorAlert = new Alert(Alert.AlertType.INFORMATION);
-//            errorAlert.setHeaderText("Error!");
-//            errorAlert.setContentText("No fields are entered.");
-//            errorAlert.showAndWait();
-//        }
-
-        if ((isValidStartDate && !isValidEndDate) || (!isValidStartDate && isValidEndDate)) {
-            date_invalid_label.setText("Enter a range of dates");
-        }
+        boolean isValidRange = isValidStartDate && isValidEndDate && dateEnd_view_poi.getValue().compareTo(dateStart_view_poi.getValue()) >= 0;
 
         String POILocation = null;
         String city = null;
@@ -176,11 +164,9 @@ public class ViewPOIController implements Initializable {
 
         if (isValidZip) {
             zipCode = "Zip_Code = " + zip_view_poi.getText();
-            //zipCode = zip_view_poi.getText();
         }
         if (isSelectedLocation) {
             POILocation = "Location_Name = \'" + poi_loc_box.getSelectionModel().getSelectedItem().toString() + "\'";
-            //POILocation = poi_loc_box.getSelectionModel().getSelectedItem().toString();
 
         }
         if (isSelectedCity) {
@@ -205,41 +191,45 @@ public class ViewPOIController implements Initializable {
         System.out.println(POILocation);
         System.out.println(city);
         System.out.println(state);
-        System.out.println("flagged?" + flag);
+        System.out.println("flagged? " + flag);
         System.out.println(zipCode);
         System.out.println("Date start " + dateStart);
         System.out.println("Date end " + dateEnd);
 
-        System.out.println(generateCondition(POILocation, city, state, flag, zipCode, dateStart, dateEnd));
+        //System.out.println(generateCondition(POILocation, city, state, flag, zipCode, dateStart, dateEnd));
         poiTableView.getItems().removeAll(data);
 
         if (POILocation == null && city == null && state == null && flag == null
-                && zipCode == null && dateStart == null && dateEnd == null) {
+                && zipCode == null && dateStart == null && dateEnd == null) { //checks empty fields
             Alert errorAlert = new Alert(Alert.AlertType.INFORMATION);
             errorAlert.setHeaderText("Error!");
             errorAlert.setContentText("No fields are entered.");
             errorAlert.showAndWait();
 
         } else if ((dateStart == null && dateEnd != null) || (dateStart != null && dateEnd == null)) {
-            System.out.println("invalid"); // fix later with labels
+            //only one date entered
+            date_invalid_label.setText("Enter a range of dates");
+        } else if (dateStart != null && dateEnd != null && !isValidRange) {
+            //start date > end date if entered
+            date_invalid_label.setText("Invalid range");
         } else {
             try {
                 PreparedStatement pst = con.prepareStatement("SELECT Location_Name, City, State, Zip_Code, Flag, Date_Flagged " +
                         "FROM POI " +
                         "WHERE " + generateCondition(POILocation, city, state, flag, zipCode, dateStart, dateEnd));
-
-
                 ResultSet rs = pst.executeQuery();
 
                 while (rs.next()) {
                     data.add(new POI(rs.getString(1), rs.getString(2), rs.getString(3),
                             rs.getString(4), rs.getInt(5), rs.getDate(6)));
                 }
+
+                rs.close();
+                pst.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-
 
         poiTableView.setItems(data);
 
@@ -269,6 +259,7 @@ public class ViewPOIController implements Initializable {
             }
         }
 
+        //removes the last "AND"
         if (whereClause.endsWith("AND ")) {
             whereClause = whereClause.substring(0, whereClause.length() - 4);
         }

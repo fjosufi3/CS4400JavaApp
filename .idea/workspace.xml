@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6903e2a3-b4b3-412c-8c92-bd5ffb811bad" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/ViewPOIController.java" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/ViewPOIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/view/browse_view_poi.fxml" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/view/browse_view_poi.fxml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,8 +46,8 @@
       <file leaf-file-name="ViewPOIController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/ViewPOIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="144" column="39" lean-forward="false" selection-start-line="144" selection-start-column="39" selection-end-line="144" selection-end-column="39" />
+            <state relative-caret-position="141">
+              <caret line="112" column="13" lean-forward="true" selection-start-line="112" selection-start-column="13" selection-end-line="112" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -1203,8 +1201,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/ViewPOIController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="144" column="39" lean-forward="false" selection-start-line="144" selection-start-column="39" selection-end-line="144" selection-end-column="39" />
+        <state relative-caret-position="141">
+          <caret line="112" column="13" lean-forward="true" selection-start-line="112" selection-start-column="13" selection-end-line="112" selection-end-column="13" />
           <folding />
         </state>
       </provider>
