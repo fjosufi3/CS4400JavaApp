@@ -15,6 +15,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -71,8 +73,12 @@ public class POIDetailController implements Initializable {
     private Label date_invalid_label;
     @FXML
     private Label dataVal_invalid_label;
+    @FXML
+    private ImageView someFlag;
 
-    private Stage stage = new Stage();
+    private int flagVal;
+
+    //private Stage stage = new Stage();
 
     private ObservableList<String> dataTypeList = FXCollections.observableArrayList();
     private ObservableList<DataPoint> data = FXCollections.observableArrayList();
@@ -82,6 +88,7 @@ public class POIDetailController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         loadDropDown();
         setCellTable();
+        changeFlag();
 
     }
 
@@ -91,9 +98,24 @@ public class POIDetailController implements Initializable {
 
     }
 
-    public void setDetailScene(Scene scene) {
-        stage.show();
+    public void setFlag(int flag) {
+        this.flagVal = flag;
+        if (flag == 1) {
+            someFlag.setImage(new Image("/main/app/java/view/red flag.png"));
+        } else {
+            someFlag.setImage(new Image("/main/app/java/view/white flag.png"));
+        }
+    }
+
+    public void setDetailScene(Scene scene) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/main/app/java/view/poi_detail.fxml"));
+        Stage stage = new Stage();
         stage.setScene(scene);
+
+
+//        stage.show();
+//        stage.setScene(scene);
+
 
     }
 
@@ -143,19 +165,19 @@ public class POIDetailController implements Initializable {
                 && FormValidation.isValidInteger(maxDataValTextField);
 
         boolean isValidDataRange = isNumericMin
-                                && isNumericMax
-                                && (Integer.parseInt(maxDataValTextField.getText()) - Integer.parseInt(minDataValTextField.getText())) >= 0;
+                && isNumericMax
+                && (Integer.parseInt(maxDataValTextField.getText()) - Integer.parseInt(minDataValTextField.getText())) >= 0;
 
-        boolean isFlagged = flagged_checkbox.isSelected();
+        boolean isFlagged = flagVal == 1;
         boolean isValidStartDate = startDate_poiDetail.getValue() != null;
         boolean isValidEndDate = endDate_poiDetail.getValue() != null;
         boolean isValidDateRange = isValidStartDate
-                                && isValidEndDate
-                                && endDate_poiDetail.getValue().compareTo(startDate_poiDetail.getValue()) >= 0;
+                && isValidEndDate
+                && endDate_poiDetail.getValue().compareTo(startDate_poiDetail.getValue()) >= 0;
 
         String type = null;
         String minVal = null;
-        String maxVal = null;
+        String maxVal =  null;
         String flag = null;
         String dateFlagged = null;
         String dateStart = null;
@@ -176,6 +198,7 @@ public class POIDetailController implements Initializable {
         }
 
 
+
         if (isValidStartDate) {
             dateStart = "POI.Date_Flagged >= \'" + startDate_poiDetail.getValue().toString() + "\'";
         }
@@ -189,13 +212,13 @@ public class POIDetailController implements Initializable {
 
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             dateFlagged = dateFormat.format(new Date());
-            System.out.println("date flagged: " + dateFlagged);
+            //System.out.println("date flagged: " + dateFlagged);
         }
 
 
         poiDetailView.getItems().removeAll(data);
 
-        if (type == null && minVal == null && maxVal == null && flag == null
+        if (type == null && minVal == null && maxVal == null
                 && dateStart == null && dateEnd == null) { //checks empty fields
 
             Alert errorAlert = new Alert(Alert.AlertType.INFORMATION);
@@ -208,7 +231,7 @@ public class POIDetailController implements Initializable {
             //start date > end date if entered
             date_invalid_label.setText("Invalid range of date");
 
-        }  else {
+        } else {
             System.out.println(generateCondition(type, minVal, maxVal, dateStart, dateEnd));
             Connection con = ConnectionConfiguration.getConnection();
             try {
@@ -275,18 +298,76 @@ public class POIDetailController implements Initializable {
         minDataValTextField.clear();
         maxDataValTextField.clear();
 
-        //clears dates
+        //clear dates
         startDate_poiDetail.getEditor().clear();
         startDate_poiDetail.setValue(null);
         endDate_poiDetail.getEditor().clear();
         endDate_poiDetail.setValue(null);
 
+        //clear labels
+        dataVal_invalid_label.setText("");
+        date_invalid_label.setText("");
+
     }
 
     @FXML
     private void onClickBack(ActionEvent event) throws IOException {
-        stage.close();
+
+        Stage stage;
+        Parent root;
+        stage = (Stage) backBtn_poi_detail.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("/main/app/java/view/browse_view_poi.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
 
     }
+
+    private void changeFlag() {
+
+
+        Connection con = ConnectionConfiguration.getConnection();
+        someFlag.setOnMouseClicked(event -> {
+
+            if (event.getClickCount() == 2) {
+                someFlag.setImage(new Image("/main/app/java/view/red flag.png"));
+
+                PreparedStatement pst = null;
+                try {
+                    pst = con.prepareStatement("UPDATE POI SET Flag = TRUE, Date_Flagged = ?  WHERE Location_Name = ? ");
+                    Date date = new Date();
+                    DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+
+                    pst.setString(1, df.format(date).toString());
+                    pst.setString(2, chosen_loc.getText().toString());
+
+
+                    pst.executeUpdate();
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+            } else {
+                someFlag.setImage(new Image("/main/app/java/view/white flag.png"));
+
+                PreparedStatement pst = null;
+                try {
+                    pst = con.prepareStatement("UPDATE POI SET Flag = FALSE, Date_Flagged = NULL WHERE Location_Name = ?");
+                    pst.setString(1, chosen_loc.getText().toString());
+
+                    pst.executeUpdate();
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        });
+
+    }
+
 
 }

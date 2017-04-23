@@ -103,12 +103,12 @@ public class ViewPOIController implements Initializable {
         poiTableView.setRowFactory(tv -> {
             TableRow<POI> row = new TableRow<>();
 
-            FXMLLoader loader = new FXMLLoader();
 
             row.setOnMouseClicked(event -> {
                 if (!row.isEmpty()) {
-                    //Stage stage = new Stage(); // = (Stage) viewPOIpane.getScene().getWindow();
+                    Stage stage = (Stage) viewPOIpane.getScene().getWindow();
                     Parent root = null;
+                    FXMLLoader loader = new FXMLLoader();
 
                     try {
 
@@ -117,9 +117,12 @@ public class ViewPOIController implements Initializable {
 
                         POIDetailController cont = loader.getController();
                         cont.setLocationText(poiTableView.getSelectionModel().getSelectedItem().getLocation());
+                        cont.setFlag(poiTableView.getSelectionModel().getSelectedItem().getFlag());
+
 
                         Scene scene = new Scene(root);
                         cont.setDetailScene(scene);
+                        stage.setScene(scene);
 
                     } catch (IOException e) {
                         e.printStackTrace();

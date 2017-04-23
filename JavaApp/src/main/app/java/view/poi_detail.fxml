@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXCheckBox?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -9,6 +8,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -48,12 +49,19 @@
             <TableColumn fx:id="columnDateTime" prefWidth="192.0" text="Date &amp; Time of Reading" />
         </columns>
       </TableView>
-      <JFXCheckBox fx:id="flagged_checkbox" layoutX="479.0" layoutY="88.0" prefHeight="27.0" prefWidth="74.0" text="Flag" />
       <Separator layoutX="-2.0" layoutY="68.0" prefHeight="8.0" prefWidth="600.0" />
       <Separator layoutY="330.0" prefHeight="8.0" prefWidth="600.0" />
       <Label fx:id="typeRequired_label" layoutX="398.0" layoutY="138.0" textFill="RED" />
       <Label fx:id="invalidDate_label" layoutX="462.0" layoutY="232.0" textFill="RED" />
       <Label fx:id="dataVal_invalid_label" layoutX="405.0" layoutY="185.0" textFill="RED" />
       <Label fx:id="date_invalid_label" layoutX="455.0" layoutY="233.0" textFill="RED" />
+
+      <ImageView fx:id="someFlag" fitWidth="80" layoutX="460.0" layoutY="148.0" preserveRatio="true" smooth="true">
+         <image>
+            <Image url="/main/app/java/view/white flag.png" />
+         </image>
+      </ImageView>
+
+
    </children>
 </AnchorPane>

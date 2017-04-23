@@ -49,8 +49,8 @@
       <file leaf-file-name="ViewPOIController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/ViewPOIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-546">
-              <caret line="199" column="9" lean-forward="true" selection-start-line="199" selection-start-column="9" selection-end-line="199" selection-end-column="9" />
+            <state relative-caret-position="108">
+              <caret line="111" column="0" lean-forward="true" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -59,8 +59,8 @@
       <file leaf-file-name="POIDetailController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/POIDetailController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="274" column="36" lean-forward="true" selection-start-line="274" selection-start-column="36" selection-end-line="274" selection-end-column="36" />
+            <state relative-caret-position="3120">
+              <caret line="208" column="0" lean-forward="true" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,9 +94,20 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="56" column="32" lean-forward="false" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
-              <folding />
+            <state relative-caret-position="310">
+              <caret line="59" column="16" lean-forward="true" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="58" />
+              <folding>
+                <marker date="1492970353000" expanded="true" signature="825:4244" ph="..." />
+                <marker date="1492970353000" expanded="true" signature="839:4230" ph="..." />
+                <marker date="1492970353000" expanded="true" signature="921:1002" ph="..." />
+                <marker date="1492970353000" expanded="true" signature="937:987" ph="..." />
+                <marker date="1492970353000" expanded="true" signature="2727:2795" ph="..." />
+                <marker date="1492970353000" expanded="true" signature="2929:3027" ph="..." />
+                <marker date="1492970353000" expanded="true" signature="2945:3020" ph="..." />
+                <marker date="1492970353000" expanded="true" signature="3135:3461" ph="..." />
+                <marker date="1492970353000" expanded="true" signature="3153:3442" ph="..." />
+                <marker date="1492970353000" expanded="true" signature="4113:4194" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,16 +136,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>validzip</find>
-      <find>accepted</find>
-      <find>_date</find>
       <find>location</find>
       <find>alert</find>
       <find>label</find>
       <find>empty</find>
       <find>aler</find>
       <find>click</find>
-      <find>back</find>
       <find>chose</find>
       <find>combo</find>
       <find>appp</find>
@@ -148,7 +155,17 @@
       <find>isvalidIn</find>
       <find>scene</find>
       <find>poi</find>
+      <find>setlo</find>
+      <find>close</find>
+      <find>back</find>
       <find>poiloca</find>
+      <find>invalid</find>
+      <find>range</find>
+      <find>int</find>
+      <find>int</find>
+      <find>setf</find>
+      <find>invalid ra</find>
+      <find>formval</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -208,11 +225,11 @@
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/POIReportController.java" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/view/poi_report.fxml" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/view/browse_view_poi.fxml" />
-        <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/view/poi_detail.fxml" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/Main.java" />
-        <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/POIDetailController.java" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java" />
+        <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/view/poi_detail.fxml" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/ViewPOIController.java" />
+        <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/POIDetailController.java" />
       </list>
     </option>
   </component>
@@ -796,13 +813,13 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3248" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32371795" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23397435" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30448717" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1217,17 +1234,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/poi_detail.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="56" column="32" lean-forward="false" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/RegistrationController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
@@ -1252,18 +1258,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/view/poi_detail.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="59" column="16" lean-forward="true" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="58" />
+          <folding>
+            <marker date="1492970353000" expanded="true" signature="825:4244" ph="..." />
+            <marker date="1492970353000" expanded="true" signature="839:4230" ph="..." />
+            <marker date="1492970353000" expanded="true" signature="921:1002" ph="..." />
+            <marker date="1492970353000" expanded="true" signature="937:987" ph="..." />
+            <marker date="1492970353000" expanded="true" signature="2727:2795" ph="..." />
+            <marker date="1492970353000" expanded="true" signature="2929:3027" ph="..." />
+            <marker date="1492970353000" expanded="true" signature="2945:3020" ph="..." />
+            <marker date="1492970353000" expanded="true" signature="3135:3461" ph="..." />
+            <marker date="1492970353000" expanded="true" signature="3153:3442" ph="..." />
+            <marker date="1492970353000" expanded="true" signature="4113:4194" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/ViewPOIController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-546">
-          <caret line="199" column="9" lean-forward="true" selection-start-line="199" selection-start-column="9" selection-end-line="199" selection-end-column="9" />
+        <state relative-caret-position="108">
+          <caret line="111" column="0" lean-forward="true" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/POIDetailController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="274" column="36" lean-forward="true" selection-start-line="274" selection-start-column="36" selection-end-line="274" selection-end-column="36" />
+        <state relative-caret-position="3120">
+          <caret line="208" column="0" lean-forward="true" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
