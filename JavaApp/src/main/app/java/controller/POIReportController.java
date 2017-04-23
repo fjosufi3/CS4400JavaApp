@@ -1,7 +1,8 @@
 package app.java.controller;
 
 import app.java.model.ConnectionConfiguration;
-import app.java.model.DataPoint;
+
+import app.java.model.POIReport;
 import app.java.model.POI;
 import app.java.model.POIReport;
 import javafx.collections.FXCollections;
@@ -34,7 +35,7 @@ import java.util.ResourceBundle;
 public class POIReportController implements Initializable {
 
     @FXML
-    private TableView poiReportView;
+    private TableView<POIReport> poiReportView;
     @FXML
     private TableColumn<POI, String> columnPOILoc;
     @FXML
@@ -67,7 +68,7 @@ public class POIReportController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setCellTable();
-
+        loadFromDB();
     }
 
     @FXML
@@ -81,6 +82,7 @@ public class POIReportController implements Initializable {
         columnAQMin.setCellValueFactory(new PropertyValueFactory<>("aqMin"));
         columnAQAvg.setCellValueFactory(new PropertyValueFactory<>("aqAvg"));
         columnAQMax.setCellValueFactory(new PropertyValueFactory<>("aqMax"));
+        columnNumDataPts.setCellFactory(new PropertyValueFactory<>("numPoints"));
         columnFlagged.setCellValueFactory(new PropertyValueFactory<>("flag"));
 
     }
@@ -90,22 +92,30 @@ public class POIReportController implements Initializable {
         Connection con = ConnectionConfiguration.getConnection();
 
         try {
-            PreparedStatement pst = con.prepareStatement("SELECT * FROM POI_REPORT");
+            PreparedStatement pst = con.prepareStatement("SELECT * FROM test_report");
             ResultSet rs = pst.executeQuery();
 
             while (rs.next()) {
-
-
-
-
-
+                data.add(new POIReport(
+                        rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getInt(4),
+                        rs.getInt(5),
+                        rs.getInt(6),
+                        rs.getInt(7),
+                        rs.getInt(8),
+                        rs.getInt(9),
+                        rs.getInt(10),
+                        rs.getInt(11)));
 
             }
-
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        poiReportView.setItems(data);
 
     }
 

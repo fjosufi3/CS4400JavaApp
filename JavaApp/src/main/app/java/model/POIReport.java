@@ -19,12 +19,13 @@ public class POIReport {
     private IntegerProperty aqMin;
     private IntegerProperty aqAvg;
     private IntegerProperty aqMax;
+    private IntegerProperty numPoints;
     private IntegerProperty flag;
 
-    private POIReport(String loc, String c, String s,
+    public POIReport(String loc, String c, String s,
                       int mmin, int mavg, int mmax,
                       int aqmin, int aqavg, int aqmax,
-                      int f) {
+                      int num, int f) {
 
         location = new SimpleStringProperty(loc);
         city = new SimpleStringProperty(c);
@@ -37,6 +38,7 @@ public class POIReport {
         aqAvg = new SimpleIntegerProperty(aqavg);
         aqMax = new SimpleIntegerProperty(aqmax);
 
+        numPoints = new SimpleIntegerProperty(num);
         flag = new SimpleIntegerProperty(f);
 
     }
@@ -88,6 +90,19 @@ public class POIReport {
 
     public void setFlag(int flag) {
         this.flag.set(flag);
+    }
+
+
+    public int getNumPoints() {
+        return numPoints.get();
+    }
+
+    public IntegerProperty numPointsProperty() {
+        return numPoints;
+    }
+
+    public void setNumPoints(int numPoints) {
+        this.numPoints.set(numPoints);
     }
 
     public int getMoldMin() {
