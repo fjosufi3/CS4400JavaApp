@@ -103,25 +103,28 @@ public class ViewPOIController implements Initializable {
         poiTableView.setRowFactory(tv -> {
             TableRow<POI> row = new TableRow<>();
 
+            FXMLLoader loader = new FXMLLoader();
+
             row.setOnMouseClicked(event -> {
                 if (!row.isEmpty()) {
-                    Stage stage = (Stage) viewPOIpane.getScene().getWindow();
+                    //Stage stage = new Stage(); // = (Stage) viewPOIpane.getScene().getWindow();
                     Parent root = null;
 
                     try {
-                        FXMLLoader loader = new FXMLLoader();
+
                         loader.setLocation(getClass().getResource("/main/app/java/view/poi_detail.fxml"));
                         root = loader.load();
 
                         POIDetailController cont = loader.getController();
                         cont.setLocationText(poiTableView.getSelectionModel().getSelectedItem().getLocation());
 
+                        Scene scene = new Scene(root);
+                        cont.setDetailScene(scene);
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
 
-                    Scene scene = new Scene(root);
-                    stage.setScene(scene);
 
                 }
             });
@@ -181,7 +184,8 @@ public class ViewPOIController implements Initializable {
         boolean isFlagged = flagged_checkBox.isSelected();
         boolean isValidStartDate = dateStart_view_poi.getValue() != null;
         boolean isValidEndDate = dateEnd_view_poi.getValue() != null;
-        boolean isValidRange = isValidStartDate && isValidEndDate && dateEnd_view_poi.getValue().compareTo(dateStart_view_poi.getValue()) >= 0;
+        boolean isValidRange = isValidStartDate
+                && isValidEndDate && dateEnd_view_poi.getValue().compareTo(dateStart_view_poi.getValue()) >= 0;
 
         String POILocation = null;
         String city = null;
@@ -236,18 +240,21 @@ public class ViewPOIController implements Initializable {
 
         if (POILocation == null && city == null && state == null && flag == null
                 && zipCode == null && dateStart == null && dateEnd == null) { //checks empty fields
+
             Alert errorAlert = new Alert(Alert.AlertType.INFORMATION);
             errorAlert.setHeaderText("Error!");
             errorAlert.setContentText("No fields are entered.");
             errorAlert.showAndWait();
+        }
+//          else if ((dateStart == null && dateEnd != null)
+//                || (dateStart != null && dateEnd == null)) {
+//
+//            //only one date entered
+//            date_invalid_label.setText("Enter a range of dates");
+//
+//        }
 
-        } else if ((dateStart == null && dateEnd != null)
-                || (dateStart != null && dateEnd == null)) {
-
-            //only one date entered
-            date_invalid_label.setText("Enter a range of dates");
-
-        } else if (dateStart != null && dateEnd != null && !isValidRange) {
+        else if (dateStart != null && dateEnd != null && !isValidRange) {
 
             //start date > end date if entered
             date_invalid_label.setText("Invalid range");
@@ -257,7 +264,8 @@ public class ViewPOIController implements Initializable {
             try {
                 PreparedStatement pst = con.prepareStatement("SELECT Location_Name, City, State, Zip_Code, Flag, Date_Flagged " +
                         "FROM POI " +
-                        "WHERE " + generateCondition(POILocation, city, state, flag, zipCode, dateStart, dateEnd));
+                        "WHERE " + generateCondition(POILocation, city, state, flag, zipCode, dateStart, dateEnd) +
+                        "ORDER BY Location_Name");
                 ResultSet rs = pst.executeQuery();
 
                 while (rs.next()) {
@@ -351,9 +359,6 @@ public class ViewPOIController implements Initializable {
 
     }
 
-//    public String getPOILocation() {
-//        return poiTableView.getSelectionModel().getSelectedItem().getLocation();
-//    }
 
     /*@FXML
     private void loadFromDB() {
@@ -373,7 +378,6 @@ public class ViewPOIController implements Initializable {
         poiTableView.setItems(null);
         poiTableView.setItems(data);
     }*/
-
 
 
 }

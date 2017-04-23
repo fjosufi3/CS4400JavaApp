@@ -68,6 +68,8 @@ public class POIDetailController implements Initializable {
     @FXML
     private Text chosen_loc = new Text("");
 
+    private Stage stage = new Stage();
+
     private ObservableList<String> dataTypeList = FXCollections.observableArrayList();
     private ObservableList<DataPoint> data = FXCollections.observableArrayList();
 
@@ -79,20 +81,15 @@ public class POIDetailController implements Initializable {
 
     }
 
-    @FXML
-    private void onClickBack(ActionEvent event) throws IOException {
-        Stage stage;
-        Parent root;
-        stage = (Stage) backBtn_poi_detail.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("/main/app/java/view/browse_view_poi.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-
-    }
 
     public void setLocationText(String loc) {
         chosen_loc.setText(loc);
+
+    }
+
+    public void setDetailScene(Scene scene) {
+        stage.show();
+        stage.setScene(scene);
 
     }
 
@@ -210,16 +207,16 @@ public class POIDetailController implements Initializable {
             System.out.println("invalid rage");
 
         } else {
-            System.out.println(generateCondition(type, minVal, maxVal, dateStart,  dateEnd));
+            System.out.println(generateCondition(type, minVal, maxVal, dateStart, dateEnd));
             Connection con = ConnectionConfiguration.getConnection();
             try {
                 PreparedStatement pst = con.prepareStatement(
                         "SELECT * " +
                                 "FROM DATA_POINT, POI WHERE DATA_POINT.Location_Name = ? AND POI.Location_Name  = ? AND Accepted = TRUE AND "
-                                + generateCondition(type, minVal, maxVal, dateStart,  dateEnd) + " ORDER BY Type");
+                                + generateCondition(type, minVal, maxVal, dateStart, dateEnd) + " ORDER BY Type");
 
                 pst.setString(1, chosen_loc.getText());
-                pst.setString(2,chosen_loc.getText());
+                pst.setString(2, chosen_loc.getText());
 
                 ResultSet rs = pst.executeQuery();
 
@@ -246,7 +243,7 @@ public class POIDetailController implements Initializable {
 
         String whereClause = "";
 
-        String [] paramArray = {type, minVal, maxVal, dateStart, dateEnd};
+        String[] paramArray = {type, minVal, maxVal, dateStart, dateEnd};
 
         for (int i = 0; i < paramArray.length; i++) {
             if (paramArray[i] != null) {
@@ -281,6 +278,12 @@ public class POIDetailController implements Initializable {
         startDate_poiDetail.setValue(null);
         endDate_poiDetail.getEditor().clear();
         endDate_poiDetail.setValue(null);
+
+    }
+
+    @FXML
+    private void onClickBack(ActionEvent event) throws IOException {
+        stage.close();
 
     }
 
