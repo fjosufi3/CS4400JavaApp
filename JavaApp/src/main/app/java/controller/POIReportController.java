@@ -43,19 +43,19 @@ public class POIReportController implements Initializable {
     @FXML
     private TableColumn<POI, String> columnState;
     @FXML
-    private TableColumn columnMoldMin;
+    private TableColumn<POI, Integer> columnMoldMin;
     @FXML
-    private TableColumn columnMoldAvg;
+    private TableColumn<POI, Integer> columnMoldAvg;
     @FXML
-    private TableColumn columnMoldMax;
+    private TableColumn<POI, Integer> columnMoldMax;
     @FXML
-    private TableColumn columnAQMin;
+    private TableColumn<POI, Integer> columnAQMin;
     @FXML
-    private TableColumn columnAQAvg;
+    private TableColumn<POI, Integer> columnAQAvg;
     @FXML
-    private TableColumn columnAQMax;
+    private TableColumn<POI, Integer> columnAQMax;
     @FXML
-    private TableColumn columnNumDataPts;
+    private TableColumn<POI, Integer> columnNumDataPts;
     @FXML
     private TableColumn<POI, Integer> columnFlagged;
     @FXML
@@ -82,7 +82,7 @@ public class POIReportController implements Initializable {
         columnAQMin.setCellValueFactory(new PropertyValueFactory<>("aqMin"));
         columnAQAvg.setCellValueFactory(new PropertyValueFactory<>("aqAvg"));
         columnAQMax.setCellValueFactory(new PropertyValueFactory<>("aqMax"));
-        columnNumDataPts.setCellFactory(new PropertyValueFactory<>("numPoints"));
+        columnNumDataPts.setCellValueFactory(new PropertyValueFactory<>("numPoints"));
         columnFlagged.setCellValueFactory(new PropertyValueFactory<>("flag"));
 
     }
