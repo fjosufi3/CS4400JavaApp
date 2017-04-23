@@ -67,6 +67,10 @@ public class POIDetailController implements Initializable {
     private Button backBtn_poi_detail;
     @FXML
     private Text chosen_loc = new Text("");
+    @FXML
+    private Label date_invalid_label;
+    @FXML
+    private Label dataVal_invalid_label;
 
     private Stage stage = new Stage();
 
@@ -127,17 +131,27 @@ public class POIDetailController implements Initializable {
     @FXML
     private void onClickApplyFilter() {
 
+        dataVal_invalid_label.setText("");
+        date_invalid_label.setText("");
+
         boolean minDataNotEmpty = FormValidation.textFieldNotEmpty(minDataValTextField);
         boolean maxDataNotEmpty = FormValidation.textFieldNotEmpty(maxDataValTextField);
         boolean isSelectedType = !(dataTypeBox.getSelectionModel().isEmpty());
         boolean isNumericMin = minDataNotEmpty
                 && FormValidation.isValidInteger(minDataValTextField);
-        boolean isNumericMax = minDataNotEmpty
+        boolean isNumericMax = maxDataNotEmpty
                 && FormValidation.isValidInteger(maxDataValTextField);
+
+        boolean isValidDataRange = isNumericMin
+                                && isNumericMax
+                                && (Integer.parseInt(maxDataValTextField.getText()) - Integer.parseInt(minDataValTextField.getText())) >= 0;
+
         boolean isFlagged = flagged_checkbox.isSelected();
         boolean isValidStartDate = startDate_poiDetail.getValue() != null;
         boolean isValidEndDate = endDate_poiDetail.getValue() != null;
-        boolean isValidRange = isValidStartDate && isValidEndDate && endDate_poiDetail.getValue().compareTo(startDate_poiDetail.getValue()) >= 0;
+        boolean isValidDateRange = isValidStartDate
+                                && isValidEndDate
+                                && endDate_poiDetail.getValue().compareTo(startDate_poiDetail.getValue()) >= 0;
 
         String type = null;
         String minVal = null;
@@ -151,28 +165,23 @@ public class POIDetailController implements Initializable {
             type = "Type = \'" + dataTypeBox.getSelectionModel()
                     .getSelectedItem().toString() + "\' ";
 
-            //type = dataTypeBox.getSelectionModel().getSelectedItem().toString();
         }
 
         if (isNumericMin) {
             minVal = "Data_Value >= " + Integer.parseInt(minDataValTextField.getText());
-            //minVal =  minDataValTextField.getText();
         }
 
         if (isNumericMax) {
             maxVal = "Data_Value <= " + Integer.parseInt(maxDataValTextField.getText());
-            //maxVal = maxDataValTextField.getText();
         }
 
 
         if (isValidStartDate) {
             dateStart = "POI.Date_Flagged >= \'" + startDate_poiDetail.getValue().toString() + "\'";
-            //dateStart = startDate_poiDetail.getValue().toString();
         }
 
         if (isValidEndDate) {
             dateEnd = "POI.Date_Flagged <= \'" + endDate_poiDetail.getValue().toString() + "\'";
-            //dateEnd = endDate_poiDetail.getValue().toString();
         }
 
         if (isFlagged) {
@@ -188,32 +197,25 @@ public class POIDetailController implements Initializable {
 
         if (type == null && minVal == null && maxVal == null && flag == null
                 && dateStart == null && dateEnd == null) { //checks empty fields
+
             Alert errorAlert = new Alert(Alert.AlertType.INFORMATION);
             errorAlert.setHeaderText("Error!");
             errorAlert.setContentText("No fields are entered.");
             errorAlert.showAndWait();
 
-        } else if ((dateStart == null && dateEnd != null)
-                || (dateStart != null && dateEnd == null)) {
-
-            //only one date entered
-            //date_invalid_label.setText("Enter a range of dates");
-            System.out.println("enter range");
-
-        } else if (dateStart != null && dateEnd != null && !isValidRange) {
+        } else if (dateStart != null && dateEnd != null && !isValidDateRange) {
 
             //start date > end date if entered
-            //date_invalid_label.setText("Invalid range");
-            System.out.println("invalid rage");
+            date_invalid_label.setText("Invalid range of date");
 
-        } else {
+        }  else {
             System.out.println(generateCondition(type, minVal, maxVal, dateStart, dateEnd));
             Connection con = ConnectionConfiguration.getConnection();
             try {
                 PreparedStatement pst = con.prepareStatement(
                         "SELECT * " +
                                 "FROM DATA_POINT, POI WHERE DATA_POINT.Location_Name = ? AND POI.Location_Name  = ? AND Accepted = TRUE AND "
-                                + generateCondition(type, minVal, maxVal, dateStart, dateEnd) + " ORDER BY Type");
+                                + generateCondition(type, minVal, maxVal, dateStart, dateEnd) + " ORDER BY Date_Time");
 
                 pst.setString(1, chosen_loc.getText());
                 pst.setString(2, chosen_loc.getText());

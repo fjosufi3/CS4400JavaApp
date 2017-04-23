@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="636.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.java.controller.POIDetailController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="636.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.java.controller.POIDetailController">
    <children>
       <Label layoutX="250.0" layoutY="90.0" text="POI Detail" textFill="#221fe4">
          <font>
@@ -21,13 +21,13 @@
          </font>
       </Label>
       <ComboBox fx:id="dataTypeBox" layoutX="138.0" layoutY="133.0" prefHeight="27.0" prefWidth="197.0" promptText="Select Data Type" AnchorPane.bottomAnchor="476.0" AnchorPane.topAnchor="133.0" />
-      <Button fx:id="backBtn_poi_detail" layoutX="266.0" layoutY="582.0" mnemonicParsing="false" onAction="#onClickBack" text="Back" />
+      <Button fx:id="backBtn_poi_detail" layoutX="278.0" layoutY="584.0" mnemonicParsing="false" onAction="#onClickBack" text="Back" />
       <Text layoutX="51.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" />
       <Text layoutX="52.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data Value" />
       <Text layoutX="52.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
       <DatePicker fx:id="startDate_poiDetail" layoutX="137.0" layoutY="228.0" prefHeight="27.0" prefWidth="128.0" />
       <Text layoutX="282.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to" />
-      <DatePicker fx:id="endDate_poiDetail" layoutX="311.0" layoutY="228.0" prefHeight="27.0" prefWidth="128.0" />
+      <DatePicker fx:id="endDate_poiDetail" layoutX="310.0" layoutY="228.0" prefHeight="27.0" prefWidth="128.0" />
       <Button fx:id="applyFilter_poi_detail_btn" layoutX="138.0" layoutY="283.0" mnemonicParsing="false" onAction="#onClickApplyFilter" text="Apply Filter" />
       <Button fx:id="resetFilter_poi_detail_btn" layoutX="344.0" layoutY="282.0" mnemonicParsing="false" onAction="#onClickResetFilter" text="Reset Filter" />
       <TextField fx:id="minDataValTextField" layoutX="138.0" layoutY="180.0" prefHeight="27.0" prefWidth="100.0" />
@@ -41,7 +41,7 @@
          <font>
             <Font name="Arial Bold Italic" size="14.0" />
          </font></Text>
-      <TableView fx:id="poiDetailView" layoutX="82.0" layoutY="356.0" prefHeight="200.0" prefWidth="422.0">
+      <TableView fx:id="poiDetailView" layoutX="93.0" layoutY="357.0" prefHeight="200.0" prefWidth="422.0">
         <columns>
           <TableColumn fx:id="columnDataType" prefWidth="96.0" text="Data Type" />
           <TableColumn fx:id="columnDataVal" prefWidth="133.0" text="Data Value" />
@@ -49,9 +49,11 @@
         </columns>
       </TableView>
       <JFXCheckBox fx:id="flagged_checkbox" layoutX="479.0" layoutY="88.0" prefHeight="27.0" prefWidth="74.0" text="Flag" />
-      <Separator layoutX="-2.0" layoutY="68.0" prefHeight="8.0" prefWidth="590.0" />
-      <Separator layoutY="330.0" prefHeight="8.0" prefWidth="590.0" />
+      <Separator layoutX="-2.0" layoutY="68.0" prefHeight="8.0" prefWidth="600.0" />
+      <Separator layoutY="330.0" prefHeight="8.0" prefWidth="600.0" />
       <Label fx:id="typeRequired_label" layoutX="398.0" layoutY="138.0" textFill="RED" />
       <Label fx:id="invalidDate_label" layoutX="462.0" layoutY="232.0" textFill="RED" />
+      <Label fx:id="dataVal_invalid_label" layoutX="405.0" layoutY="185.0" textFill="RED" />
+      <Label fx:id="date_invalid_label" layoutX="455.0" layoutY="233.0" textFill="RED" />
    </children>
 </AnchorPane>

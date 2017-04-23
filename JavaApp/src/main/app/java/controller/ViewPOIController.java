@@ -184,8 +184,8 @@ public class ViewPOIController implements Initializable {
         boolean isFlagged = flagged_checkBox.isSelected();
         boolean isValidStartDate = dateStart_view_poi.getValue() != null;
         boolean isValidEndDate = dateEnd_view_poi.getValue() != null;
-        boolean isValidRange = isValidStartDate
-                && isValidEndDate && dateEnd_view_poi.getValue().compareTo(dateStart_view_poi.getValue()) >= 0;
+        boolean isValidRange = isValidStartDate && isValidEndDate
+                && dateEnd_view_poi.getValue().compareTo(dateStart_view_poi.getValue()) >= 0;
 
         String POILocation = null;
         String city = null;
@@ -200,7 +200,8 @@ public class ViewPOIController implements Initializable {
         }
 
         if (isSelectedLocation) {
-            POILocation = "Location_Name = \'" + poi_loc_box.getSelectionModel().getSelectedItem().toString() + "\'";
+            POILocation = "Location_Name = \'" +
+                    poi_loc_box.getSelectionModel().getSelectedItem().toString().replace("\'", "\'\'") + "\'";
 
         }
 
@@ -235,37 +236,31 @@ public class ViewPOIController implements Initializable {
         System.out.println("Date start " + dateStart);
         System.out.println("Date end " + dateEnd);
 
-        //System.out.println(generateCondition(POILocation, city, state, flag, zipCode, dateStart, dateEnd));
+        System.out.println(generateCondition(POILocation, city, state, flag, zipCode, dateStart, dateEnd));
         poiTableView.getItems().removeAll(data);
 
         if (POILocation == null && city == null && state == null && flag == null
                 && zipCode == null && dateStart == null && dateEnd == null) { //checks empty fields
 
-            Alert errorAlert = new Alert(Alert.AlertType.INFORMATION);
-            errorAlert.setHeaderText("Error!");
-            errorAlert.setContentText("No fields are entered.");
-            errorAlert.showAndWait();
-        }
-//          else if ((dateStart == null && dateEnd != null)
-//                || (dateStart != null && dateEnd == null)) {
-//
-//            //only one date entered
-//            date_invalid_label.setText("Enter a range of dates");
-//
-//        }
-
-        else if (dateStart != null && dateEnd != null && !isValidRange) {
+            if (!zipNotEmpty) {
+                Alert errorAlert = new Alert(Alert.AlertType.INFORMATION);
+                errorAlert.setHeaderText("Error!");
+                errorAlert.setContentText("No fields are entered.");
+                errorAlert.showAndWait();
+            }
+        } else if (dateStart != null && dateEnd != null && !isValidRange) {
 
             //start date > end date if entered
             date_invalid_label.setText("Invalid range");
 
-        } else {
+        }
+        else {
 
             try {
                 PreparedStatement pst = con.prepareStatement("SELECT Location_Name, City, State, Zip_Code, Flag, Date_Flagged " +
                         "FROM POI " +
                         "WHERE " + generateCondition(POILocation, city, state, flag, zipCode, dateStart, dateEnd) +
-                        "ORDER BY Location_Name");
+                        " ORDER BY Location_Name");
                 ResultSet rs = pst.executeQuery();
 
                 while (rs.next()) {
