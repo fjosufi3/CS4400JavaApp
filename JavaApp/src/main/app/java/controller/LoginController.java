@@ -16,10 +16,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 /**
@@ -28,7 +25,7 @@ import javafx.stage.Stage;
  * @author Josufi
  */
 public class LoginController implements Initializable {
-    
+
     @FXML
     private Button login_bt;
     @FXML
@@ -49,7 +46,7 @@ public class LoginController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         //
     }
-    
+
     @FXML
     private void onLogin(ActionEvent event) throws IOException {
         Stage stage;
@@ -61,16 +58,31 @@ public class LoginController implements Initializable {
         if (isValidLogin) {
             if (userType.equals(UserType.Admin.toString())) {
                 root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_admin.fxml"));
+                stage = (Stage) login_bt.getScene().getWindow();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
             } else if (userType.equals(UserType.City_Official.toString())) {
-                root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_official.fxml"));
+                boolean approved = FormValidation.isApproved(login_username);
+                if (approved) {
+                    root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_official.fxml"));
+                    stage = (Stage) login_bt.getScene().getWindow();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                } else {
+                    Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+                    successAlert.setHeaderText("Login failed");
+                    successAlert.setContentText("Your account is either pending or rejected.");
+                    successAlert.showAndWait();
+                }
             } else {
-                System.out.println(UserType.City_Official.toString());
                 root = FXMLLoader.load(getClass().getResource("/main/app/java/view/welcome_scientist.fxml"));
+                stage = (Stage) login_bt.getScene().getWindow();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
             }
-            stage = (Stage) login_bt.getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
         }
     }
 

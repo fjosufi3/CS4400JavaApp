@@ -268,6 +268,30 @@ public class FormValidation {
         return validInteger;
     }
 
+    public static boolean isApproved(TextField co_user) {
+        boolean entry = false;
+        Connection c = null;
+        PreparedStatement statement = null;
+        String query = "SELECT Approved FROM CITY_OFFICIAL WHERE Username = ?";
+        try {
+            c = ConnectionConfiguration.getConnection();
+            statement = c.prepareStatement(query);
+            statement.setString(1, co_user.getText());
+
+            ResultSet co = statement.executeQuery();
+
+            if (co.next()) {
+                entry = co.getBoolean("Approved");
+            }
+            co.close();
+            statement.close();
+            c.close();
+        } catch (Exception e) {
+            System.out.println("Something went wrong with the database");
+        }
+        return entry;
+    }
+
     public static boolean isValidLogin(TextField user, PasswordField pass, Label label) {
         boolean access_granted = false;
         Connection c = null;
