@@ -13,11 +13,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
+import javafx.scene.control.Label;
 
 import java.io.IOException;
 import java.net.URL;
@@ -44,6 +42,8 @@ public class AddDataPointController implements Initializable {
     private ComboBox data_type;
     @FXML
     private TextField data_value;
+    @FXML
+    private Label value_label;
 
     //buttons
     @FXML
@@ -85,8 +85,9 @@ public class AddDataPointController implements Initializable {
         java.text.DateFormat format = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         java.util.Date _d = format.parse(dt);
         java.sql.Timestamp timestamp = new java.sql.Timestamp(_d.getTime());
+        boolean d_value = FormValidation.textFieldNotEmpty(data_value, value_label, "Required");
 
-        if (validInteger) {
+        if (d_value && validInteger) {
             Boolean accepted = null;
             LocalDate localDate = date.getValue();
             int value = Integer.parseInt(data_value.getText());
@@ -104,5 +105,7 @@ public class AddDataPointController implements Initializable {
         ObservableList<String> loc_names = FormValidation.populateLocationNames();
         data_type.setItems(types);
         location_name.setItems(loc_names);
+        data_type.getSelectionModel().selectFirst();
+        location_name.getSelectionModel().selectFirst();
     }
 }
