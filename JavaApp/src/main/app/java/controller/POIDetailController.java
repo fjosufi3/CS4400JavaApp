@@ -194,11 +194,11 @@ public class POIDetailController implements Initializable {
 
 
         if (isValidStartDate) {
-            dateStart = "POI.Date_Flagged >= \'" + startDate_poiDetail.getValue().toString() + "\'";
+            dateStart = "Date_Time >= \'" + startDate_poiDetail.getValue().toString() + "\'";
         }
 
         if (isValidEndDate) {
-            dateEnd = "POI.Date_Flagged <= \'" + endDate_poiDetail.getValue().toString() + "\'";
+            dateEnd = "Date_Time <= \'" + endDate_poiDetail.getValue().toString() + "\'";
         }
 
         if (isFlagged) {

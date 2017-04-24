@@ -190,6 +190,8 @@ public class ViewPOIController implements Initializable {
         boolean isValidRange = isValidStartDate && isValidEndDate
                 && dateEnd_view_poi.getValue().compareTo(dateStart_view_poi.getValue()) >= 0;
 
+
+        System.out.println();
         String POILocation = null;
         String city = null;
         String state = null;
@@ -236,7 +238,7 @@ public class ViewPOIController implements Initializable {
         System.out.println("Date start " + dateStart);
         System.out.println("Date end " + dateEnd);
 
-        System.out.println(generateCondition(POILocation, city, state, flag, zipCode, dateStart, dateEnd));
+        //System.out.println( generateCondition(POILocation, city, state, flag, zipCode, dateStart, dateEnd));
         poiTableView.getItems().removeAll(data);
 
         if (POILocation == null && city == null && state == null && flag == null
@@ -260,6 +262,7 @@ public class ViewPOIController implements Initializable {
                         "FROM POI " +
                         "WHERE " + generateCondition(POILocation, city, state, flag, zipCode, dateStart, dateEnd) +
                         " ORDER BY Location_Name");
+
                 ResultSet rs = pst.executeQuery();
 
                 while (rs.next()) {
