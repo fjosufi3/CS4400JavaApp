@@ -92,7 +92,7 @@ public class POIReportController implements Initializable {
         Connection con = ConnectionConfiguration.getConnection();
 
         try {
-            PreparedStatement pst = con.prepareStatement("SELECT * FROM test_report");
+            PreparedStatement pst = con.prepareStatement("SELECT * FROM POI_REPORT");
             ResultSet rs = pst.executeQuery();
 
             while (rs.next()) {
