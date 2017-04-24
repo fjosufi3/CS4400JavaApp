@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6903e2a3-b4b3-412c-8c92-bd5ffb811bad" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddDataPointController.java" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddDataPointController.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddDataPointController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AddDataPointController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddDataPointController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="89" column="36" lean-forward="false" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
+            <state relative-caret-position="171">
+              <caret line="89" column="38" lean-forward="true" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,7 +53,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FormValidation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FormValidation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="229">
@@ -73,6 +73,19 @@
                 <marker date="1493013948000" expanded="true" signature="13733:13831" ph="INSERT INTO DATA_POINT... " />
                 <marker date="1493013948000" expanded="true" signature="14864:14962" ph="INSERT INTO POI... " />
                 <marker date="1493013948000" expanded="true" signature="16037:16063" ph="SELECT Type DATA_TYPE" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="POIReportController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/POIReportController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="33" column="3" lean-forward="true" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1493013450000" expanded="true" signature="3072:3096" ph="SELECT * FRO... POI_REPORT" />
               </folding>
             </state>
           </provider>
@@ -187,8 +200,8 @@
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/model/UserType.java" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/model/ConnectionConfiguration.java" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/POIDetailController.java" />
-        <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddDataPointController.java" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java" />
+        <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddDataPointController.java" />
       </list>
     </option>
   </component>
@@ -884,12 +897,12 @@
       <workItem from="1492974933256" duration="2846000" />
       <workItem from="1492977919194" duration="29000" />
       <workItem from="1492977962284" duration="105000" />
-      <workItem from="1493013482307" duration="445000" />
+      <workItem from="1493013482307" duration="1100000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55194000" />
+    <option name="totallyTimeSpent" value="55849000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1267,16 +1280,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/POIReportController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="33" column="3" lean-forward="true" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/POIReport.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1436,32 +1439,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/Main.java">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddLocationController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="78" column="17" lean-forward="false" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddDataPointController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="89" column="36" lean-forward="false" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1484,6 +1466,38 @@
             <marker date="1493013948000" expanded="true" signature="13733:13831" ph="INSERT INTO DATA_POINT... " />
             <marker date="1493013948000" expanded="true" signature="14864:14962" ph="INSERT INTO POI... " />
             <marker date="1493013948000" expanded="true" signature="16037:16063" ph="SELECT Type DATA_TYPE" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/POIReportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="33" column="3" lean-forward="true" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1493013450000" expanded="true" signature="3072:3096" ph="SELECT * FRO... POI_REPORT" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/Main.java">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddDataPointController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="89" column="38" lean-forward="true" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

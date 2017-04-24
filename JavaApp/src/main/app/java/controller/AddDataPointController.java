@@ -82,7 +82,7 @@ public class AddDataPointController implements Initializable {
         DataType type = new DataType(data_type.getSelectionModel().getSelectedItem().toString());
         Date _date = Date.from(date.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
         String dt = date.getValue().toString() + " " + time.getValue().toString();
-        java.text.DateFormat format = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        java.text.DateFormat format = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm");
         java.util.Date _d = format.parse(dt);
         java.sql.Timestamp timestamp = new java.sql.Timestamp(_d.getTime());
         boolean d_value = FormValidation.textFieldNotEmpty(data_value, value_label, "Required");
