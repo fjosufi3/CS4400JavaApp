@@ -32,7 +32,9 @@ import java.util.Date;
 import java.util.ResourceBundle;
 
 /**
- * Created by mcw0805 on 4/18/17.
+ * POI Detail controller
+ *
+ * @author mcw0805
  */
 public class POIDetailController implements Initializable {
 
@@ -78,8 +80,6 @@ public class POIDetailController implements Initializable {
 
     private int flagVal;
 
-    //private Stage stage = new Stage();
-
     private ObservableList<String> dataTypeList = FXCollections.observableArrayList();
     private ObservableList<DataPoint> data = FXCollections.observableArrayList();
 
@@ -91,7 +91,6 @@ public class POIDetailController implements Initializable {
         changeFlag();
 
     }
-
 
     public void setLocationText(String loc) {
         chosen_loc.setText(loc);
@@ -111,10 +110,6 @@ public class POIDetailController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("/main/app/java/view/poi_detail.fxml"));
         Stage stage = new Stage();
         stage.setScene(scene);
-
-
-//        stage.show();
-//        stage.setScene(scene);
 
 
     }
@@ -148,7 +143,6 @@ public class POIDetailController implements Initializable {
         dataTypeBox.setItems(dataTypeList);
 
     }
-
 
     @FXML
     private void onClickApplyFilter() {

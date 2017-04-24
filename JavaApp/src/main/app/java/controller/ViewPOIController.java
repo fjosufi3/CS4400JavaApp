@@ -218,17 +218,14 @@ public class ViewPOIController implements Initializable {
 
         if (isFlagged) {
             flag = "Flag = TRUE";
-            //flag = "TRUE";
         }
 
         if (isValidStartDate) {
             dateStart = "Date_Flagged >= \'" + dateStart_view_poi.getValue().toString() + "\'";
-            //dateStart = dateStart_view_poi.getValue().toString();
         }
 
         if (isValidEndDate) {
             dateEnd = "Date_Flagged <= \'" + dateEnd_view_poi.getValue().toString() + "\'";
-            //dateEnd = dateEnd_view_poi.getValue().toString();
         }
 
         System.out.println(POILocation);
@@ -256,8 +253,7 @@ public class ViewPOIController implements Initializable {
             //start date > end date if entered
             date_invalid_label.setText("Invalid range");
 
-        }
-        else {
+        } else {
 
             try {
                 PreparedStatement pst = con.prepareStatement("SELECT Location_Name, City, State, Zip_Code, Flag, Date_Flagged " +
@@ -356,26 +352,6 @@ public class ViewPOIController implements Initializable {
         stage.show();
 
     }
-
-
-    /*@FXML
-    private void loadFromDB() {
-        data = FXCollections.observableArrayList();
-        try {
-            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM POI");
-
-            while (rs.next()) {
-                data.add(new POI(rs.getString(1), rs.getString(2), rs.getString(3),
-                        rs.getString(4), rs.getInt(5), rs.getDate(6)));
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        poiTableView.setItems(null);
-        poiTableView.setItems(data);
-    }*/
 
 
 }

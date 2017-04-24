@@ -6,7 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- * Created by mcw0805 on 4/23/17.
+ * POI Report
  */
 public class POIReport {
 

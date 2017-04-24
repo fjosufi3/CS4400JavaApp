@@ -74,23 +74,9 @@ public class PendingCityOfficialController implements Initializable {
     private void loadFromDB() {
         try {
 
-            //retrieve email and username from the USER table of the users who have "City_Official" Title
-            //may be approved or not approve yet
-//            PreparedStatement infoFromUser = connection.prepareStatement("SELECT Email, Username FROM USER" +
-//                    "WHERE User_Type = \'City_Official\'");
-//            ResultSet infoFromUserTable = infoFromUser.executeQuery();
-
-            //PreparedStatement pendingCityTs
-//                pst = connection.prepareStatement("SELECT * " +
-//                    "FROM (USER as U join CITY_OFFICIAL as C on U.Username = C.Username and C.Approved IS NULL);");
-
             pst = connection.prepareStatement("SELECT * " +
-                    "from (USER NATURAL JOIN CITY_OFFICIAL) WHERE CITY_OFFICIAL.Approved IS NULL;");
+                    "FROM (USER NATURAL JOIN CITY_OFFICIAL) WHERE CITY_OFFICIAL.Approved IS NULL");
             rs = pst.executeQuery();
-
-
-//            pst = connection.prepareStatement("SELECT * FROM CITY_OFFICIAL WHERE Approved IS NULL");
-//            rs = pst.executeQuery();
 
             //pull data, adjust columns based on tables in DB 
             while (rs.next()) {
@@ -151,9 +137,6 @@ public class PendingCityOfficialController implements Initializable {
                 //System.out.println(dateTimePK);
 
                 try {
-//                    PreparedStatement changeStatement = connection.prepareStatement("SELECT Location_Name, Date_Time " +
-//                            "FROM DATA_POINT WHERE Location_Name = '"+locNamePK+"' and  Date_time = '"+dateTimePK+"'     ");
-
                     PreparedStatement changeStatement = connection.prepareStatement("UPDATE CITY_OFFICIAL " +
                             "SET Approved = TRUE WHERE Username = ?");
                     changeStatement.setString(1, usernamePK);
@@ -185,8 +168,6 @@ public class PendingCityOfficialController implements Initializable {
                 String usernamePK = pendingOfficialView.getItems().get(i).getUsername();
 
                 try {
-//                    PreparedStatement changeStatement = connection.prepareStatement("DELETE FROM CITY_OFFICIAL " +
-//                            "WHERE Username = ?");
 
                     PreparedStatement changeStatement = connection.prepareStatement("UPDATE CITY_OFFICIAL " +
                             "SET Approved = FALSE WHERE Username = ?");

@@ -74,6 +74,14 @@ public class PendingDataController implements Initializable {
             pst = connection.prepareStatement("SELECT * FROM DATA_POINT WHERE Accepted IS NULL");
             rs = pst.executeQuery();
 
+            /*
+
+                SELECT Date_Time, Data_Value, Type, Location_Name FROM DATA_POINT WHERE Accepted IS NULL;
+                is technically what we need, but the way we designed the class, we need to feed the other
+                variable to make a complete object.
+
+             */
+
             while (rs.next()) {
                 //get string from db,whichever way
                 data.add(new DataPoint(rs.getString(4),
@@ -89,8 +97,6 @@ public class PendingDataController implements Initializable {
             Logger.getLogger(PendingDataController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        //Set cell value factory to tableview.
-        //NB.PropertyValue Factory must be the same with the one set in model class.
 
         pendingDataView.setItems(data);
 
@@ -120,7 +126,6 @@ public class PendingDataController implements Initializable {
 
     @FXML
     private void onClickAccept(ActionEvent event) {
-        //push checked data to the DB
 
         for (int i = 0; i < data.size(); i++) {
             ObservableValue<CheckBox> c = columnSelect.getCellObservableValue(data.get(i));
@@ -132,11 +137,8 @@ public class PendingDataController implements Initializable {
                 data.get(i).setAccepted(true);
                 String locNamePK = pendingDataView.getItems().get(i).getLocationName();
                 String dateTimePK = pendingDataView.getItems().get(i).getDateTimeString();
-                //System.out.println(dateTimePK);
 
                 try {
-//                    PreparedStatement changeStatement = connection.prepareStatement("SELECT Location_Name, Date_Time " +
-//                            "FROM DATA_POINT WHERE Location_Name = '"+locNamePK+"' and  Date_time = '"+dateTimePK+"'     ");
 
                     PreparedStatement changeStatement = connection.prepareStatement("UPDATE DATA_POINT " +
                             "SET Accepted = TRUE WHERE Location_Name = ? and  Date_Time = ?");
@@ -173,8 +175,6 @@ public class PendingDataController implements Initializable {
                 //System.out.println(dateTimePK);
 
                 try {
-//                    PreparedStatement changeStatement = connection.prepareStatement("DELETE FROM DATA_POINT " +
-//                            "WHERE Location_Name = ? and  Date_Time = ?");
 
                     PreparedStatement changeStatement = connection.prepareStatement("UPDATE DATA_POINT " +
                             "SET Accepted = FALSE WHERE Location_Name = ? and  Date_Time = ?");

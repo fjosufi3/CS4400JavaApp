@@ -7,7 +7,11 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
 
-
+/**
+ * DataPoint (weak) entity
+ *
+ * @author mcw0805
+ */
 public class DataPoint {
 
     private BooleanProperty accepted;
@@ -41,18 +45,6 @@ public class DataPoint {
         this.accepted.set(accepted);
     }
 
-
-//    public int getAccepted() {
-//        return accepted.get();
-//    }
-//
-//    public IntegerProperty acceptedProperty() {
-//        return accepted;
-//    }
-//
-//    public void setAccepted(int accepted) {
-//        this.accepted.set(accepted);
-//    }
 
     public String getLocationName() {
         return locationName.get();

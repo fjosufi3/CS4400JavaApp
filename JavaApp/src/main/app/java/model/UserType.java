@@ -1,5 +1,9 @@
 package app.java.model;
 
+
+/**
+ * UserType enum
+ */
 public enum UserType {
     Admin, City_Scientist, City_Official;
 

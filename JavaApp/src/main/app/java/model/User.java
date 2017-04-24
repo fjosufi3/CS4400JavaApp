@@ -6,6 +6,11 @@ import javafx.beans.property.StringProperty;
 import java.util.Random;
 
 
+/**
+ * User entity
+ *
+ * @author mcw0805
+ */
 public class User {
 
     private StringProperty email;

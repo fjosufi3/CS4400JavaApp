@@ -8,6 +8,12 @@ import javafx.beans.property.StringProperty;
 import java.util.Date;
 
 
+/**
+ * POI entity
+ *
+ * @author mcw0805
+ */
+
 public class POI {
     private StringProperty location;
     private StringProperty city;

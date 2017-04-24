@@ -4,7 +4,9 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- * Created by mcw0805 on 4/14/17.
+ * DataType entity
+ *
+ * @author mcw0805
  */
 public class DataType {
     private StringProperty dataType;
