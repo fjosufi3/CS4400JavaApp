@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6903e2a3-b4b3-412c-8c92-bd5ffb811bad" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/out/app/java/view/add_data_point.fxml" afterPath="$PROJECT_DIR$/JavaApp/out/app/java/view/add_data_point.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/out/main/app/java/view/add_data_point.fxml" afterPath="$PROJECT_DIR$/JavaApp/out/main/app/java/view/add_data_point.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddDataPointController.java" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddDataPointController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/view/add_data_point.fxml" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/view/add_data_point.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java" afterPath="$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,13 +41,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddDataPointController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AddDataPointController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddDataPointController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
               <caret line="89" column="36" lean-forward="false" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FormValidation.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="142" column="40" lean-forward="false" selection-start-line="142" selection-start-column="40" selection-end-line="142" selection-end-column="40" />
+              <folding>
+                <marker date="1493013948000" expanded="true" signature="1192:1236" ph="SELECT Usern... USER" />
+                <marker date="1493013948000" expanded="true" signature="2083:2121" ph="SELECT Email... USER" />
+                <marker date="1493013948000" expanded="true" signature="4677:4713" ph="SELECT DISTI... CITY_STATE" />
+                <marker date="1493013948000" expanded="true" signature="5474:5511" ph="SELECT DISTI... CITY_STATE" />
+                <marker date="1493013948000" expanded="true" signature="6281:6310" ph="SELECT Locat... POI" />
+                <marker date="1493013948000" expanded="true" signature="7093:7117" ph="SELECT * FRO... CITY_STATE" />
+                <marker date="1493013948000" expanded="true" signature="8939:8992" ph="SELECT Appro... CITY_OFFICIAL" />
+                <marker date="1493013948000" expanded="true" signature="9771:9842" ph="SELECT Usern... USER" />
+                <marker date="1493013948000" expanded="true" signature="10898:10952" ph="SELECT * FRO... USER" />
+                <marker date="1493013948000" expanded="true" signature="11824:11897" ph="INSERT INTO USER... " />
+                <marker date="1493013948000" expanded="true" signature="12919:12993" ph="INSERT INTO CITY_OFFICIAL... " />
+                <marker date="1493013948000" expanded="true" signature="13733:13831" ph="INSERT INTO DATA_POINT... " />
+                <marker date="1493013948000" expanded="true" signature="14864:14962" ph="INSERT INTO POI... " />
+                <marker date="1493013948000" expanded="true" signature="16037:16063" ph="SELECT Type DATA_TYPE" />
               </folding>
             </state>
           </provider>
@@ -151,7 +172,6 @@
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/view/browse_view_poi.fxml" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/view/poi_detail.fxml" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/Main.java" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/POIReportController.java" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/PendingDataController.java" />
@@ -168,6 +188,7 @@
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/model/ConnectionConfiguration.java" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/POIDetailController.java" />
         <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/controller/AddDataPointController.java" />
+        <option value="$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java" />
       </list>
     </option>
   </component>
@@ -863,12 +884,12 @@
       <workItem from="1492974933256" duration="2846000" />
       <workItem from="1492977919194" duration="29000" />
       <workItem from="1492977962284" duration="105000" />
-      <workItem from="1493013482307" duration="369000" />
+      <workItem from="1493013482307" duration="445000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55118000" />
+    <option name="totallyTimeSpent" value="55194000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1185,14 +1206,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="269" column="0" lean-forward="true" selection-start-line="269" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="542">
@@ -1448,6 +1461,29 @@
           <caret line="89" column="36" lean-forward="false" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaApp/src/main/app/java/model/FormValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="142" column="40" lean-forward="false" selection-start-line="142" selection-start-column="40" selection-end-line="142" selection-end-column="40" />
+          <folding>
+            <marker date="1493013948000" expanded="true" signature="1192:1236" ph="SELECT Usern... USER" />
+            <marker date="1493013948000" expanded="true" signature="2083:2121" ph="SELECT Email... USER" />
+            <marker date="1493013948000" expanded="true" signature="4677:4713" ph="SELECT DISTI... CITY_STATE" />
+            <marker date="1493013948000" expanded="true" signature="5474:5511" ph="SELECT DISTI... CITY_STATE" />
+            <marker date="1493013948000" expanded="true" signature="6281:6310" ph="SELECT Locat... POI" />
+            <marker date="1493013948000" expanded="true" signature="7093:7117" ph="SELECT * FRO... CITY_STATE" />
+            <marker date="1493013948000" expanded="true" signature="8939:8992" ph="SELECT Appro... CITY_OFFICIAL" />
+            <marker date="1493013948000" expanded="true" signature="9771:9842" ph="SELECT Usern... USER" />
+            <marker date="1493013948000" expanded="true" signature="10898:10952" ph="SELECT * FRO... USER" />
+            <marker date="1493013948000" expanded="true" signature="11824:11897" ph="INSERT INTO USER... " />
+            <marker date="1493013948000" expanded="true" signature="12919:12993" ph="INSERT INTO CITY_OFFICIAL... " />
+            <marker date="1493013948000" expanded="true" signature="13733:13831" ph="INSERT INTO DATA_POINT... " />
+            <marker date="1493013948000" expanded="true" signature="14864:14962" ph="INSERT INTO POI... " />
+            <marker date="1493013948000" expanded="true" signature="16037:16063" ph="SELECT Type DATA_TYPE" />
           </folding>
         </state>
       </provider>

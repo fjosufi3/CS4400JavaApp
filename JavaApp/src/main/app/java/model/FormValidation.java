@@ -140,7 +140,7 @@ public class FormValidation {
         ObservableList<String> citiesArr = FXCollections.observableArrayList();
         Connection c = null;
         PreparedStatement statement = null;
-        String query = "SELECT City FROM CITY_STATE";
+        String query = "SELECT DISTINCT City FROM CITY_STATE";
         try {
             c = ConnectionConfiguration.getConnection();
             statement = c.prepareStatement(query);
@@ -163,7 +163,7 @@ public class FormValidation {
         ObservableList<String> statesArr = FXCollections.observableArrayList();
         Connection c = null;
         PreparedStatement statement = null;
-        String query = "SELECT State FROM CITY_STATE";
+        String query = "SELECT DISTINCT State FROM CITY_STATE";
         try {
             c = ConnectionConfiguration.getConnection();
             statement = c.prepareStatement(query);
